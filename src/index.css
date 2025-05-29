@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* margin: auto; */
+  font-family: 'montserrat';
+  --bck-color: #ffffff;
+  --primary-color: #0a2838;
+  --secondary-color: #888888;
+  --tertiary-color: #F1F3F8;
+  --text-color: #7F8087;
+  --brand-color: #21434B;
+  --brandD-color: #183136;
+  --brand2-color: #D8B266;
+  --dark-color: #7C7C7C;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background-color: #000;
+  max-width: 2560px;
+  margin: auto;
+  overflow-x: hidden;
+}
+*{
+  font-family: 'montserrat';
+}
+
+@font-face {
+  font-family: 'hiden-certon';
+  src: url('/assets/fonts/hiden-certon.otf');
+}
+
+.montserrat{
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.certon {
+  font-family: 'hiden-certon';
+}
+.swiper-pagination-bullet {
+  background: var(--brand2-color) !important;
+}
+.transition-nav {
+  transition: all 0.3s ease;
+}
+
+
+.rent-class {
+  fill: var(--brand2-color);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease 0s;
+  opacity: 0.5;
+  stroke: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 1px;
+  outline: none;
+  width: 100%;
+}
+
+.parking-reserved {
+  fill: #ff7b00;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease 0s;
+  opacity: 0.5;
+  stroke: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 1px;
+  outline: none;
+  width: 100%;
+}
+
+.st0 {
+  fill: #21434B;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease 0s;
+  opacity: 0.5;
+  stroke: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 1px;
+  outline: none;
+  width: 100%;
+}
+.cm0 {
+  fill: #D8B266;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease 0s;
+  opacity: 0.5;
+  stroke: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 1px;
+  outline: none;
+  width: 100%;
+}
+
+.st2 {
+  fill: #21434B;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease 0s;
+  opacity: 0.5;
+  stroke: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  /* stroke-width: 1px; */
+  outline: none;
+  width: 100%;
+}
+
+.st2:hover {
+  fill: #21434B;
+  opacity: 0.9;
+}
+
+.st0:hover {
+  fill: #21434B;
+  opacity: 0.8;
+}
+.cm0:hover {
+  fill: #D8B266;
+  opacity: 0.8;
+}
+
+.st1 {
+  fill: #8b0000;
+  opacity: 0.5;
+  stroke-width: 1px;
+  stroke: white;
+}
+
+.st3 {
+  fill: transparent;
+  stroke-width: 1px;
+  stroke: white;
+}
+
+.ft0 {
+  fill: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease 0s;
+  opacity: 0.5;
+  stroke: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 1px;
+  outline: none;
+  width: 100%;
+}
+
+.ft0:hover {
+  fill: #21434B;
+  opacity: 0.6;
+
+}
+
+.g1{
+  fill: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease 0s;
+  opacity: 0.2;
+  stroke: #1d1d3a;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 2px;
+  outline: none;
+  width: 100%;
+}
+
+.g1:hover{
+  fill: #1D1D3A;
+  opacity: 0.6;
+}
+
+.filter-input::placeholder{
+  color: white
+}
+
+select {
+  /* appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; */
+  cursor: pointer;
+}
+option {
+  background-color: var(--brand-color);
+  color: white;
+  cursor: pointer;
+}
+
+/* Custom dropdown styling */
+select:active, select:focus {
+  border: 1px solid var(--brand2-color);
+}
