@@ -27,9 +27,9 @@ const ViewProject = () => {
     );
   };
 
-  const currentBuilding = buildings[currentIndex];
+  const currentBuilding = buildings.find(b => b.name === selectedTab) || buildings[0];
 
-    const handleTabClick = (view) => {
+  const handleTabClick = (view) => {
     setSelectedTab(view);
   };
 
@@ -92,23 +92,6 @@ const ViewProject = () => {
                 ))}
             </svg>
           </div>
-        </div>
-      </div>
-      <div className="absolute w-screen h-48 bg-brand bottom-0 z-0"></div>
-      <div className="absolute w-11/12 flex justify-end items-center bottom-10 z-10">
-        <div className="right-0 top-12 flex justif-center items-center gap-2 md:gap-4">
-          <button
-            onClick={handlePrevious}
-            className="bg-gold transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
-          >
-            <SlArrowLeft color="#fff" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="bg-gold transition-all duration-.3s  hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
-          >
-            <SlArrowRight color="#fff" />
-          </button>
         </div>
       </div>
       <div className="absolute w-11/12 md:5/6 flex justify-end items-center text-center top-10 md:top-24 z-10">
