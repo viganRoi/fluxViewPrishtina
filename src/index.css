@@ -10,9 +10,9 @@
   --secondary-color: #888888;
   --tertiary-color: #F1F3F8;
   --text-color: #7F8087;
-  --brand-color: #21434B;
+  --brand-color: rgba(246, 206, 62, 1);
   --brandD-color: #183136;
-  --brand2-color: #D8B266;
+  --brand2-color: #000;
   --dark-color: #7C7C7C;
 }
 

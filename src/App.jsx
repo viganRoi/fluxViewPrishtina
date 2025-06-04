@@ -21,7 +21,7 @@ import {
   TempCommA,
   TempCommB,
   TempCommC,
-  TempCommD
+  TempCommD,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import SvgExtractor from "./pages/SvgExtractor";
@@ -43,12 +43,19 @@ function App() {
           <Route path="/floorsvg/:id" element={<FloorSvgPage />} />
           <Route path="/svg-extrator" element={<SvgExtractor />} />
           <Route path="/fsvg-extrator" element={<FloorSvgExtractor />} />
-          <Route path="/fbsvg-extrator" element={<FloorBuildingSvgExtractor />} />
+          <Route
+            path="/fbsvg-extrator"
+            element={<FloorBuildingSvgExtractor />}
+          />
           <Route path="/psvg-extrator" element={<ParkingSvgExtractor />} />
-          <Route path="/store/svg-extractor" element={<SvgExtractorForStores />} />
+          <Route
+            path="/store/svg-extractor"
+            element={<SvgExtractorForStores />}
+          />
           <Route path="/buildings" element={<GeneralBuildingPage />} />
           <Route path="/buildings/:id" element={<BuildingPage />} />
           <Route path="/buildings/:id/floor/:floorId" element={<FloorPage />} />
+          <Route path="/apartments/:id" element={<SingleApartmentPage />} />
           <Route
             path="/admin/*"
             element={

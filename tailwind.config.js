@@ -21,7 +21,7 @@ module.exports = {
         gold: "#D8B266",
         black: "#000",
         white: "#fff",
-        brand: "#21434B",
+        brand: "rgba(246, 206, 62, 1)",
         brandD: "#183136",
         bck: "#eee",
         primary: "#C5A700",
