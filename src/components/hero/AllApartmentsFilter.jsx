@@ -74,12 +74,12 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
   };
 
   return (
-    <div className="w-full h-full py-24 md:py-32 flex flex-col items-center justify-center bg-black">
+    <div className="w-full h-full py-24 md:py-32 flex flex-col items-center justify-center bg-black border-b border-brand">
       <div className="w-11/12 h-full text-white flex flex-col justify-between items-start gap-4 border-b border-white pb-12">
         <h1 className="font-bold text-4xl">Filtro <span className="text-brand">Apartmentet</span></h1>
       </div>
       <div className="w-11/12 h-full text-gold flex flex-col justify-between items-center gap-4 py-12">
-        <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-6">
+        <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-20">
           <div className="w-full flex flex-col items-start gap-1 md:gap-4">
             <h1 className="text-lg text-white font-semibold">Objekti</h1>
             <div className="w-full flex gap-4 justify-start">
@@ -232,11 +232,11 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
                   step={1}
                   min={minFloor}
                   max={maxFloor}
-                  color="var(--brand2-color)"
+                  color="var(--brand-color)"
                   sx={{
-                    color: "var(--brand2-color)",
+                    color: "var(--brand-color)",
                     height: "1px",
-                    width: "94%",
+                    width: "100%",
                   }}
                 />
               </div>
