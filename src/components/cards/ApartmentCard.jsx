@@ -3,7 +3,7 @@ import { homepage, planmetricImageUrl } from "../../utils/consts";
 
 const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft }) => {
   return (
-    <div className="w-full h-[480px] md:h-[585px] flex flex-col justify-between p-4 relative rounded-lg overflow-hidden border border-[#8B8B8BCC] shadow-lg bg-black hover:cursor-pointer">
+    <div className="w-full h-[480px] md:h-[585px] flex flex-col justify-between p-8 relative rounded-lg overflow-hidden border border-[#8B8B8BCC] shadow-lg bg-black hover:cursor-pointer">
       <div className="w-full flex flex-col gap-1">
         <h2 className="text-[16px] text-white montserrat">
           109.57m<sup>2</sup>
@@ -21,7 +21,7 @@ const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft }) => {
         src="/assets/images/plani.png"
         alt=""
       />
-      <button className="absolute top-4 right-4">
+      <button className="absolute top-8 right-8">
         <img src="/assets/icons/heart.svg" alt="" />
       </button>
     </div>
