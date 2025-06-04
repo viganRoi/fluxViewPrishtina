@@ -61,19 +61,19 @@ const BuildingFilter = ({ available }) => {
 
 
   return (
-    <div className="w-full h-full py-0 pt-36 pb-12 flex flex-col items-center justify-center bg-brand md:gap-10">
+    <div className="w-full h-full py-0 pt-36 pb-12 flex flex-col items-center justify-center bg-black md:gap-10">
       <div className="w-11/12 h-full text-gold flex justify-between">
-        <h1 className="text-xl md:text-5xl certon text-gold">
+        <h1 className="text-xl md:text-5xl text-gold">
           Objekti: {buildingData[0]?.buildingNr?.toUpperCase()}
         </h1>
-        <h1 className="text-lg md:text-2xl certon text-gold">
+        <h1 className="text-lg md:text-2xl text-gold">
           Apartamentet e lira: {available}
         </h1>
       </div>
       <div className="w-11/12 h-full text-gold flex flex-col justify-between items-end">
         <div className="w-full flex flex-col md:flex-row justify-between items-start">
           <div className="w-full md:w-1/6 flex flex-col items-start gap-4 mb-4 md:mb-0">
-            <h1 className="text-lg text-white font-semibold">Dhoma</h1>
+            <h1 className="text-lg text-white font-semibold">Tipi</h1>
             <div className="flex gap-2 md:gap-4">
               <button
                 name="1"

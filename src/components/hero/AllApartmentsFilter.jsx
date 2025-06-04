@@ -74,81 +74,126 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
   };
 
   return (
-    <div className="w-full h-full py-24 md:py-32 flex items-center justify-center bg-brand">
-      <div className="w-11/12 h-full text-gold flex flex-col justify-between items-center gap-4">
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6">
-          <div className="w-full flex md:hidden mb-2">
-            <h1 className="text-lg md:text-2xl certon text-gold">
-              Apartamentet e lira: {available}
-            </h1>
-          </div>
-          {/* <div className="w-full flex flex-col items-center justify-center gap-1 md:gap-4">
-            <div className="w-full flex gap-4  justify-start">
-              <DropdownType
-                label="Selekto Tipin"
-                value={selectedType}
-                onChange={handleTypeChange}
-                options={[
-                  { value: "apartment", label: "Apartament" },
-                  { value: "commercial", label: "Afarizëm" },
-                  { value: "parking", label: "Parking" },
-                ]}
-              />
-            </div>
-          </div> */}
-          <div className="w-full flex flex-col items-start gap-1 md:gap-4 ml-0 md:ml-32">
+    <div className="w-full h-full py-24 md:py-32 flex flex-col items-center justify-center bg-black">
+      <div className="w-11/12 h-full text-white flex flex-col justify-between items-start gap-4 border-b border-white pb-12">
+        <h1 className="font-bold text-4xl">Filtro <span className="text-brand">Apartmentet</span></h1>
+      </div>
+      <div className="w-11/12 h-full text-gold flex flex-col justify-between items-center gap-4 py-12">
+        <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-6">
+          <div className="w-full flex flex-col items-start gap-1 md:gap-4">
             <h1 className="text-lg text-white font-semibold">Objekti</h1>
-            <div className="w-full flex gap-4  justify-start">
+            <div className="w-full flex gap-4 justify-start">
               <button
                 name="a"
                 onClick={handleBuildingChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  buildingFilter.includes("a")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
+                className={`px-4 py-2 rounded-full border border-gold ${buildingFilter.includes("a")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
               >
                 A
               </button>
               <button
                 name="b"
                 onClick={handleBuildingChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  buildingFilter.includes("b")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
+                className={`px-4 py-2 rounded-full border border-gold ${buildingFilter.includes("b")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
               >
                 B
               </button>
               <button
                 name="c"
                 onClick={handleBuildingChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  buildingFilter.includes("c")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
+                className={`px-4 py-2 rounded-full border border-gold ${buildingFilter.includes("c")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
               >
                 C
               </button>
               <button
                 name="d"
                 onClick={handleBuildingChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  buildingFilter.includes("d")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
+                className={`px-4 py-2 rounded-full border border-gold ${buildingFilter.includes("d")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
               >
                 D
+              </button>
+              <button
+                name="e"
+                onClick={handleBuildingChange}
+                className={`px-4 py-2 rounded-full border border-gold ${buildingFilter.includes("e")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
+              >
+                E
+              </button>
+              <button
+                name="f"
+                onClick={handleBuildingChange}
+                className={`px-4 py-2 rounded-full border border-gold ${buildingFilter.includes("f")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
+              >
+                F
+              </button>
+            </div>
+          </div>
+          <div className="w-full flex flex-col items-start gap-1 md:gap-4">
+            <h1 className="text-lg text-white font-semibold">Dhoma</h1>
+            <div className="w-full flex gap-4 justify-start">
+              <button
+                name="1"
+                onClick={handleRoomChange}
+                className={`px-4 py-2 rounded-full border border-gold ${roomFilter.includes("1")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
+              >
+                1 + 1
+              </button>
+              <button
+                name="2"
+                onClick={handleRoomChange}
+                className={`px-4 py-2 rounded-full border border-gold ${roomFilter.includes("2")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
+              >
+                2 + 1
+              </button>
+              <button
+                name="3"
+                onClick={handleRoomChange}
+                className={`px-4 py-2 rounded-full border border-gold ${roomFilter.includes("3")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
+              >
+                3 + 1
+              </button>
+              <button
+                name="penthouse"
+                onClick={handleRoomChange}
+                className={`px-4 py-2 rounded-full border border-gold ${roomFilter.includes("penthouse")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
+              >
+                Penthouse
               </button>
             </div>
           </div>
           <div className="w-full flex flex-col items-start gap-1 md:gap-4">
             <h1 className="text-lg text-white font-semibold">Sipërfaqja</h1>
             <div className="w-full flex flex-col justify-between">
-              <div className="w-full ml-3">
+              <div className="w-full">
                 <Slider
                   getAriaLabel={() => "Size range"}
                   value={[squareFilter.startVal, squareFilter.endVal]}
@@ -157,23 +202,28 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
                   step={10}
                   min={minSquare}
                   max={maxSquare}
-                  color="var(--brand2-color)"
+                  color="var(--brand-color)"
                   sx={{
-                    color: "var(--brand2-color)",
+                    color: "var(--brand-color)",
                     height: "1px",
-                    width: "94%",
+                    width: "100%",
                   }}
                 />
               </div>
-              <p className="text-lg">
-                {squareFilter.startVal}m2 - {squareFilter.endVal}m2
+              <div className="flex items-center gap-4 w-full">
+              <p className="text-lg py-1 px-8 text-white border border-gold rounded-full">
+                {squareFilter.startVal} m<sup>2</sup>
               </p>
+              <p className="text-lg py-1 px-8 text-white border border-gold rounded-full">
+                {squareFilter.endVal} m<sup>2</sup>
+              </p>
+              </div>
             </div>
           </div>
           <div className="w-full flex flex-col items-start gap-1 md:gap-4">
             <h1 className="text-lg text-white font-semibold">Kati</h1>
             <div className="w-full flex flex-col justify-between">
-              <div className="w-full ml-3">
+              <div className="w-full">
                 <Slider
                   getAriaLabel={() => "Floor range"}
                   value={[floorFilter.startVal, floorFilter.endVal]}
@@ -196,65 +246,6 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
               </p>
             </div>
           </div>
-          <div className="w-full flex flex-col items-start gap-1 md:gap-4 ml-0 md:ml-32">
-            <h1 className="text-lg text-white font-semibold">Dhoma</h1>
-            <div className="w-full flex gap-4  justify-start">
-              <button
-                name="1"
-                onClick={handleRoomChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  roomFilter.includes("1")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
-              >
-                1 + 1
-              </button>
-              <button
-                name="2"
-                onClick={handleRoomChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  roomFilter.includes("2")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
-              >
-                2 + 1
-              </button>
-              <button
-                name="3"
-                onClick={handleRoomChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  roomFilter.includes("3")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
-              >
-                3 + 1
-              </button>
-            </div>
-          </div>
-          <div className="w-full hidden md:flex flex-col items-start justify-center gap-1 md:gap-4">
-            <div className="flex gap-4 ">
-              <h1 className="text-lg md:text-2xl certon text-gold">
-                Apartamentet e lira: {available}
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div className="w-full flex items-center justify-end gap-4">
-          <button
-            onClick={resetFilters}
-            className="bg-brand text-white px-4 py-2 rounded-full border border-gold hover:bg-gold transition"
-          >
-            Reseto
-          </button>
-          <button
-            onClick={setFilteredData}
-            className="bg-gold text-white px-4 py-2 rounded-full border border-gold"
-          >
-            Apliko Ndryshimet
-          </button>
         </div>
       </div>
     </div>
