@@ -56,6 +56,7 @@ function App() {
           <Route path="/buildings/:id" element={<BuildingPage />} />
           <Route path="/buildings/:id/floor/:floorId" element={<FloorPage />} />
           <Route path="/apartments/:id" element={<SingleApartmentPage />} />
+          <Route path="/apartments" element={<AllApartmentsPage />} />
           <Route
             path="/admin/*"
             element={
