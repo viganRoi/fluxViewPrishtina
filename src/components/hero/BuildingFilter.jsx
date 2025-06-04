@@ -12,8 +12,10 @@ import {
 } from "../../features/filter/FilterSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Slider } from "@mui/material";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getAllApartmentSvgData } from "../../features/apartment/ApartmentSlice";
+import { TfiClose } from "react-icons/tfi";
+import { SlArrowLeft } from "react-icons/sl";
 
 const floorLabelMapping = {
   0: "Përdhesa",
@@ -25,6 +27,7 @@ const getFloorLabel = (floor) => {
 };
 
 const BuildingFilter = ({ available }) => {
+  const navigate = useNavigate();
   const [sizeRange, setSizeRange] = useState([minSquare, maxSquare]);
   const [floorRange, setFloorRange] = useState([minFloor, maxFloor]);
   const [roomRange, setRoomRange] = useState("all");
@@ -61,67 +64,102 @@ const BuildingFilter = ({ available }) => {
 
 
   return (
-    <div className="w-full h-full py-0 pt-36 pb-12 flex flex-col items-center justify-center bg-black md:gap-10">
-      <div className="w-11/12 h-full text-gold flex justify-between">
-        <h1 className="text-xl md:text-5xl text-gold">
-          Objekti: {buildingData[0]?.buildingNr?.toUpperCase()}
-        </h1>
-        <h1 className="text-lg md:text-2xl text-gold">
-          Apartamentet e lira: {available}
-        </h1>
+    <div className="w-full h-full py-32 gap-32 flex flex-col items-center justify-center bg-black border-b border-brand">
+      <div className="w-11/12 h-full grid grid-cols-1 md:grid-cols-3 text-white flex flex-col justify-between items-start gap-4 border-b border-white pb-12">
+        <div className="w-full flex items-center justify-start gap-4">
+          <button onClick={() => navigate('/apartments')} className='bg-transparent border-brand border transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center'>
+            <SlArrowLeft color='#fff' />
+          </button>
+          <h1 className="text-xl">Kthehu te Apartmentet</h1>
+        </div>
+        <div className="w-full flex items-center justify-center">
+          <h1 className="font-bold text-4xl">Filtro <span className="text-brand">Apartmentet</span></h1>
+        </div>
+        <div className="w-full flex items-center justify-end">
+                    <button  onClick={() => navigate('/apartments')} className="text-xl border-brand border bg-transparent hover:bg-brand px-8 py-2 rounded-full duration-300">Kthehu te Apartmentet</button>
+        </div>
       </div>
-      <div className="w-11/12 h-full text-gold flex flex-col justify-between items-end">
-        <div className="w-full flex flex-col md:flex-row justify-between items-start">
-          <div className="w-full md:w-1/6 flex flex-col items-start gap-4 mb-4 md:mb-0">
+      <div className="w-11/12 h-full text-gold flex flex-row justify-between items-center gap-4">
+        <div className="w-1/6 flex justify-between items-center mb-4">
+          <h1 className="font-bold px-8 py-4 bg-brand rounded-full text-black uppercase">Objekti {id}</h1>
+        </div>
+        <div className="w-4/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-x border-white border-1 px-12">
+          <div className="w-full flex flex-col items-start gap-4">
             <h1 className="text-lg text-white font-semibold">Tipi</h1>
-            <div className="flex gap-2 md:gap-4">
+            <div className="w-full flex gap-2 justify-start">
               <button
                 name="1"
                 onClick={handleRoomChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  roomRange.includes("1")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
+                className={`text-nowrap px-3 py-2 rounded-full border border-gold ${roomRange.includes("1")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
               >
-                1+1
+                1 + 1
               </button>
               <button
                 name="2"
                 onClick={handleRoomChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  roomRange.includes("2")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
+                className={`text-nowrap px-3 py-2 rounded-full border border-gold ${roomRange.includes("2")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
               >
-                2+1
+                2 + 1
               </button>
               <button
                 name="3"
                 onClick={handleRoomChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  roomRange.includes("3")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
+                className={`text-nowrap px-3 py-2 rounded-full border border-gold ${roomRange.includes("3")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
               >
-                3+1
+                3 + 1
               </button>
               <button
-                name="4"
+                name="penthouse"
                 onClick={handleRoomChange}
-                className={`px-4 py-2 rounded-full border border-gold ${
-                  roomRange.includes("4")
-                    ? "bg-gold text-black"
-                    : "bg-brand text-white"
-                }`}
+                className={`text-nowrap px-3 py-2 rounded-full border border-gold ${roomRange.includes("penthouse")
+                  ? "bg-brand text-black"
+                  : "bg-transparent text-white"
+                  }`}
               >
-                4+1
+                Penthouse
               </button>
             </div>
           </div>
-          <div className="w-full md:w-2/6 flex flex-col items-start gap-4 mb-4 md:mb-0">
+          <div className="w-full flex flex-col items-start gap-4">
+            <h1 className="text-lg text-white font-semibold">Sipërfaqja</h1>
+            <div className="w-full flex flex-col justify-between">
+              <div className="w-full">
+                <Slider
+                  getAriaLabel={() => "Size range"}
+                  value={[sizeRange[0], sizeRange[1]]}
+                  onChange={handleSizeChange}
+                  shiftStep={1}
+                  step={10}
+                  min={minSquare}
+                  max={maxSquare}
+                  color="var(--brand-color)"
+                  sx={{
+                    color: "var(--brand-color)",
+                    height: "1px",
+                    width: "100%",
+                  }}
+                />
+              </div>
+              <div className="flex items-center gap-4 w-full">
+                <p className="text-lg py-1 px-8 text-white border border-gold rounded-full">
+                  {sizeRange[0]} m<sup>2</sup>
+                </p>
+                <p className="text-lg py-1 px-8 text-white border border-gold rounded-full">
+                  {sizeRange[1]} m<sup>2</sup>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="w-full flex flex-col items-start gap-4">
             <h1 className="text-lg text-white font-semibold">Kati</h1>
             <div className="w-full flex flex-col justify-between">
               <div className="w-full ml-3">
@@ -133,55 +171,35 @@ const BuildingFilter = ({ available }) => {
                   step={1}
                   min={minFloor}
                   max={maxFloor}
-                  color="var(--brand2-color)"
+                  color="var(--brand-color)"
                   sx={{
-                    color: "var(--brand2-color)",
+                    color: "var(--brand-color)",
                     height: "1px",
-                    width: "94%",
+                    width: "100%",
                   }}
                 />
               </div>
-              <p className="text-lg">
-                {getFloorLabel(floorRange[0])} - {getFloorLabel(floorRange[1])}
-              </p>
-            </div>
-          </div>
-          <div className="w-full md:w-2/6 flex flex-col items-start gap-4 mb-4 md:mb-0">
-            <h1 className="text-lg text-white font-semibold">Sipërfaqja</h1>
-            <div className="w-full flex flex-col justify-between">
-              <div className="w-full ml-3">
-                <Slider
-                  getAriaLabel={() => "Size range"}
-                  value={[sizeRange[0], sizeRange[1]]}
-                  onChange={handleSizeChange}
-                  shiftStep={1}
-                  step={10}
-                  min={minSquare}
-                  max={maxSquare}
-                  color="var(--brand2-color)"
-                  sx={{
-                    color: "var(--brand2-color)",
-                    height: "1px",
-                    width: "94%",
-                  }}
-                />
+              <div className="flex items-center gap-4 w-full">
+                <p className="text-lg py-1 px-8 text-white border border-gold rounded-full">
+                  {getFloorLabel(floorRange[0])}
+                </p>
+                <p className="text-lg py-1 px-8 text-white border border-gold rounded-full">
+                  {getFloorLabel(floorRange[1])}
+                </p>
               </div>
-              <p className="text-lg">
-                {sizeRange[0]}m<sup>2</sup> - {sizeRange[1]}m<sup>2</sup>
-              </p>
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-center gap-4 mt-4 md:mt-0">
+        <div className="w-1/6 flex flex-col justify-between items-center gap-4">
           <button
             onClick={resetFilters}
-            className="bg-brand text-white px-4 py-2 rounded-full border border-gold hover:bg-gold transition"
+            className="bg-transparent text-white w-full py-2 rounded-full border border-brand hover:bg-brand transition"
           >
             Reseto
           </button>
           <button
             onClick={setFilteredData}
-            className="bg-gold text-white px-4 py-2 rounded-full border border-gold"
+            className="text-nowrap bg-gold text-white w-full py-2 rounded-full border border-gold"
           >
             Apliko Ndryshimet
           </button>
