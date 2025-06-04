@@ -95,8 +95,8 @@ const SingleApartment = () => {
           </div>
 
           <div className="w-full flex h-full justify-center bg-white items-center ">
-            <div className="w-full flex flex-col gap-2 flex-[5]">
-              <div className=" border-b border-black  w-3/4">
+            <div className="w-full flex flex-col gap-2 flex-[4]">
+              <div className=" border-b border-black  w-5/6">
                 {" "}
                 <h1 className="text-brand leading-none  text-[134px] montserrat font-bold">
                   A1{" "}
@@ -106,32 +106,32 @@ const SingleApartment = () => {
                 </h1>
               </div>
 
-              <div className="w-full flex flex-col gap-2">
-                <div className="flex w-3/4 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
+              <div className="w-full flex flex-col gap-2 ">
+                <div className="flex w-5/6 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
                   <img
                     className="w-[35px] "
                     src="/assets/icons/key-s.svg"
                     alt=""
                   />{" "}
-                  Dhoma:3+1
+                  Dhoma: 3+1
                 </div>
 
-                <div className="flex w-3/4 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
+                <div className="flex w-5/6 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
                   <img
                     className="w-[35px] "
                     src="/assets/icons/floor.svg"
                     alt=""
                   />{" "}
-                  Dhoma:3+1
+                  Kati: 1
                 </div>
 
-                <div className="flex w-3/4 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
+                <div className="flex w-5/6 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
                   <img
                     className="w-[35px] "
                     src="/assets/icons/sip.svg"
                     alt=""
                   />{" "}
-                  Dhoma:3+1
+                  Sipërfaqja: 99.34m²
                 </div>
 
                 <div className="flex  border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
@@ -140,7 +140,7 @@ const SingleApartment = () => {
                     src="/assets/icons/terrace.svg"
                     alt=""
                   />{" "}
-                  Dhoma:3+1
+                  Terraca: 10.23m²
                 </div>
 
                 <div className="flex  py-4 border-slate-300 text-[18px] font-black text-black montserrat items-center gap-2">
@@ -165,9 +165,9 @@ const SingleApartment = () => {
                 </button>
               </div>
             </div>
-            <div className="w-full flex h-full flex-col justify-start items-start gap-2 flex-[7]">
-              <div className="w-full flex justify-center items-center gap-4">
-                <div className="w-fit px-2  flex items-center border border-brand rounded-full justify-between md:justify-center">
+            <div className="w-full flex h-full flex-col justify-start items-start gap-2 flex-[8]">
+              <div className="w-full flex justify-center items-center gap-4 ">
+                <div className="w-fit px-2 bg-[#D2D6D7]  flex items-center border border-brand rounded-full justify-between md:justify-center">
                   <button
                     onClick={() => {
                       if (
@@ -179,11 +179,11 @@ const SingleApartment = () => {
                       }
                       window.open(`${apartment.vtourUrl}`, "_blank");
                     }}
-                    className="md:hidden border-dark border rounded-full py-2 px-6 text-sm text-nowrap montserrat text-text"
+                    className="md:hidden border-dark border rounded-full py-2  px-6 text-sm text-nowrap montserrat text-text"
                   >
                     360° Vr Tour
                   </button>
-                  <div className="tabs">
+                  <div className="tabs" style={{ backgroundColor: "#D2D6D7" }}>
                     <input
                       type="radio"
                       id="radio-1"
@@ -261,7 +261,7 @@ const SingleApartment = () => {
               </div>
               <div className="w-full relative flex justify-center items-center">
                 <img src="/assets/images/planimetria.png" alt="" />
-                <div className="absolute flex flex-col justify-center items-center bottom-0 -right-10  md:block">
+                <div className="absolute flex flex-col justify-center items-center bottom-10 -right-6  ">
                   <h3 className="text-[12px] text-black font-semibold">
                     Orientimi
                   </h3>
