@@ -17,7 +17,7 @@ const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft }) => {
       </div>
       {/* Image Section */}
       <img
-        className="absolute top-1/2 right-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        className="absolute w-[250px] h-[250px] top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2"
         src="/assets/images/plani.png"
         alt=""
       />

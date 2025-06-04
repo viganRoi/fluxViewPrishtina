@@ -259,7 +259,7 @@ const SingleApartment = () => {
                   </button>
                 </div>
               </div>
-              <div className="w-full relative flex justify-center items-center">
+              <div className="w-full  relative flex justify-center items-center">
                 <img src="/assets/images/planimetria.png" alt="" />
                 <div className="absolute flex flex-col justify-center items-center bottom-10 -right-6  ">
                   <h3 className="text-[12px] text-black font-semibold">
@@ -276,109 +276,7 @@ const SingleApartment = () => {
           </div>
         </div>
       </div>
-      {/* <div className="relative w-11/12 md:w-5/6 flex flex-col  justify-center items-start md:items-center mt-2 md:mt-10">
-        <div className="w-full flex items-center justify-between md:justify-center">
-          <button
-            onClick={() => {
-              if (!apartment.vtourUrl || apartment.vtourUrl === "null") {
-                toast.warning(`Momentalisht nuk eshte ne dispozicion`);
-                return;
-              }
-              window.open(`${apartment.vtourUrl}`, "_blank");
-            }}
-            className="md:hidden border-dark border rounded-full py-2 px-6 text-sm text-nowrap montserrat text-text"
-          >
-            360° Vr Tour
-          </button>
-          <div className="tabs">
-            <input
-              type="radio"
-              id="radio-1"
-              name="tabs"
-              checked={selectedTab === "3d"}
-            />
-            <label
-              className="tab montserrat"
-              onClick={() => {
-                handleTabClick("3d");
-              }}
-              htmlFor="radio-1"
-              style={{ fontSize: isSmallDev ? "12px" : "16px" }}
-            >
-              3D
-            </label>
-            <input
-              type="radio"
-              id="radio-2"
-              name="tabs"
-              checked={selectedTab === "2d"}
-            />
-            <label
-              className="tab montserrat"
-              onClick={() => {
-                handleTabClick("2d");
-              }}
-              htmlFor="radio-1"
-              style={{ fontSize: isSmallDev ? "12px" : "16px" }}
-            >
-              2D
-            </label>
-            {isSmallDev ? (
-              <></>
-            ) : (
-              <>
-                <input
-                  type="radio"
-                  id="radio-3"
-                  name="tabs"
-                  checked={selectedTab === "vrtour"}
-                />
-                <label
-                  className="tab montserrat"
-                  onClick={() => {
-                    if (!apartment.vtourUrl || apartment.vtourUrl === "null") {
-                      toast.warning(`Momentalisht nuk eshte ne dispozicion`);
-                      return;
-                    }
-                    window.open(`${apartment.vtourUrl}`, "_blank");
-                  }}
-                  htmlFor="radio-3"
-                  style={{ fontSize: isSmallDev ? "12px" : "16px" }}
-                >
-                  360° Vr Tour
-                </label>
-              </>
-            )}
-          </div>
-        </div>
-        <div className="hidden md:block absolute top-0 -right-28">
-          <img
-            src={`${homepage}${orientationImgPath}${apartmentPositionImageUrl}-orientimi.png`}
-            alt=""
-            className="h-52 object-contain"
-          />
-        </div>
-        <img
-          src={
-            selectedTab === "2d"
-              ? `${homepage}${planmetricImageUrl}${imageUrl}`
-              : `${homepage}${planmetricImageUrl}${image3dUrl}`
-          }
-          alt="Apartment view"
-          className="h-[500px] md:h-[1000px] object-contain"
-          style={{
-            cursor: "pointer",
-          }}
-        />
-        <div className="md:hidden w-full flex flex-col items-start justify-between">
-          <h1 className="text-brand text-xl md:text-5xl montserrat">Orientim:</h1>
-          <img
-            src={`${homepage}${orientationImgPath}${apartmentPositionImageUrl}-orientimi.png`}
-            alt=""
-            className="block md:hidden h-42  object-contain"
-          />
-        </div>
-      </div> */}
+
       <div className="md:hidden bg-brand w-full h-full py-6 flex justify-center mt-0 md:mt-10">
         <div className="md:hidden w-11/12 flex gap-4 justify-between">
           <button className="p-2 border-gold border rounded-full text-gold">

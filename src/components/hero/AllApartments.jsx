@@ -6,7 +6,12 @@ const AllApartments = ({ filteredApartments }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center content-center py-12 md:py-24  bg-brand">
+    <div
+      className="w-full h-full flex flex-col items-center justify-center content-center py-12 md:py-24  "
+      style={{
+        background: "linear-gradient(to right, black, #F6CE3E33 20%)",
+      }}
+    >
       <div className="w-11/12 flex-col align-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 md:gap-6">
           {filteredApartments.map((el) => {
