@@ -84,90 +84,96 @@ const SingleApartment = () => {
               <button className=" border-brand text-black rounded-full h-12 w-12 flex items-center justify-center">
                 <img src="/assets/icons/arrowup.svg" alt="" />
               </button>
-              <h3 className="text-black text-[18px] montserrat">Kthehu Pas</h3>
+              <h3 className="text-black text-[18px] circe">Kthehu Pas</h3>
             </div>
 
             <div className="w-full flex justify-end items-center">
-              <button className="text-black text-[16px]  border border-black rounded-full px-6 py-2 montserrat hover:bg-black hover:text-white transition-all duration-500">
+              <button className="text-black text-[16px]  border border-black rounded-full px-6 py-2 circe hover:bg-black hover:text-white transition-all duration-500">
                 Shiko te gjitha apartamentet
               </button>
             </div>
           </div>
 
           <div className="w-full flex h-full justify-center bg-white items-center ">
-            <div className="w-full flex flex-col gap-2 flex-[4]">
-              <div className=" border-b border-black  w-5/6">
+            <div className="w-full flex  flex-col gap-2 flex-[3]">
+              <div className=" border-b border-black  w-full">
                 {" "}
-                <h1 className="text-brand leading-none  text-[134px] montserrat font-bold">
-                  A1{" "}
-                  <span className="text-black text-[24px] font-normal">
-                    Apartamenti
+                <h1 className="text-brand leading-none  text-[50px] montserrat font-bold">
+                  109.57m<sup>2</sup>{" "}
+                  <span className="text-black circe text-[20px] font-normal">
+                    Sip Totale
                   </span>
                 </h1>
               </div>
 
               <div className="w-full flex flex-col gap-2 ">
-                <div className="flex w-5/6 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
-                  <img
+                <div className="flex justify-between w-full  border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
+                  {/* <img
                     className="w-[35px] "
                     src="/assets/icons/key-s.svg"
                     alt=""
-                  />{" "}
-                  Dhoma: 3+1
+                  />{" "} */}
+
+                  <h2 className="circe">Dhoma</h2>
+                  <h2 className="font-semibold">2</h2>
                 </div>
 
-                <div className="flex w-5/6 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
-                  <img
+                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[18px] text-black items-center gap-2">
+                  {/* <img
                     className="w-[35px] "
                     src="/assets/icons/floor.svg"
                     alt=""
-                  />{" "}
-                  Kati: 1
+                  />{" "} */}
+                  <h2 className="circe">Kati</h2>
+                  <h2 className="font-semibold">1</h2>
                 </div>
 
-                <div className="flex w-5/6 border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
-                  <img
+                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[18px] text-black items-center gap-2">
+                  {/* <img
                     className="w-[35px] "
                     src="/assets/icons/sip.svg"
                     alt=""
-                  />{" "}
-                  Sipërfaqja: 99.34m²
+                  />{" "} */}
+                  <h2 className="circe">Sipërfaqja</h2>
+                  <h2 className="font-semibold">
+                    99.34m<sup>2</sup>
+                  </h2>
                 </div>
 
-                <div className="flex  border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
-                  <img
+                <div className="flex  border-b py-4 border-slate-300 justify-between text-[18px] text-black items-center gap-2">
+                  {/* <img
                     className="w-[35px] "
                     src="/assets/icons/terrace.svg"
                     alt=""
-                  />{" "}
-                  Terraca: 10.23m²
+                  />{" "} */}
+                  <h2 className="circe">Terraca</h2>
+                  <h2 className="font-semibold">10.23m²</h2>
                 </div>
 
-                <div className="flex  py-4 border-slate-300 text-[18px] font-black text-black montserrat items-center gap-2">
-                  <img
+                <div className="flex  py-4 border-slate-300 text-[28px] font-semibold text-black montserrat items-center gap-2">
+                  {/* <img
                     className="w-[35px] "
                     src="/assets/icons/siptotal.svg"
                     alt=""
-                  />{" "}
-                  Siperfaqja totale:{" "}
-                  <span className="text-brand">
-                    109.57 m<sup>2</sup>
-                  </span>
+                  />{" "} */}
+                  <h1 className="circe">
+                    A1 <span className="text-brand">Apartamenti</span>
+                  </h1>
                 </div>
               </div>
 
               <div className="w-full flex flex-col gap-4">
-                <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 montserrat rounded-full">
+                <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 circe rounded-full">
                   Rezervo një takim
                 </button>
-                <button className="w-full px-4 py-2 border border-brand text-black hover:bg-brand montserrat transition-all duration-500 rounded-full">
+                <button className="w-full px-4 py-2 border border-brand text-black hover:bg-brand circe transition-all duration-500 rounded-full">
                   Shkarko PDF
                 </button>
               </div>
             </div>
             <div className="w-full flex h-full flex-col justify-start items-start gap-2 flex-[8]">
               <div className="w-full flex justify-center items-center gap-4 ">
-                <div className="w-fit px-2 bg-[#D2D6D7]  flex items-center border border-brand rounded-full justify-between md:justify-center">
+                <div className="w-fit px-2 bg-[#e9e9e9] flex items-center border-brand rounded-full justify-between md:justify-center">
                   <button
                     onClick={() => {
                       if (
@@ -179,11 +185,11 @@ const SingleApartment = () => {
                       }
                       window.open(`${apartment.vtourUrl}`, "_blank");
                     }}
-                    className="md:hidden border-dark border rounded-full py-2  px-6 text-sm text-nowrap montserrat text-text"
+                    className="md:hidden border-dark border rounded-full py-2 px-6 text-sm text-nowrap circe text-text"
                   >
                     360° Vr Tour
                   </button>
-                  <div className="tabs" style={{ backgroundColor: "#D2D6D7" }}>
+                  <div className="tabs" style={{ backgroundColor: "#e9e9e9" }}>
                     <input
                       type="radio"
                       id="radio-1"
@@ -191,7 +197,7 @@ const SingleApartment = () => {
                       checked={selectedTab === "3d"}
                     />
                     <label
-                      className="tab montserrat"
+                      className="tab circe"
                       onClick={() => {
                         handleTabClick("3d");
                       }}
@@ -207,7 +213,7 @@ const SingleApartment = () => {
                       checked={selectedTab === "2d"}
                     />
                     <label
-                      className="tab montserrat"
+                      className="tab circe"
                       onClick={() => {
                         handleTabClick("2d");
                       }}
@@ -215,6 +221,23 @@ const SingleApartment = () => {
                       style={{ fontSize: isSmallDev ? "12px" : "16px" }}
                     >
                       2D
+                    </label>
+
+                    <input
+                      type="radio"
+                      id="radio-3"
+                      name="tabs"
+                      checked={selectedTab === "onFloor"}
+                    />
+                    <label
+                      className="tab circe mr-2"
+                      onClick={() => {
+                        handleTabClick("onFloor");
+                      }}
+                      htmlFor="radio-1"
+                      style={{ fontSize: isSmallDev ? "12px" : "16px" }}
+                    >
+                      On Floor
                     </label>
                     {isSmallDev ? (
                       <></>
@@ -227,7 +250,7 @@ const SingleApartment = () => {
                           checked={selectedTab === "vrtour"}
                         />
                         <label
-                          className="tab montserrat"
+                          className="tab circe pr-2"
                           onClick={() => {
                             if (
                               !apartment.vtourUrl ||
@@ -260,7 +283,11 @@ const SingleApartment = () => {
                 </div>
               </div>
               <div className="w-full  relative flex justify-center items-center">
-                <img src="/assets/images/planimetria.png" alt="" />
+                <img
+                  className="w-[90%]"
+                  src="/assets/images/planimetria.png"
+                  alt=""
+                />
                 <div className="absolute flex flex-col justify-center items-center bottom-10 -right-6  ">
                   <h3 className="text-[12px] text-black font-semibold">
                     Orientimi
