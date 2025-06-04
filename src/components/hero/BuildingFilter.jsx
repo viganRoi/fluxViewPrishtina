@@ -73,24 +73,21 @@ const BuildingFilter = ({ available }) => {
           <h1 className="text-xl">Kthehu te Apartmentet</h1>
         </div>
         <div className="w-full flex items-center justify-center">
-          <h1 className="font-bold text-4xl">Filtro <span className="text-brand">Apartmentet</span></h1>
-        </div>
-        <div className="w-full flex items-center justify-end">
-                    <button  onClick={() => navigate('/apartments')} className="text-xl border-brand border bg-transparent hover:bg-brand px-8 py-2 rounded-full duration-300">Kthehu te Apartmentet</button>
-        </div>
-      </div>
-      <div className="w-11/12 h-full text-gold flex flex-row justify-between items-center gap-4">
-        <div className="w-1/6 flex justify-between items-center mb-4">
           <h1 className="font-bold px-8 py-4 bg-brand rounded-full text-black uppercase">Objekti {id}</h1>
         </div>
-        <div className="w-4/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-x border-white border-1 px-12">
+        <div className="w-full flex items-center justify-end">
+          <button onClick={() => navigate('/apartments')} className="text-xl border-brand border bg-transparent hover:bg-brand px-8 py-2 rounded-full duration-300">Kthehu te Apartmentet</button>
+        </div>
+      </div>
+      <div className="w-11/12 h-full text-gold flex flex-row justify-between items-center gap-8">
+        <div className="w-5/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-r border-white border-1 px-12">
           <div className="w-full flex flex-col items-start gap-4">
             <h1 className="text-lg text-white font-semibold">Tipi</h1>
             <div className="w-full flex gap-2 justify-start">
               <button
                 name="1"
                 onClick={handleRoomChange}
-                className={`text-nowrap px-3 py-2 rounded-full border border-gold ${roomRange.includes("1")
+                className={`text-nowrap px-6 py-2 rounded-full border border-gold ${roomRange.includes("1")
                   ? "bg-brand text-black"
                   : "bg-transparent text-white"
                   }`}
@@ -100,7 +97,7 @@ const BuildingFilter = ({ available }) => {
               <button
                 name="2"
                 onClick={handleRoomChange}
-                className={`text-nowrap px-3 py-2 rounded-full border border-gold ${roomRange.includes("2")
+                className={`text-nowrap px-6 py-2 rounded-full border border-gold ${roomRange.includes("2")
                   ? "bg-brand text-black"
                   : "bg-transparent text-white"
                   }`}
@@ -110,7 +107,7 @@ const BuildingFilter = ({ available }) => {
               <button
                 name="3"
                 onClick={handleRoomChange}
-                className={`text-nowrap px-3 py-2 rounded-full border border-gold ${roomRange.includes("3")
+                className={`text-nowrap px-6 py-2 rounded-full border border-gold ${roomRange.includes("3")
                   ? "bg-brand text-black"
                   : "bg-transparent text-white"
                   }`}
