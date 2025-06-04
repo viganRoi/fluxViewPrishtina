@@ -240,10 +240,14 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
                   }}
                 />
               </div>
-              <p className="text-lg">
-                {getFloorLabel(floorFilter.startVal)} -{" "}
+              <div className="flex items-center gap-4 w-full">
+              <p className="text-lg py-1 px-8 text-white border border-gold rounded-full">
+                {getFloorLabel(floorFilter.startVal)}
+              </p>
+              <p className="text-lg py-1 px-8 text-white border border-gold rounded-full">
                 {getFloorLabel(floorFilter.endVal)}
               </p>
+              </div>
             </div>
           </div>
         </div>
