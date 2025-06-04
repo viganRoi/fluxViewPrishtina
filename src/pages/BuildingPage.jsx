@@ -58,7 +58,7 @@ const BuildingPage = () => {
 
   return (
     <div>
-      {isSmallDev ? (
+      {/* {isSmallDev ? (
         <>
           <BuildingFilterMobile setFilterState={setFilterState} available={available} />
           <BuildingMobile filteredBuildings={filteredBuildings} />
@@ -69,7 +69,9 @@ const BuildingPage = () => {
           <Building filteredBuildings={filteredBuildings} />
         </>
       )
-      }
+      } */}
+      <BuildingFilter setFilterState={setFilterState} available={available} />
+      <Building filteredBuildings={filteredBuildings} />
     </div>
   );
 };
