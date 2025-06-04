@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   getRegularBuildingFilter,
   getRegularFloorFilter,
@@ -17,14 +17,13 @@ import {
 } from "../../features/filter/FilterSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Slider } from "@mui/material";
-import { useParams } from "react-router-dom";
-import DropdownType from "../extensions/DropdownType"; // Import the DropdownType component
 
 const floorLabelMapping = {
   0: "Përdhesa",
   "-1": "Suterren",
   "-2": "Bodrum",
 };
+
 const getFloorLabel = (floor) => {
   return floorLabelMapping[floor] || floor;
 };
@@ -35,20 +34,9 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
   const squareFilter = useSelector(getRegularSquareFilter);
   const floorFilter = useSelector(getRegularFloorFilter);
   const dispatch = useDispatch();
-  const [selectedType, setSelectedType] = useState(
-    buildingFilter.find((filter) =>
-      ["apartment", "commercial", "parking"].includes(filter)
-    ) || ""
-  );
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleRoomChange = (event) => {
     dispatch(setRegularRoomFilter(event.target.name));
-  };
-
-  const handleTypeChange = (value) => {
-    setSelectedType(value);
-    dispatch(setRegularBuildingFilter(value));
   };
 
   const handleBuildingChange = (event) => {
@@ -63,22 +51,12 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
     dispatch(setRegularSquareFilter(newSizeRange));
   };
 
-  const setFilteredData = () => {
-    dispatch(handleFilterState(true));
-    setFilterState((prev) => !prev);
-  };
-
-  const resetFilters = () => {
-    dispatch(handleRegularFilterReset());
-    setFilterState((prev) => !prev);
-  };
-
   return (
-    <div className="w-full h-full py-24 md:py-32 flex flex-col items-center justify-center bg-black border-b border-brand">
+    <div className="w-full h-full py-32 gap-32 flex flex-col items-center justify-center bg-black border-b border-brand">
       <div className="w-11/12 h-full text-white flex flex-col justify-between items-start gap-4 border-b border-white pb-12">
         <h1 className="font-bold text-4xl">Filtro <span className="text-brand">Apartmentet</span></h1>
       </div>
-      <div className="w-11/12 h-full text-gold flex flex-col justify-between items-center gap-4 py-12">
+      <div className="w-11/12 h-full text-gold flex flex-col justify-between items-center gap-4">
         <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-20">
           <div className="w-full flex flex-col items-start gap-1 md:gap-4">
             <h1 className="text-lg text-white font-semibold">Objekti</h1>
