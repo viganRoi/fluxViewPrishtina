@@ -32,8 +32,8 @@ html {
 }
 
 @font-face {
-  font-family: 'hiden-certon';
-  src: url('/assets/fonts/hiden-certon.otf');
+  font-family: 'circe';
+  src: url('/assets/fonts/circe.otf');
 }
 
 .montserrat{
@@ -42,8 +42,8 @@ html {
   font-style: normal;
 }
 
-.certon {
-  font-family: 'hiden-certon';
+.circe {
+  font-family: 'circe';
 }
 .swiper-pagination-bullet {
   background: var(--brand2-color) !important;
