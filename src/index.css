@@ -113,7 +113,7 @@ html {
 }
 
 .st2 {
-  fill: #21434B;
+  fill: #00800098;
   cursor: pointer;
   outline: none;
   transition: all 0.4s ease 0s;
@@ -128,7 +128,7 @@ html {
 }
 
 .st2:hover {
-  fill: #21434B;
+  fill: #164d16ea;
   opacity: 0.9;
 }
 

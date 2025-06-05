@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Building, BuildingFilter, BuildingFilterMobile, BuildingMobile } from '../components';
-import { useSelector } from 'react-redux';
-import { getRegularRoomFilter, getRegularFloorFilter, getRegularSquareFilter } from '../features/filter/FilterSlice';
-import { useParams } from 'react-router-dom';
-import { getAllApartmentSvgData } from '../features/apartment/ApartmentSlice';
+import React, { useEffect, useState } from "react";
+import {
+  Building,
+  BuildingFilter,
+  BuildingFilterMobile,
+  BuildingMobile,
+} from "../components";
+import { useSelector } from "react-redux";
+import {
+  getRegularRoomFilter,
+  getRegularFloorFilter,
+  getRegularSquareFilter,
+} from "../features/filter/FilterSlice";
+import { useParams } from "react-router-dom";
+import { getAllApartmentSvgData } from "../features/apartment/ApartmentSlice";
 
 const BuildingPage = () => {
   const isSmallDev = window.innerWidth < 700;
-  window.scrollTo({ top: 0 })
+  window.scrollTo({ top: 0 });
   const [buildings, setBuildings] = useState([]);
   const [available, setAvailable] = useState([]);
   const [filteredBuildings, setFilteredBuildings] = useState([]);
@@ -19,10 +28,12 @@ const BuildingPage = () => {
   const floorFilter = useSelector(getRegularFloorFilter);
   const squareFilter = useSelector(getRegularSquareFilter);
 
-  const buildingName = buildingData[0]?.buildingNr?.toUpperCase() || '';
+  const buildingName = buildingData[0]?.buildingNr?.toUpperCase() || "";
 
   useEffect(() => {
-    const newBuildings = buildingData.filter(building => building.buildingNr === id);
+    const newBuildings = buildingData.filter(
+      (building) => building.buildingNr === id
+    );
     setBuildings(newBuildings);
   }, [id, buildingData]);
 
@@ -33,24 +44,46 @@ const BuildingPage = () => {
   const applyFilters = (buildings) => {
     let filtered = buildings;
 
-    if (roomFilter.length && !roomFilter.includes('all')) {
-      filtered = filtered.filter(building => roomFilter.includes(building.rooms));
+    if (roomFilter.length && !roomFilter.includes("all")) {
+      filtered = filtered.filter((building) =>
+        roomFilter.includes(building.rooms)
+      );
     }
 
-    if (floorFilter.startVal !== undefined && floorFilter.endVal !== undefined) {
-      filtered = filtered.filter(building => building.floorNumber >= floorFilter.startVal && building.floorNumber <= floorFilter.endVal);
+    if (
+      floorFilter.startVal !== undefined &&
+      floorFilter.endVal !== undefined
+    ) {
+      filtered = filtered.filter(
+        (building) =>
+          building.floorNumber >= floorFilter.startVal &&
+          building.floorNumber <= floorFilter.endVal
+      );
     }
 
-    if (squareFilter.startVal !== undefined && squareFilter.endVal !== undefined) {
-      filtered = filtered.filter(building => building.square >= squareFilter.startVal && building.square <= squareFilter.endVal);
+    if (
+      squareFilter.startVal !== undefined &&
+      squareFilter.endVal !== undefined
+    ) {
+      filtered = filtered.filter(
+        (building) =>
+          building.square >= squareFilter.startVal &&
+          building.square <= squareFilter.endVal
+      );
     }
 
-    const availableCount = buildingData[0]?.apartmentList?.filter(apartment => {
-      const matchesRoom = roomFilter.includes(apartment.rooms) || roomFilter.includes('all');
-      const matchesFloor = apartment.floorNumber >= (floorFilter.startVal || -Infinity) && apartment.floorNumber <= (floorFilter.endVal || Infinity);
-      const matchesSquare = apartment.square >= (squareFilter.startVal || -Infinity) && apartment.square <= (squareFilter.endVal || Infinity);
-      return matchesRoom && matchesFloor && matchesSquare;
-    }).length || 0;
+    const availableCount =
+      buildingData[0]?.apartmentList?.filter((apartment) => {
+        const matchesRoom =
+          roomFilter.includes(apartment.rooms) || roomFilter.includes("all");
+        const matchesFloor =
+          apartment.floorNumber >= (floorFilter.startVal || -Infinity) &&
+          apartment.floorNumber <= (floorFilter.endVal || Infinity);
+        const matchesSquare =
+          apartment.square >= (squareFilter.startVal || -Infinity) &&
+          apartment.square <= (squareFilter.endVal || Infinity);
+        return matchesRoom && matchesFloor && matchesSquare;
+      }).length || 0;
 
     setAvailable(availableCount);
     setFilteredBuildings(filtered);
