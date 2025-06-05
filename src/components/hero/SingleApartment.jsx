@@ -102,7 +102,11 @@ const SingleApartment = () => {
               <div className=" border-b border-black  w-full">
                 {" "}
                 <h1 className="text-brand leading-none  text-[50px] montserrat font-bold">
-                  109.57m<sup>2</sup>{" "}
+                  {(
+                    parseFloat(apartment.square) +
+                    parseFloat(apartment.balconySquare)
+                  ).toFixed(2)}{" "}
+                  <sup>2</sup>{" "}
                   <span className="text-black circe text-[20px] font-normal">
                     Sip Totale
                   </span>
@@ -117,7 +121,7 @@ const SingleApartment = () => {
                     alt=""
                   />{" "} */}
                   <h2 className="circe">Dhoma</h2>
-                  <h2 className="font-semibold">2</h2>
+                  <h2 className="font-semibold">{apartment.rooms}</h2>
                 </div>
 
                 <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[18px] text-black items-center gap-2">
@@ -127,7 +131,7 @@ const SingleApartment = () => {
                     alt=""
                   />{" "} */}
                   <h2 className="circe">Kati</h2>
-                  <h2 className="font-semibold">1</h2>
+                  <h2 className="font-semibold">{apartment.floorNumber}</h2>
                 </div>
 
                 <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[18px] text-black items-center gap-2">
@@ -138,7 +142,8 @@ const SingleApartment = () => {
                   />{" "} */}
                   <h2 className="circe">Sipërfaqja</h2>
                   <h2 className="font-semibold">
-                    99.34m<sup>2</sup>
+                    {apartment.square}
+                    <sup>2</sup>
                   </h2>
                 </div>
 
@@ -149,7 +154,9 @@ const SingleApartment = () => {
                     alt=""
                   />{" "} */}
                   <h2 className="circe">Terraca</h2>
-                  <h2 className="font-semibold">10.23m²</h2>
+                  <h2 className="font-semibold">
+                    {apartment.balconySquare}m<sup>2</sup>
+                  </h2>
                 </div>
 
                 <div className="flex  py-4 border-slate-300 text-[28px] font-semibold text-black montserrat items-center gap-2">
