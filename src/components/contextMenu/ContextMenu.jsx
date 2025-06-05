@@ -1,5 +1,5 @@
 import { Popover } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import MenuList from '@mui/material/MenuList';
@@ -13,10 +13,12 @@ import { toast } from 'react-toastify';
 import { setApartmentEditData, setApartmentEditModalState } from '../../features/apartment/ApartmentEditSlice';
 import { updateIsSold } from '../../features/apartment/ApartmentAPI';
 import { setApartmentIdModalApartmentId, setApartmentIdModalId, setApartmentIdModalState } from '../../features/apartment/ApartmentSlice';
+import SalesModal from '../sales/SalesModal';
 
 const ContextMenu = ({ menu, setMenu }) => {
     const dispatch = useDispatch()
-    const status = null
+    const status = null;
+    const [salesModalOpen, setSalesModalOpen] = useState(false);
     const handleClose = () => {
         setMenu((prev) => ({
             ...prev,
@@ -49,6 +51,7 @@ const ContextMenu = ({ menu, setMenu }) => {
   // if(!isAuthorized()) return
 
   return (
+    <div>
     <Popover
       open={menu?.open}
       anchorEl={menu?.anchorEl}
@@ -109,7 +112,10 @@ const ContextMenu = ({ menu, setMenu }) => {
           </ListItemIcon>
           <ListItemText>Ndro ID</ListItemText>
         </MenuItem>
-        <MenuItem 
+        <MenuItem
+        onClick={() => {
+          setSalesModalOpen(true)
+        }} 
         // onClick={() => { 
         //   const session = getSession()
         //   const length = session ? Object.keys(session).length : 0;
@@ -140,6 +146,8 @@ const ContextMenu = ({ menu, setMenu }) => {
       </MenuList>
     </Paper>
     </Popover>
+    <SalesModal open={salesModalOpen} handleClose={() => setSalesModalOpen(false)} apartmentData={menu?.data}/>
+    </div>
   );
 }
 
