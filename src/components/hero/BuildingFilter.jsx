@@ -62,72 +62,86 @@ const BuildingFilter = ({ available }) => {
     dispatch(handleRegularFilterReset());
   };
 
-
   return (
-    <div className="w-full h-full py-32 gap-32 flex flex-col items-center justify-center bg-black border-b border-brand">
-      <div className="w-11/12 h-full grid grid-cols-1 md:grid-cols-3 text-white flex flex-col justify-between items-start gap-4 border-b border-white pb-12">
+    <div className="w-full h-full pt-32 pb-14 gap-14 flex flex-col items-center justify-center bg-black border-b border-brand">
+      <div className="w-11/12 h-full grid grid-cols-1 md:grid-cols-3 text-white flex flex-col justify-between items-start gap-4 border-b border-white pb-6">
         <div className="w-full flex items-center justify-start gap-4">
-          <button onClick={() => navigate('/apartments')} className='bg-transparent border-brand border transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center'>
-            <SlArrowLeft color='#fff' />
+          <button
+            onClick={() => navigate("/apartments")}
+            className="bg-transparent border-brand border transition-all duration-300 hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
+          >
+            <SlArrowLeft color="#fff" />
           </button>
-          <h1 className="text-xl">Kthehu te Apartmentet</h1>
         </div>
         <div className="w-full flex items-center justify-center">
-          <h1 className="font-bold px-8 py-4 bg-brand rounded-full text-black uppercase">Objekti {id}</h1>
+          <h1 className="font-bold text-4xl circe rounded-full text-white uppercase">
+            Ndertesa <span className="text-brand montserrat">{id}</span>
+          </h1>
         </div>
         <div className="w-full flex items-center justify-end">
-          <button onClick={() => navigate('/apartments')} className="text-xl border-brand border bg-transparent hover:bg-brand px-8 py-2 rounded-full duration-300">Kthehu te Apartmentet</button>
+          <button
+            onClick={() => navigate("/apartments")}
+            className="text-mdl border-brand border bg-transparent hover:bg-brand px-8 py-2 rounded-full duration-300"
+          >
+            Shiko të gjitha apartamentet
+          </button>
         </div>
       </div>
-      <div className="w-11/12 h-full text-gold flex flex-row justify-between items-center gap-8">
-        <div className="w-5/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-r border-white border-1 px-12">
+      <div className="w-11/12 h-full text-gold  flex flex-row justify-between items-center gap-4">
+        <div className="w-5/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-r  border-white border-1 pr-12">
           <div className="w-full flex flex-col items-start gap-4">
-            <h1 className="text-lg text-white font-semibold">Tipi</h1>
+            <h1 className="text-lg text-white circe font-semibold">Tipi</h1>
             <div className="w-full flex gap-2 justify-start">
               <button
                 name="1"
                 onClick={handleRoomChange}
-                className={`text-nowrap px-6 py-2 rounded-full border border-gold ${roomRange.includes("1")
-                  ? "bg-brand text-black"
-                  : "bg-transparent text-white"
-                  }`}
+                className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
+                  roomRange.includes("1")
+                    ? "bg-brand text-black"
+                    : "bg-transparent text-white"
+                }`}
               >
                 1 + 1
               </button>
               <button
                 name="2"
                 onClick={handleRoomChange}
-                className={`text-nowrap px-6 py-2 rounded-full border border-gold ${roomRange.includes("2")
-                  ? "bg-brand text-black"
-                  : "bg-transparent text-white"
-                  }`}
+                className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
+                  roomRange.includes("2")
+                    ? "bg-brand text-black"
+                    : "bg-transparent text-white"
+                }`}
               >
                 2 + 1
               </button>
               <button
                 name="3"
                 onClick={handleRoomChange}
-                className={`text-nowrap px-6 py-2 rounded-full border border-gold ${roomRange.includes("3")
-                  ? "bg-brand text-black"
-                  : "bg-transparent text-white"
-                  }`}
+                className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
+                  roomRange.includes("3")
+                    ? "bg-brand text-black"
+                    : "bg-transparent text-white"
+                }`}
               >
                 3 + 1
               </button>
               <button
                 name="penthouse"
                 onClick={handleRoomChange}
-                className={`text-nowrap px-3 py-2 rounded-full border border-gold ${roomRange.includes("penthouse")
-                  ? "bg-brand text-black"
-                  : "bg-transparent text-white"
-                  }`}
+                className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
+                  roomRange.includes("penthouse")
+                    ? "bg-brand text-black"
+                    : "bg-transparent text-white"
+                }`}
               >
                 Penthouse
               </button>
             </div>
           </div>
           <div className="w-full flex flex-col items-start gap-4">
-            <h1 className="text-lg text-white font-semibold">Sipërfaqja</h1>
+            <h1 className="text-lg text-white circe font-semibold">
+              Sipërfaqja
+            </h1>
             <div className="w-full flex flex-col justify-between">
               <div className="w-full">
                 <Slider
@@ -138,11 +152,24 @@ const BuildingFilter = ({ available }) => {
                   step={10}
                   min={minSquare}
                   max={maxSquare}
-                  color="var(--brand-color)"
                   sx={{
-                    color: "var(--brand-color)",
-                    height: "1px",
-                    width: "100%",
+                    color: "var(--brand-color)", // This affects the track and rail color
+                    height: 2,
+                    "& .MuiSlider-thumb": {
+                      height: 12,
+                      width: 20,
+                      backgroundColor: "#fff",
+                      border: "1px solid var(--brand-color)",
+                      "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                        boxShadow: "0 0 0 6px rgba(0,0,0,0.1)",
+                      },
+                    },
+                    "& .MuiSlider-track": {
+                      backgroundColor: "var(--brand-color)",
+                    },
+                    "& .MuiSlider-rail": {
+                      backgroundColor: "#ccc", // optional, for contrast
+                    },
                   }}
                 />
               </div>
@@ -157,7 +184,7 @@ const BuildingFilter = ({ available }) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start gap-4">
-            <h1 className="text-lg text-white font-semibold">Kati</h1>
+            <h1 className="text-lg text-white circe font-semibold">Kati</h1>
             <div className="w-full flex flex-col justify-between">
               <div className="w-full ml-3">
                 <Slider
@@ -170,9 +197,23 @@ const BuildingFilter = ({ available }) => {
                   max={maxFloor}
                   color="var(--brand-color)"
                   sx={{
-                    color: "var(--brand-color)",
-                    height: "1px",
-                    width: "100%",
+                    color: "var(--brand-color)", // This affects the track and rail color
+                    height: 2,
+                    "& .MuiSlider-thumb": {
+                      height: 12,
+                      width: 20,
+                      backgroundColor: "#fff",
+                      border: "1px solid var(--brand-color)",
+                      "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                        boxShadow: "0 0 0 6px rgba(0,0,0,0.1)",
+                      },
+                    },
+                    "& .MuiSlider-track": {
+                      backgroundColor: "var(--brand-color)",
+                    },
+                    "& .MuiSlider-rail": {
+                      backgroundColor: "#ccc", // optional, for contrast
+                    },
                   }}
                 />
               </div>
@@ -196,7 +237,7 @@ const BuildingFilter = ({ available }) => {
           </button>
           <button
             onClick={setFilteredData}
-            className="text-nowrap bg-gold text-white w-full py-2 rounded-full border border-gold"
+            className="text-nowrap bg-brand text-white w-full py-2 rounded-full border border-gold"
           >
             Apliko Ndryshimet
           </button>

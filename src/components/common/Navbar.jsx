@@ -38,8 +38,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`w-screen fixed top-0 z-50 transition-nav ${isScrolled ? "bg-brand" : "bg-transparent"
-          }`}
+        className={`w-screen fixed top-0 z-50 transition-nav ${
+          isScrolled ? "bg-brand" : "bg-transparent"
+        }`}
       >
         <div className="max-w-11/12 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -99,14 +100,17 @@ const Navbar = () => {
               </NavLink>
               <div className="relative">
                 <button
-                  onClick={toggleDropdown}
+                  // onClick={toggleDropdown}
                   className="px-12 py-2 border border-gold bg-transparent text-white rounded-full"
                 >
                   Ndërtesa
                 </button>
                 <div
-                  className={`absolute right-0 mt-4 w-96 h-48 bg-brand border border-gold rounded-lg shadow-lg ${isDropdownOpen ? "flex" : "hidden"} justify-between dropdown-transition ${isDropdownOpen ? "dropdown-transition-enter" : ""
-                    }`}
+                  className={`absolute right-0 mt-4 w-96 h-48 bg-brand border border-gold rounded-lg shadow-lg ${
+                    isDropdownOpen ? "flex" : "hidden"
+                  } justify-between dropdown-transition ${
+                    isDropdownOpen ? "dropdown-transition-enter" : ""
+                  }`}
                 >
                   <NavLink
                     to="/buildings"
@@ -158,9 +162,7 @@ const Navbar = () => {
                 )}
               </NavLink>
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <PiTextAlignRightThin
-                  className={`fill-white text-3xl`}
-                />
+                <PiTextAlignRightThin className={`fill-white text-3xl`} />
               </button>
             </div>
           </div>
@@ -259,11 +261,13 @@ const Navbar = () => {
                 className="h-full w-full object-cover"
               />
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
+              <div
+                className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
                 onClick={() => {
                   navigate("/buildings");
                   setIsMenuOpen(false);
-                }}>
+                }}
+              >
                 <p className="text-white text-2xl certon">Ndërtesa</p>
               </div>
             </div>

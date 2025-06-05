@@ -81,7 +81,10 @@ const SingleApartment = () => {
         <div className="w-11/12 md:w-5/6 flex flex-col justify-center content-center gap-4 md:gap-10">
           <div className="w-full flex justify-between items-center">
             <div className="w-full flex gap-4 items-center">
-              <button className=" border-brand text-black rounded-full h-12 w-12 flex items-center justify-center">
+              <button
+                onClick={() => navigate(-1)}
+                className=" border-brand text-black rounded-full h-12 w-12 flex items-center justify-center"
+              >
                 <img src="/assets/icons/arrowup.svg" alt="" />
               </button>
               <h3 className="text-black text-[18px] circe">Kthehu Pas</h3>
@@ -113,7 +116,6 @@ const SingleApartment = () => {
                     src="/assets/icons/key-s.svg"
                     alt=""
                   />{" "} */}
-
                   <h2 className="circe">Dhoma</h2>
                   <h2 className="font-semibold">2</h2>
                 </div>
@@ -283,11 +285,27 @@ const SingleApartment = () => {
                 </div>
               </div>
               <div className="w-full  relative flex justify-center items-center">
-                <img
-                  className="w-[90%]"
-                  src="/assets/images/planimetria.png"
-                  alt=""
-                />
+                {selectedTab === "3d" && (
+                  <img
+                    className="w-[90%]"
+                    src="/assets/images/planimetria.png"
+                    alt="3D View"
+                  />
+                )}
+                {selectedTab === "2d" && (
+                  <img
+                    className="w-[70%]"
+                    src="/assets/images/plani.png"
+                    alt="2D View"
+                  />
+                )}
+                {selectedTab === "onFloor" && (
+                  <img
+                    className="w-[90%] p-14"
+                    src="/assets/images/onfloor.png"
+                    alt="On Floor View"
+                  />
+                )}
                 <div className="absolute flex flex-col justify-center items-center bottom-10 -right-6  ">
                   <h3 className="text-[12px] text-black font-semibold">
                     Orientimi
