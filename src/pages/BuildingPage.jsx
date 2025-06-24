@@ -90,7 +90,7 @@ const BuildingPage = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col-reverse md:flex-col">
       {/* {isSmallDev ? (
         <>
           <BuildingFilterMobile setFilterState={setFilterState} available={available} />

@@ -64,7 +64,7 @@ const BuildingFilter = ({ available }) => {
 
   return (
     <div className="w-full h-full pt-32 pb-14 gap-14 flex flex-col items-center justify-center bg-black border-b border-brand">
-      <div className="w-11/12 h-full grid grid-cols-1 md:grid-cols-3 text-white flex flex-col justify-between items-start gap-4 border-b border-white pb-6">
+      <div className="w-11/12 h-full grid grid-cols-1 md:grid-cols-3 text-white  justify-between items-start gap-4 border-b border-white pb-6">
         <div className="w-full flex items-center justify-start gap-4">
           <button
             onClick={() => navigate("/apartments")}
@@ -73,22 +73,22 @@ const BuildingFilter = ({ available }) => {
             <SlArrowLeft color="#fff" />
           </button>
         </div>
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex items-center justify-start md:justify-center">
           <h1 className="font-bold text-4xl circe rounded-full text-white uppercase">
             Ndertesa <span className="text-brand montserrat">{id}</span>
           </h1>
         </div>
-        <div className="w-full flex items-center justify-end">
+        <div className="w-full flex items-center justify-start md:justify-end">
           <button
             onClick={() => navigate("/apartments")}
-            className="text-mdl border-brand border bg-transparent hover:bg-brand px-8 py-2 rounded-full duration-300"
+            className="text-sm md:text-md border-brand border bg-transparent hover:bg-brand px-8 py-2 rounded-full duration-300"
           >
             Shiko të gjitha apartamentet
           </button>
         </div>
       </div>
-      <div className="w-11/12 h-full text-gold  flex flex-row justify-between items-center gap-4">
-        <div className="w-5/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-r  border-white border-1 pr-12">
+      <div className="w-11/12 h-full text-gold  flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div className="w-5/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-r  border-white border-none md:border-1 pr-12">
           <div className="w-full flex flex-col items-start gap-4">
             <h1 className="text-lg text-white circe font-semibold">Tipi</h1>
             <div className="w-full flex gap-2 justify-start">
@@ -143,7 +143,7 @@ const BuildingFilter = ({ available }) => {
               Sipërfaqja
             </h1>
             <div className="w-full flex flex-col justify-between">
-              <div className="w-full">
+              <div className="w-full ml-3">
                 <Slider
                   getAriaLabel={() => "Size range"}
                   value={[sizeRange[0], sizeRange[1]]}
@@ -186,7 +186,7 @@ const BuildingFilter = ({ available }) => {
           <div className="w-full flex flex-col items-start gap-4">
             <h1 className="text-lg text-white circe font-semibold">Kati</h1>
             <div className="w-full flex flex-col justify-between">
-              <div className="w-full ml-3">
+              <div className="w-full  ml-3">
                 <Slider
                   getAriaLabel={() => "Floor range"}
                   value={[floorRange[0], floorRange[1]]}
@@ -228,16 +228,16 @@ const BuildingFilter = ({ available }) => {
             </div>
           </div>
         </div>
-        <div className="w-1/6 flex flex-col justify-between items-center gap-4">
+        <div className="w-11/12 md:w-1/6 flex flex-row md:flex-col mt-6 justify-between items-center gap-4">
           <button
             onClick={resetFilters}
-            className="bg-transparent text-white w-full py-2 rounded-full border border-brand hover:bg-brand transition"
+            className="bg-transparent text-white text-sm md:text-md w-full py-2 px-2 rounded-full border border-brand hover:bg-brand transition"
           >
             Reseto
           </button>
           <button
             onClick={setFilteredData}
-            className="text-nowrap bg-brand text-white w-full py-2 rounded-full border border-gold"
+            className="text-nowrap bg-brand text-white text-sm md:text-md w-full py-2 px-2 rounded-full border border-gold"
           >
             Apliko Ndryshimet
           </button>

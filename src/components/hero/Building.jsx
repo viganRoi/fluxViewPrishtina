@@ -67,7 +67,7 @@ const Building = () => {
   };
 
   const getSvgHeight = () => {
-    return "100%";
+    return isSmallDev ? "70vh" : "100%";
   };
 
   const handleContextMenu = (e, data) => {
@@ -91,7 +91,7 @@ const Building = () => {
 
   const selectionView = () => (
     <div
-      className="absolute md:relative top-0 left-0 w-[100%] bg-brand flex items-center justify-center"
+      className="absolute md:relative  top-0 left-0 w-[100%] bg-brand flex  items-center justify-center"
       style={{ height: getSvgHeight() }}
     >
       {buildingData?.map((building, index) => (
@@ -110,9 +110,9 @@ const Building = () => {
         >
           <svg
             width={"100%"}
-            height={"100%"}
+            height={isSmallDev ? "60%" : "100%"}
             preserveAspectRatio="xMidYMid slice"
-            style={{ transform: isSmallDev && "scale(1.9) translateX(20px)" }}
+            style={{ transform: isSmallDev && "scale(1.4) translateX(20px)" }}
             viewBox={building.viewBoxStyle}
           >
             <image
@@ -223,7 +223,7 @@ const Building = () => {
         >
           <svg
             width={"100%"}
-            height={"100%"}
+            height={isSmallDev ? "60%" : "100%"}
             preserveAspectRatio="xMidYMid slice"
             style={{ transform: isSmallDev && "scale(1.9) translateX(20px)" }}
             viewBox={building.viewBoxStyle}
@@ -302,8 +302,8 @@ const Building = () => {
   );
 
   return (
-    <div className="relative w-full h-[100vh] flex flex-col items-center justify-center">
-      <div className="absolute w-11/12 md:5/6 h-0 flex justify-center items-center top-10 z-10">
+    <div className="relative w-full h-[65vh]  md:h-[100vh] flex flex-col items-center justify-center">
+      <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-20 z-10">
         <div className="flex items-center">
           <div className="tabsB">
             <input
