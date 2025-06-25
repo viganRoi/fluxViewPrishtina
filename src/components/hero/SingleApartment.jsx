@@ -76,7 +76,7 @@ const SingleApartment = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
+    <div className="w-full h-full flex flex-col items-center justify-center  overflow-x-hidden">
       <div className="w-full h-full bg-white flex justify-center text-brand pt-4 pb-8 md:pb-24">
         <div className="w-11/12 md:w-5/6 flex flex-col justify-center content-center gap-4 md:gap-10">
           <div className="w-full flex justify-between items-center">
@@ -87,21 +87,23 @@ const SingleApartment = () => {
               >
                 <img src="/assets/icons/arrowup.svg" alt="" />
               </button>
-              <h3 className="text-black text-[18px] circe">Kthehu Pas</h3>
+              <h3 className="text-black text-[14px] md:text-[18px] circe">
+                Kthehu Pas
+              </h3>
             </div>
 
             <div className="w-full flex justify-end items-center">
-              <button className="text-black text-[16px]  border border-black rounded-full px-6 py-2 circe hover:bg-black hover:text-white transition-all duration-500">
+              <button className="text-black text-[14px] md:text-[16px] text-nowrap  border border-black rounded-full px-6 py-2 circe hover:bg-black hover:text-white transition-all duration-500">
                 Shiko te gjitha apartamentet
               </button>
             </div>
           </div>
 
-          <div className="w-full flex h-full justify-center bg-white items-center ">
+          <div className="w-full flex flex-col md:flex-row h-full justify-center mt-6 md:mt-0 bg-white items-center ">
             <div className="w-full flex  flex-col gap-2 flex-[3]">
               <div className=" border-b border-black  w-full">
                 {" "}
-                <h1 className="text-brand leading-none  text-[50px] montserrat font-bold">
+                <h1 className="text-brand leading-none  text-[40px] md:text-[50px] montserrat font-bold">
                   {(
                     parseFloat(apartment.square) +
                     parseFloat(apartment.balconySquare)
@@ -114,7 +116,7 @@ const SingleApartment = () => {
               </div>
 
               <div className="w-full flex flex-col gap-2 ">
-                <div className="flex justify-between w-full  border-b py-4 border-slate-300 text-[18px] text-black items-center gap-2">
+                <div className="flex justify-between w-full  border-b py-4 border-slate-300  text-[16px] md:text-[18px] text-black items-center gap-2">
                   {/* <img
                     className="w-[35px] "
                     src="/assets/icons/key-s.svg"
@@ -124,7 +126,7 @@ const SingleApartment = () => {
                   <h2 className="font-semibold">{apartment.rooms}</h2>
                 </div>
 
-                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[18px] text-black items-center gap-2">
+                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
                   {/* <img
                     className="w-[35px] "
                     src="/assets/icons/floor.svg"
@@ -134,7 +136,7 @@ const SingleApartment = () => {
                   <h2 className="font-semibold">{apartment.floorNumber}</h2>
                 </div>
 
-                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[18px] text-black items-center gap-2">
+                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
                   {/* <img
                     className="w-[35px] "
                     src="/assets/icons/sip.svg"
@@ -147,7 +149,7 @@ const SingleApartment = () => {
                   </h2>
                 </div>
 
-                <div className="flex  border-b py-4 border-slate-300 justify-between text-[18px] text-black items-center gap-2">
+                <div className="flex  border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
                   {/* <img
                     className="w-[35px] "
                     src="/assets/icons/terrace.svg"
@@ -171,7 +173,7 @@ const SingleApartment = () => {
                 </div>
               </div>
 
-              <div className="w-full flex flex-col gap-4">
+              <div className="w-full flex md:flex-col gap-4">
                 <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 circe rounded-full">
                   Rezervo një takim
                 </button>
@@ -180,9 +182,9 @@ const SingleApartment = () => {
                 </button>
               </div>
             </div>
-            <div className="w-full flex h-full flex-col justify-start items-start gap-2 flex-[8]">
+            <div className="w-full flex h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
               <div className="w-full flex justify-center items-center gap-4 ">
-                <div className="w-fit px-2 bg-[#e9e9e9] flex items-center border-brand rounded-full justify-between md:justify-center">
+                <div className="w-fit py-1 px-1  gap-2 bg-[#e9e9e9] flex items-center border-brand rounded-full justify-between md:justify-center">
                   <button
                     onClick={() => {
                       if (
@@ -198,7 +200,10 @@ const SingleApartment = () => {
                   >
                     360° Vr Tour
                   </button>
-                  <div className="tabs" style={{ backgroundColor: "#e9e9e9" }}>
+                  <div
+                    className="tabs gap-1"
+                    style={{ backgroundColor: "#e9e9e9" }}
+                  >
                     <input
                       type="radio"
                       id="radio-1"
@@ -313,12 +318,12 @@ const SingleApartment = () => {
                     alt="On Floor View"
                   />
                 )}
-                <div className="absolute flex flex-col justify-center items-center bottom-10 -right-6  ">
+                <div className="absolute flex flex-col justify-center items-center -bottom-4 md:bottom-10 -right-10 md:-right-6   ">
                   <h3 className="text-[12px] text-black font-semibold">
                     Orientimi
                   </h3>
                   <img
-                    className="w-4/5"
+                    className="w-1/2 md:w-4/5"
                     src="/assets/images/orientimi.png"
                     alt=""
                   />
@@ -329,7 +334,7 @@ const SingleApartment = () => {
         </div>
       </div>
 
-      <div className="md:hidden bg-brand w-full h-full py-6 flex justify-center mt-0 md:mt-10">
+      {/* <div className="md:hidden bg-brand w-full h-full py-6 flex justify-center mt-0 md:mt-10">
         <div className="md:hidden w-11/12 flex gap-4 justify-between">
           <button className="p-2 border-gold border rounded-full text-gold">
             <PiPhoneThin className="text-3xl" />
@@ -345,7 +350,7 @@ const SingleApartment = () => {
             Pdf
           </button>
         </div>
-      </div>
+      </div> */}
       {isPriceCardVisible && <PriceCard onClose={togglePriceCard} />}
     </div>
   );

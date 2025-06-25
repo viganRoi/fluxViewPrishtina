@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ApartmentModal, AvailableFloor, FloorPopup } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
@@ -66,8 +66,19 @@ const Building = () => {
     );
   };
 
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (isSmallDev && containerRef.current) {
+      const container = containerRef.current;
+      // Scroll to center: (scrollWidth - clientWidth) / 2
+      container.scrollLeft =
+        (container.scrollWidth - container.clientWidth) / 46;
+    }
+  }, []);
+
   const getSvgHeight = () => {
-    return isSmallDev ? "70vh" : "100%";
+    return isSmallDev ? "60vh" : "100%";
   };
 
   const handleContextMenu = (e, data) => {
@@ -91,11 +102,12 @@ const Building = () => {
 
   const selectionView = () => (
     <div
-      className="absolute md:relative  top-0 left-0 w-[100%] bg-brand flex  items-center justify-center"
+      className="relative   top-0 left-0 w-[100%] bg-brand flex  overflow-hidden  items-center justify-center"
       style={{ height: getSvgHeight() }}
     >
       {buildingData?.map((building, index) => (
         <div
+          ref={containerRef}
           key={building.buildingName}
           style={{
             height: index === currentIndex ? getSvgHeight() : "0px",
@@ -105,14 +117,16 @@ const Building = () => {
             position: "absolute",
             display: "flex",
             justifyContent: "center",
-            overflow: "auto",
+            overflowX: "auto",
           }}
         >
           <svg
             width={"100%"}
-            height={isSmallDev ? "60%" : "100%"}
+            height={isSmallDev ? "85%" : "100%"}
             preserveAspectRatio="xMidYMid slice"
-            style={{ transform: isSmallDev && "scale(1.4) translateX(20px)" }}
+            style={{
+              transform: isSmallDev && "scale(1.4) translateX(20px)",
+            }}
             viewBox={building.viewBoxStyle}
           >
             <image
@@ -225,7 +239,7 @@ const Building = () => {
             width={"100%"}
             height={isSmallDev ? "60%" : "100%"}
             preserveAspectRatio="xMidYMid slice"
-            style={{ transform: isSmallDev && "scale(1.9) translateX(20px)" }}
+            style={{ transform: isSmallDev && "scale(1.4) translateX(20px)" }}
             viewBox={building.viewBoxStyle}
           >
             <image
@@ -302,10 +316,10 @@ const Building = () => {
   );
 
   return (
-    <div className="relative w-full h-[65vh]  md:h-[100vh] flex flex-col items-center justify-center">
-      <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-20 z-10">
+    <div className="relative w-full h-[75vh]  md:h-[100vh] flex flex-col items-center justify-center">
+      <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-0 md:top-10 z-10">
         <div className="flex items-center">
-          <div className="tabsB">
+          <div className="tabsB w-full flex justify-between px-1">
             <input
               type="radio"
               id="radio-1"
@@ -313,12 +327,12 @@ const Building = () => {
               checked={selectedTab === "selection"}
             />
             <label
-              className="tabB"
+              className="tabB w-full"
               onClick={() => {
                 handleTabClick("selection");
               }}
               htmlFor="radio-1"
-              style={{ fontSize: "16px" }}
+              style={{ fontSize: isSmallDev ? "12px" : "16px", width: "100%" }}
             >
               By Apartment
             </label>
@@ -329,12 +343,12 @@ const Building = () => {
               checked={selectedTab === "floor"}
             />
             <label
-              className="tabB"
+              className="tabB w-full"
               onClick={() => {
                 handleTabClick("floor");
               }}
               htmlFor="radio-1"
-              style={{ fontSize: "16px" }}
+              style={{ fontSize: isSmallDev ? "12px" : "16px", width: "100%" }}
             >
               By Floor
             </label>
@@ -344,7 +358,7 @@ const Building = () => {
       <div className="relative w-full h-full flex justify-center items-center">
         {selectedTab === "selection" ? selectionView() : floorView()}
         {selectedTab === "selection" && (
-          <div className="absolute w-full left-0 h-0 flex justify-between px-4">
+          <div className="absolute w-full left-0 bottom-5 md:top-1/2 h-0 flex justify-between px-4">
             <button
               onClick={handlePrevious}
               className="bg-brand transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
