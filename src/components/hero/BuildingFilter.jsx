@@ -63,7 +63,7 @@ const BuildingFilter = ({ available }) => {
   };
 
   return (
-    <div className="w-full h-full pt-32 pb-14 gap-14 flex flex-col items-center justify-center bg-black border-b border-brand">
+    <div className=" w-full h-full pt-32 pb-14 gap-14 flex flex-col items-center justify-center bg-black border-b border-brand">
       <div className="w-11/12 h-full grid grid-cols-1 md:grid-cols-3 text-white  justify-between items-start gap-4 border-b border-white pb-6">
         <div className="w-full flex items-center justify-start gap-4">
           <button

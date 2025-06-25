@@ -78,7 +78,7 @@ const Building = () => {
   }, []);
 
   const getSvgHeight = () => {
-    return isSmallDev ? "60vh" : "100%";
+    return isSmallDev ? "50vh" : "100%";
   };
 
   const handleContextMenu = (e, data) => {
@@ -102,7 +102,7 @@ const Building = () => {
 
   const selectionView = () => (
     <div
-      className="relative   top-0 left-0 w-[100%] bg-brand flex  overflow-hidden  items-center justify-center"
+      className="relative   top-0 left-0 w-[100%] bg-brand flex  overflow-hidden mt-16 md:mt-0  items-center justify-center"
       style={{ height: getSvgHeight() }}
     >
       {buildingData?.map((building, index) => (
@@ -118,6 +118,7 @@ const Building = () => {
             display: "flex",
             justifyContent: "center",
             overflowX: "auto",
+            overflowY: "hidden",
           }}
         >
           <svg
@@ -316,8 +317,8 @@ const Building = () => {
   );
 
   return (
-    <div className="relative w-full h-[75vh]  md:h-[100vh] flex flex-col items-center justify-center">
-      <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-0 md:top-10 z-10">
+    <div className="relative w-full h-[65vh]  md:h-[100vh] flex flex-col items-center justify-center">
+      <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-8 md:top-10 z-10">
         <div className="flex items-center">
           <div className="tabsB w-full flex justify-between px-1">
             <input
@@ -355,10 +356,10 @@ const Building = () => {
           </div>
         </div>
       </div>
-      <div className="relative w-full h-full flex justify-center items-center">
+      <div className="relative w-full h-full flex justify-center items-start  md:items-center">
         {selectedTab === "selection" ? selectionView() : floorView()}
         {selectedTab === "selection" && (
-          <div className="absolute w-full left-0 bottom-5 md:top-1/2 h-0 flex justify-between px-4">
+          <div className="absolute w-full left-0 bottom-12 md:top-1/2 h-0 flex justify-between px-4">
             <button
               onClick={handlePrevious}
               className="bg-brand transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
@@ -374,6 +375,7 @@ const Building = () => {
           </div>
         )}
       </div>
+
       {selectedTab === "selection" && popup.open && (
         <ApartmentModal apartment={popup.data} mousePosition={mousePosition} />
       )}

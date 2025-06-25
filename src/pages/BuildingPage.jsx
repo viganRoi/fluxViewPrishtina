@@ -3,16 +3,22 @@ import {
   Building,
   BuildingFilter,
   BuildingFilterMobile,
+  BuildingFilterModal,
   BuildingMobile,
 } from "../components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   getRegularRoomFilter,
   getRegularFloorFilter,
   getRegularSquareFilter,
+  minSquare,
+  maxSquare,
+  maxFloor,
+  minFloor,
 } from "../features/filter/FilterSlice";
 import { useParams } from "react-router-dom";
 import { getAllApartmentSvgData } from "../features/apartment/ApartmentSlice";
+import { apartments } from "../utils/server";
 
 const BuildingPage = () => {
   const isSmallDev = window.innerWidth < 700;
@@ -23,6 +29,11 @@ const BuildingPage = () => {
   const [filterState, setFilterState] = useState(false);
   const { id } = useParams();
   const buildingData = useSelector(getAllApartmentSvgData);
+  const [sizeRange, setSizeRange] = useState([minSquare, maxSquare]);
+  const [floorRange, setFloorRange] = useState([minFloor, maxFloor]);
+  const [roomRange, setRoomRange] = useState("all");
+  const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
 
   const roomFilter = useSelector(getRegularRoomFilter);
   const floorFilter = useSelector(getRegularFloorFilter);
@@ -89,22 +100,80 @@ const BuildingPage = () => {
     setFilteredBuildings(filtered);
   };
 
+  const handleRoomChange = (event) => {
+    setRoomRange(event.target.name);
+  };
+
+  const handleFloorChange = (event, newFloorRange) => {
+    setFloorRange(newFloorRange);
+  };
+
+  const handleSizeChange = (event, newSizeRange) => {
+    setSizeRange(newSizeRange);
+  };
+
+  const setFilteredData = () => {
+    dispatch(setRegularFloorFilter([floorRange[0], floorRange[1]]));
+    dispatch(setRegularRoomFilter(roomRange));
+    dispatch(setRegularSquareFilter([sizeRange[0], sizeRange[1]]));
+    dispatch(handleFilterState(true));
+  };
+
+  const resetFilters = () => {
+    setSizeRange([minSquare, maxSquare]);
+    setFloorRange([minFloor, maxFloor]);
+    setRoomRange("all");
+    dispatch(handleRegularFilterReset());
+  };
+
   return (
-    <div className="flex flex-col-reverse md:flex-col">
-      {/* {isSmallDev ? (
+    <div className="flex flex-col ">
+      {isSmallDev ? (
         <>
-          <BuildingFilterMobile setFilterState={setFilterState} available={available} />
-          <BuildingMobile filteredBuildings={filteredBuildings} />
+          <Building filteredBuildings={filteredBuildings} />
+          <div className="flex md:hidden p-4  ">
+            <h1 className="text-white text-2xl">
+              Objekti <span className="font-semibold">{apartments.name}</span>
+            </h1>
+          </div>
+          <div className="w-full flex justify-center items-center px-4 ">
+            <button
+              onClick={() => setShowModal(true)}
+              className="text-white w-full border border-white rounded-full py-2 "
+            >
+              Filtro
+            </button>
+
+            {showModal && (
+              <BuildingFilterModal
+                available={available}
+                sizeRange={sizeRange}
+                floorRange={floorRange}
+                roomRange={roomRange}
+                handleRoomChange={handleRoomChange}
+                handleFloorChange={handleFloorChange}
+                handleSizeChange={handleSizeChange}
+                setFilteredData={setFilteredData}
+                resetFilters={resetFilters}
+                onClose={() => setShowModal(false)}
+              />
+            )}
+          </div>
         </>
       ) : (
         <>
-          <BuildingFilter setFilterState={setFilterState} available={available} />
+          <BuildingFilter
+            setFilterState={setFilterState}
+            available={available}
+          />
           <Building filteredBuildings={filteredBuildings} />
         </>
-      )
-      } */}
-      <BuildingFilter setFilterState={setFilterState} available={available} />
+      )}
+      {/* <BuildingFilter setFilterState={setFilterState} available={available} />
       <Building filteredBuildings={filteredBuildings} />
+      <div className="flex md:hidden p-4  ">
+        <h1 className="text-white text-2xl">Objekti {apartments.name}</h1>
+      </div> */}
     </div>
   );
 };
