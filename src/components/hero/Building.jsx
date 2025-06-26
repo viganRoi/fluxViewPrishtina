@@ -124,7 +124,7 @@ const Building = () => {
           <svg
             width={"100%"}
             height={isSmallDev ? "85%" : "100%"}
-            preserveAspectRatio="xMidYMid slice"
+            preserveAspectRatio="xMaxYMax slice"
             style={{
               transform: isSmallDev && "scale(1.4) translateX(20px)",
             }}
@@ -317,7 +317,7 @@ const Building = () => {
   );
 
   return (
-    <div className="relative w-full h-[65vh]  md:h-[100vh] flex flex-col items-center justify-center">
+    <div className="relative w-full h-[65vh]  md:h-[120vh] flex flex-col items-center justify-center">
       <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-8 md:top-10 z-10">
         <div className="flex items-center">
           <div className="tabsB w-full flex justify-between px-1">
