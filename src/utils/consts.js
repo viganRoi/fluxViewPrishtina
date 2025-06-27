@@ -1,4 +1,4 @@
-export const mainUrl = 'https://fluxview.roitiv.com/';
+export const mainUrl = 'https://fluxview.roitiv.com';
 //export const BASE_URL = 'http://localhost:8080';
 export const BASE_URL = 'https://srv412786.hstgr.cloud:7145'
 export const objectImageUrl = 'images/'
@@ -7,7 +7,7 @@ export const planmetricImageUrl = '/images/planimetrit/'
 // export const BASE_URL_JEHONA = 'http://localhost:8845';
 export const STORE_IMAGE_PATH = 'objektetImg/';
 export const EURO_SYMBOL = '€';
-export const homepage = `https://fluxview.roitiv.com/`
+export const homepage = `https://fluxview.roitiv.com`
 export const galleryDir = 'assets/gallery/'
 export const imagePath = `https://fluxview.roitiv.com/objektetImg/`
 export const pdfPath = `https://fluxview.roitiv.com/pdf/`

@@ -168,7 +168,8 @@ const SingleApartment = () => {
                     alt=""
                   />{" "} */}
                   <h1 className="circe">
-                    A1 <span className="text-brand">Apartamenti</span>
+                    {apartment.name}{" "}
+                    <span className="text-brand">Apartamenti</span>
                   </h1>
                 </div>
               </div>
@@ -177,7 +178,10 @@ const SingleApartment = () => {
                 <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 circe rounded-full">
                   Rezervo një takim
                 </button>
-                <button className="w-full px-4 py-2 border border-brand text-black hover:bg-brand circe transition-all duration-500 rounded-full">
+                <button
+                  onClick={() => window.open(`${pdfPath}${pdfUrl}`, "_blank")}
+                  className="w-full px-4 py-2 border border-brand text-black hover:bg-brand circe transition-all duration-500 rounded-full"
+                >
                   Shkarko PDF
                 </button>
               </div>
@@ -300,14 +304,20 @@ const SingleApartment = () => {
                 {selectedTab === "3d" && (
                   <img
                     className="w-[90%]"
-                    src="/assets/images/planimetria.png"
+                    src={
+                      `${homepage}${planmetricImageUrl}${apartment?.image3dUrl}` ||
+                      "/projektet/assets/images/planimetria.png"
+                    }
                     alt="3D View"
                   />
                 )}
                 {selectedTab === "2d" && (
                   <img
                     className="w-[70%]"
-                    src="/assets/images/plani.png"
+                    src={
+                      `${homepage}${planmetricImageUrl}${apartment?.imageUrl}` ||
+                      "/projektet/assets/images/planimetria.png"
+                    }
                     alt="2D View"
                   />
                 )}
