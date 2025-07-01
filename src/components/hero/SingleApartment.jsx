@@ -24,7 +24,7 @@ import { ArrowLeft, Key } from "@mui/icons-material";
 
 const SingleApartment = () => {
   const isSmallDev = window.innerWidth < 700;
-  const [selectedTab, setSelectedTab] = useState("3d");
+  const [selectedTab, setSelectedTab] = useState("2d");
   const [isPriceCardVisible, setIsPriceCardVisible] = useState(false);
 
   const apartment = useSelector(getApartmentDetailModalData);
