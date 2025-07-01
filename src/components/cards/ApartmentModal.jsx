@@ -1,11 +1,9 @@
-import React from "react";
 import { homepage, planmetricImageUrl } from "../../utils/consts";
 
 const ApartmentModal = ({ apartment, mousePosition }) => {
   return (
-    // <div className="absolute top-40 left-60 w-[300px] h-[200px] md:h-[400px] rounded-lg overflow-hidden shadow-lg bg-white hover:cursor-pointer">
     <div
-      className="relative w-[300px] h-[250px]  rounded-lg overflow-hidden shadow-lg bg-black"
+      className="relative w-[300px] h-[300px]  rounded-lg overflow-hidden shadow-lg bg-white"
       style={{
         position: "fixed",
         pointerEvents: "none",
@@ -14,13 +12,13 @@ const ApartmentModal = ({ apartment, mousePosition }) => {
       }}
     >
       <img
-        src="/assets/images/planimetria.png"
+        src={`${homepage}${planmetricImageUrl}${apartment?.image}`}
         alt={apartment?.title}
-        className="w-full h-[150px] object-contain mt-14"
+        className="w-full h-[200px] object-contain mt-16"
         onClick={apartment?.navigateTo}
       />
       <div className="absolute top-5 right-5 w-5/6 flex justify-between items-start">
-        <h1 className="text-lg md:text-4xl font-semibold text-white mb-2 circe">
+        <h1 className="text-lg md:text-4xl font-semibold text-black mb-2 circe">
           {apartment?.sqft}m<sup>2</sup>{" "}
         </h1>
         <button
@@ -33,7 +31,7 @@ const ApartmentModal = ({ apartment, mousePosition }) => {
 
       <div className="absolute  bottom-4 left-8 text-brand">
         <p className="text-sm md:text-lg montserrat">
-          Tipi: {apartment?.bedroom}+1 ・ Kati: {apartment?.floor}
+          Tipi: {apartment?.bedroom} ・ Kati: {apartment?.floor}
         </p>
       </div>
     </div>

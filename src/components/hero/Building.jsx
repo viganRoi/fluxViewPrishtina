@@ -162,7 +162,7 @@ const Building = () => {
                       e.preventDefault();
                       setPopup({
                         data: {
-                          image: apartment.image3dUrl,
+                          image: apartment.imageUrl,
                           title: apartment.title,
                           navigateTo: () =>
                             navigate(`/apartments/${apartment.id}`),
