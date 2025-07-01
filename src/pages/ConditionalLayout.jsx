@@ -20,7 +20,7 @@ const ConditionalLayout = ({ children }) => {
 
   return (
     <>
-      {!shouldHideNavbar && <Navbar />}
+      {/* {!shouldHideNavbar && <Navbar />} */}
       {children}
       {/* {!shouldHideFooter && <Footer />} */}
     </>
