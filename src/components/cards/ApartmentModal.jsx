@@ -31,7 +31,7 @@ const ApartmentModal = ({ apartment, mousePosition }) => {
 
       <div className="absolute  bottom-4 left-8 text-brand">
         <p className="text-sm md:text-lg montserrat">
-          Tipi: {apartment?.bedroom} ・ Kati: {apartment?.floor}
+          Tipi: {apartment?.bedroom}+1 ・ Kati: {apartment?.floor}
         </p>
       </div>
     </div>
