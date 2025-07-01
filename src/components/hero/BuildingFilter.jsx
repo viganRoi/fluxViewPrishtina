@@ -67,7 +67,7 @@ const BuildingFilter = ({ available }) => {
       <div className="w-11/12 h-full grid grid-cols-1 md:grid-cols-3 text-white  justify-between items-start gap-4 border-b border-white pb-6">
         <div className="w-full flex items-center justify-start gap-4">
           <button
-            onClick={() => navigate("/apartments")}
+            onClick={() => navigate(-1)}
             className="bg-transparent border-brand border transition-all duration-300 hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
           >
             <SlArrowLeft color="#fff" />
