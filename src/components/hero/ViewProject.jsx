@@ -27,17 +27,16 @@ const ViewProject = () => {
     );
   };
 
-  const currentBuilding = buildings.find(b => b.name === selectedTab) || buildings[0];
+  const currentBuilding =
+    buildings.find((b) => b.name === selectedTab) || buildings[0];
 
   const handleTabClick = (view) => {
     setSelectedTab(view);
   };
 
-
   const getSvgHeight = () => {
     return "100%";
   };
-
 
   return (
     <div className="relative bg-black w-full h-[65vh] md:h-[100vh] flex flex-col items-center justify-center">
@@ -66,7 +65,7 @@ const ViewProject = () => {
               x="0px"
               y="0px"
               viewBox="0 0 1920 1080"
-              // height={isSmallDev ? "" : "100%"} 
+              // height={isSmallDev ? "" : "100%"}
               width={"100%"}
               xmlSpace="preserve"
               preserveAspectRatio="xMidYMid slice"
@@ -79,22 +78,21 @@ const ViewProject = () => {
                 width="100%"
                 height="100%"
               />
-              {currentBuilding.points
-                .map((point) => (
-                  <path
-                    key={point.id}
-                    className={point.type === "commercial" ? "cm0" : "st0"}
-                    d={point.path}
-                    onMouseEnter={() => setHoveredId(point.id)}
-                    onMouseLeave={() => setHoveredId(null)}
-                    onClick={() => navigate(`/${point.type}/${point.name}`)}
-                  />
-                ))}
+              {currentBuilding.points.map((point) => (
+                <path
+                  key={point.id}
+                  className={point.type === "commercial" ? "cm0" : "st0"}
+                  d={point.path}
+                  onMouseEnter={() => setHoveredId(point.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  onClick={() => navigate(`/${point.type}/${point.name}`)}
+                />
+              ))}
             </svg>
           </div>
         </div>
       </div>
-      <div className="absolute w-11/12 md:5/6 flex justify-end items-center text-center top-10 md:top-24 z-10">
+      {/* <div className="absolute w-11/12 md:5/6 flex justify-end items-center text-center top-10 md:top-24 z-10">
         <div className="tabs">
           <input
             type="radio"
@@ -129,7 +127,7 @@ const ViewProject = () => {
             PAMJA NGA LART
           </label>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
