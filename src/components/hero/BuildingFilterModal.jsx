@@ -2,26 +2,32 @@ import React, { useState } from "react";
 import { Slider } from "@mui/material";
 import { IoCloseOutline } from "react-icons/io5";
 import {
+  handleFilterState,
+  handleRegularFilterReset,
   maxFloor,
   maxSquare,
   minFloor,
   minSquare,
+  setRegularFloorFilter,
+  setRegularRoomFilter,
+  setRegularSquareFilter,
 } from "../../features/filter/FilterSlice";
 import { SlArrowLeft } from "react-icons/sl";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { getAllApartmentSvgData } from "../../features/apartment/ApartmentSlice";
 
 const BuildingFilterModal = ({
-  id,
+  // id,
   available,
-  sizeRange,
-  floorRange,
-  roomRange,
-  handleRoomChange,
-  handleFloorChange,
-  handleSizeChange,
-  setFilteredData,
-  resetFilters,
+  // sizeRange,
+  // floorRange,
+  // roomRange,
+  // handleRoomChange,
+  // handleFloorChange,
+  // handleSizeChange,
+  // setFilteredData,
+  // resetFilters,
   onClose,
 }) => {
   const floorLabelMapping = {
@@ -31,6 +37,41 @@ const BuildingFilterModal = ({
   };
   const getFloorLabel = (floor) => {
     return floorLabelMapping[floor] || floor;
+  };
+
+  const navigate = useNavigate();
+  const [sizeRange, setSizeRange] = useState([minSquare, maxSquare]);
+  const [floorRange, setFloorRange] = useState([minFloor, maxFloor]);
+  const [roomRange, setRoomRange] = useState("all");
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const isSmallDev = window.innerWidth < 700;
+  const buildingData = useSelector(getAllApartmentSvgData);
+
+  const handleRoomChange = (event) => {
+    setRoomRange(event.target.name);
+  };
+
+  const handleFloorChange = (event, newFloorRange) => {
+    setFloorRange(newFloorRange);
+  };
+
+  const handleSizeChange = (event, newSizeRange) => {
+    setSizeRange(newSizeRange);
+  };
+
+  const setFilteredData = () => {
+    dispatch(setRegularFloorFilter([floorRange[0], floorRange[1]]));
+    dispatch(setRegularRoomFilter(roomRange));
+    dispatch(setRegularSquareFilter([sizeRange[0], sizeRange[1]]));
+    dispatch(handleFilterState(true));
+  };
+
+  const resetFilters = () => {
+    setSizeRange([minSquare, maxSquare]);
+    setFloorRange([minFloor, maxFloor]);
+    setRoomRange("all");
+    dispatch(handleRegularFilterReset());
   };
 
   return (
