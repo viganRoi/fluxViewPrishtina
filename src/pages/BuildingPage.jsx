@@ -133,7 +133,7 @@ const BuildingPage = () => {
           <Building filteredBuildings={filteredBuildings} />
           <div className="flex md:hidden p-4  ">
             <h1 className="text-white text-2xl">
-              Objekti <span className="font-semibold">{apartments.name}</span>
+              Objekti <span className="font-semibold">{buildingName}</span>
             </h1>
           </div>
           <div className="w-full flex justify-center items-center px-4 ">
