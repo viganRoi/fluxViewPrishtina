@@ -124,7 +124,7 @@ const Building = () => {
           <svg
             width={"100%"}
             height={isSmallDev ? "85%" : "100%"}
-            preserveAspectRatio="xMaxYMax slice"
+            preserveAspectRatio="xMidYMid slice"
             style={{
               transform: isSmallDev && "scale(1.4) translateX(20px)",
             }}
