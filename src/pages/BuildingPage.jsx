@@ -130,12 +130,13 @@ const BuildingPage = () => {
     <div className="flex flex-col ">
       {isSmallDev ? (
         <>
-          <Building filteredBuildings={filteredBuildings} />
-          <div className="flex md:hidden p-4  ">
-            <h1 className="text-white text-2xl">
+          <div className="flex md:hidden  mt-8 pl-4 ">
+            <h1 className="text-white text-3xl">
               Objekti <span className="font-semibold">{buildingName}</span>
             </h1>
           </div>
+          <Building filteredBuildings={filteredBuildings} />
+
           <div className="w-full flex justify-center items-center px-4 ">
             <button
               onClick={() => setShowModal(true)}

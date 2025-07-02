@@ -102,7 +102,7 @@ const Building = () => {
 
   const selectionView = () => (
     <div
-      className="relative   top-0 left-0 w-[100%] bg-brand flex  overflow-hidden mt-16 md:mt-0  items-center justify-center"
+      className="relative   top-0 left-0 w-[100%] bg-brand flex  overflow-hidden mt-8 md:mt-0  items-center justify-center"
       style={{ height: getSvgHeight() }}
     >
       {buildingData?.map((building, index) => (
@@ -317,7 +317,7 @@ const Building = () => {
   );
 
   return (
-    <div className="relative w-full h-[65vh]  md:h-[120vh] flex flex-col items-center justify-center">
+    <div className="relative w-full h-[63vh]  md:h-[120vh] flex flex-col items-center justify-center">
       {/* <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-8 md:top-10 z-10">
         <div className="flex items-center">
           <div className="tabsB w-full flex justify-between px-1">
