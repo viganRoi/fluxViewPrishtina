@@ -359,7 +359,7 @@ const Building = () => {
       <div className="relative w-full h-full flex justify-center items-start  md:items-center">
         {selectedTab === "selection" ? selectionView() : floorView()}
         {selectedTab === "selection" && (
-          <div className="absolute w-full left-0 bottom-12 md:top-1/2 h-0 flex justify-between px-4">
+          <div className="absolute w-full left-0 bottom-12 md:top-1/2 h-0 flex justify-end md:justify-between gap-2 px-4">
             <button
               onClick={handlePrevious}
               className="bg-brand transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"

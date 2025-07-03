@@ -114,44 +114,40 @@ const BuildingFilterModal = ({
                 <button
                   name="1"
                   onClick={handleRoomChange}
-                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
-                    roomRange.includes("1")
+                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${roomRange.includes("1")
                       ? "bg-brand text-black"
                       : "bg-transparent text-white"
-                  }`}
+                    }`}
                 >
                   1 + 1
                 </button>
                 <button
                   name="2"
                   onClick={handleRoomChange}
-                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
-                    roomRange.includes("2")
+                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${roomRange.includes("2")
                       ? "bg-brand text-black"
                       : "bg-transparent text-white"
-                  }`}
+                    }`}
                 >
                   2 + 1
                 </button>
                 <button
                   name="3"
                   onClick={handleRoomChange}
-                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
-                    roomRange.includes("3")
+                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${roomRange.includes("3")
                       ? "bg-brand text-black"
                       : "bg-transparent text-white"
-                  }`}
+                    }`}
                 >
                   3 + 1
                 </button>
                 <button
                   name="penthouse"
                   onClick={handleRoomChange}
-                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
-                    roomRange.includes("penthouse")
+                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${roomRange.includes("penthouse")
                       ? "bg-brand text-black"
                       : "bg-transparent text-white"
-                  }`}
+                    }`}
                 >
                   Penthouse
                 </button>
@@ -255,7 +251,10 @@ const BuildingFilterModal = ({
               Reseto
             </button>
             <button
-              onClick={setFilteredData}
+              onClick={() => {
+                setFilteredData();
+                onClose();
+              }}
               className="text-nowrap bg-brand text-white text-sm md:text-md w-full py-2 px-2 rounded-full border border-gold"
             >
               Apliko Ndryshimet

@@ -132,7 +132,7 @@ const BuildingPage = () => {
         <>
           <div className="flex md:hidden  mt-8 pl-4 ">
             <h1 className="text-white text-3xl">
-              Objekti <span className="font-semibold">{buildingName}</span>
+              Objekti <span className="font-semibold text-brand">{buildingName}</span>
             </h1>
           </div>
           <Building filteredBuildings={filteredBuildings} />
