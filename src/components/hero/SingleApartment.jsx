@@ -80,30 +80,53 @@ const SingleApartment = () => {
       <div className="w-full h-full bg-white flex justify-center text-brand pt-4 pb-8 md:pb-24">
         <div className="w-11/12 md:w-5/6 flex flex-col justify-center content-center gap-4 md:gap-10">
           <div className="w-full flex justify-between items-center">
-            <div className="w-full flex gap-4 items-center">
+            <div className="w-fit md:w-full flex gap-4 items-center">
               <button
                 onClick={() => navigate(-1)}
                 className=" border-brand text-black rounded-full h-12 w-12 flex items-center justify-center"
               >
                 <img src="/assets/icons/arrowup.svg" alt="" />
               </button>
-              <h3 className="text-black text-[14px] md:text-[18px] circe">
+              <h3 className="text-black text-nowrap text-[14px] md:text-[18px] circe">
                 Kthehu Pas
               </h3>
             </div>
 
-            <div className="w-full flex justify-end items-center">
-              <button className="text-black text-[14px] md:text-[16px] text-nowrap  border border-black rounded-full px-6 py-2 circe hover:bg-black hover:text-white transition-all duration-500">
+            <div className="w-full flex justify-end md:justify-end items-center">
+              <button className="text-black text-[10px] md:text-[16px] text-nowrap  border border-black rounded-full px-3 md:px-6 py-2 circe hover:bg-black hover:text-white transition-all duration-500">
                 Shiko te gjitha apartamentet
               </button>
+              <div className="w-fit px-2 flex items-center gap-2  md:justify-center">
+                <button className="w-[35px] md:w-[45px]">
+                  <img src="/assets/icons/share.svg" alt="" />
+                </button>
+                <button className="">
+                  <img
+                    className="w-[35px] md:w-[45px]"
+                    src="/assets/icons/heart.svg"
+                    alt=""
+                  />
+                </button>
+              </div>
             </div>
           </div>
 
           <div className="w-full flex flex-col md:flex-row h-full justify-center mt-6 md:mt-0 bg-white items-center ">
             <div className="w-full flex  flex-col gap-2 flex-[3]">
+              <div className="flex  py-4 border-slate-300 text-[35px] md:text-[40px] font-semibold text-black montserrat items-center gap-2">
+                {/* <img
+                    className="w-[35px] "
+                    src="/assets/icons/siptotal.svg"
+                    alt=""
+                  />{" "} */}
+                <h1 className="circe">
+                  <span className="text-brand">Apartamenti </span>
+                  {apartment.name}{" "}
+                </h1>
+              </div>
               <div className=" border-b border-black  w-full">
                 {" "}
-                <h1 className="text-brand leading-none  text-[40px] md:text-[50px] montserrat font-bold">
+                <h1 className="text-brand leading-none  text-[30px] md:text-[35px] montserrat font-bold">
                   {(
                     parseFloat(apartment.square) +
                     parseFloat(apartment.balconySquare)
@@ -160,18 +183,6 @@ const SingleApartment = () => {
                     {apartment.balconySquare}m<sup>2</sup>
                   </h2>
                 </div>
-
-                <div className="flex  py-4 border-slate-300 text-[28px] font-semibold text-black montserrat items-center gap-2">
-                  {/* <img
-                    className="w-[35px] "
-                    src="/assets/icons/siptotal.svg"
-                    alt=""
-                  />{" "} */}
-                  <h1 className="circe">
-                    {apartment.name}{" "}
-                    <span className="text-brand">Apartamenti</span>
-                  </h1>
-                </div>
               </div>
 
               <div className="w-full flex md:flex-col gap-4">
@@ -187,7 +198,7 @@ const SingleApartment = () => {
               </div>
             </div>
             <div className="w-full flex h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
-              <div className="w-full flex justify-center items-center gap-4 ">
+              <div className="w-full flex justify-start md:justify-center items-center gap-4 ">
                 <div className="w-fit py-1 px-1  gap-2 bg-[#e9e9e9] flex items-center border-brand rounded-full justify-between md:justify-center">
                   <button
                     onClick={() => {
@@ -289,15 +300,6 @@ const SingleApartment = () => {
                       </>
                     )}
                   </div>
-                </div>
-
-                <div className="w-fit px-2 flex items-center gap-2  md:justify-center">
-                  <button className="">
-                    <img src="/assets/icons/share.svg" alt="" />
-                  </button>
-                  <button className="">
-                    <img src="/assets/icons/heart.svg" alt="" />
-                  </button>
                 </div>
               </div>
               <div className="w-full  relative flex justify-center items-center">
