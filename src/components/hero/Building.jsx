@@ -78,7 +78,7 @@ const Building = () => {
   }, []);
 
   const getSvgHeight = () => {
-    return isSmallDev ? "50vh" : "100%";
+    return isSmallDev ? "40vh" : "100%";
   };
 
   const handleContextMenu = (e, data) => {
@@ -317,7 +317,7 @@ const Building = () => {
   );
 
   return (
-    <div className="relative w-full h-[63vh]  md:h-[120vh] flex flex-col items-center justify-center">
+    <div className="relative w-full h-[53vh]  md:h-[120vh] flex flex-col items-center justify-center">
       {/* <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-8 md:top-10 z-10">
         <div className="flex items-center">
           <div className="tabsB w-full flex justify-between px-1">
@@ -361,11 +361,11 @@ const Building = () => {
         {selectedTab === "selection" && (
           <div className="absolute w-full left-0 bottom-12 md:top-1/2 h-0 flex justify-end md:justify-between gap-2 px-4">
             <button
-            onClick={() => navigate("/apartments")}
-            className="absolute md:hidden items-center justify-center text-sm border-brand border rounded-full h-[35px] w-2/3 text-white left-4"
-          >
-            Shiko të gjitha apartamentet
-          </button>
+              onClick={() => navigate("/apartments")}
+              className="absolute md:hidden items-center justify-center text-sm border-brand border rounded-full h-[35px] w-2/3 text-white left-4"
+            >
+              Shiko të gjitha apartamentet
+            </button>
             <button
               onClick={handlePrevious}
               className="bg-brand transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"

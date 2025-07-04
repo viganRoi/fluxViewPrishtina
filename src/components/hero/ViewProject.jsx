@@ -92,7 +92,7 @@ const ViewProject = () => {
           </div>
         </div>
       </div>
-      {/* <div className="absolute w-11/12 md:5/6 flex justify-end items-center text-center top-10 md:top-24 z-10">
+      <div className="absolute w-11/12 md:5/6 flex justify-end items-center text-center top-10 md:top-24 z-10">
         <div className="tabs">
           <input
             type="radio"
@@ -127,7 +127,7 @@ const ViewProject = () => {
             PAMJA NGA LART
           </label>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

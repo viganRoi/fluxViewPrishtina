@@ -93,7 +93,7 @@ const SingleApartment = () => {
             </div>
 
             <div className="w-full flex justify-end md:justify-end items-center">
-              <button className="text-black text-[10px] md:text-[16px] text-nowrap  border border-black rounded-full px-3 md:px-6 py-2 circe hover:bg-black hover:text-white transition-all duration-500">
+              <button className="hidden md:flex text-black text-[10px] md:text-[16px] text-nowrap  border border-black rounded-full px-3 md:px-6 py-2 circe hover:bg-black hover:text-white transition-all duration-500">
                 Shiko te gjitha apartamentet
               </button>
               <div className="w-fit px-2 flex items-center gap-2  md:justify-center">
@@ -120,11 +120,11 @@ const SingleApartment = () => {
                     alt=""
                   />{" "} */}
                 <h1 className="circe">
-                  <span className="text-brand">Apartamenti </span>
+                  <span className="text-brand">Tipi </span>
                   {apartment.name}{" "}
                 </h1>
               </div>
-              <div className=" border-b border-black  w-full">
+              <div className="w-full">
                 {" "}
                 <h1 className="text-brand leading-none  text-[30px] md:text-[35px] montserrat font-bold">
                   {(
