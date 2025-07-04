@@ -19,6 +19,7 @@ import {
 import { useParams } from "react-router-dom";
 import { getAllApartmentSvgData } from "../features/apartment/ApartmentSlice";
 import { apartments } from "../utils/server";
+import { SlArrowLeft } from "react-icons/sl";
 
 const BuildingPage = () => {
   const isSmallDev = window.innerWidth < 700;
@@ -131,20 +132,20 @@ const BuildingPage = () => {
       {isSmallDev ? (
         <>
           <div className="flex md:hidden  mt-8 pl-4 ">
+            <button onClick={() => window.history.back()} className="border border-brand rounded-full p-2 mr-4">
+              <SlArrowLeft color="#fff" />
+            </button>
             <h1 className="text-white text-3xl">
               Objekti <span className="font-semibold text-brand">{buildingName}</span>
             </h1>
           </div>
-          <Building filteredBuildings={filteredBuildings} />
-
-          <div className="w-full flex justify-center items-center px-4 ">
+          <div className="w-full flex justify-center items-center p-4 ">
             <button
               onClick={() => setShowModal(true)}
-              className="text-white w-full border border-white rounded-full py-2 "
+              className="text-white w-full border border-brand rounded-full py-2"
             >
               Filtro
             </button>
-
             {showModal && (
               <BuildingFilterModal
                 available={available}
@@ -160,6 +161,7 @@ const BuildingPage = () => {
               />
             )}
           </div>
+          <Building filteredBuildings={filteredBuildings} />
         </>
       ) : (
         <>
