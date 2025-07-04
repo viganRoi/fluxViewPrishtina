@@ -78,7 +78,7 @@ const Building = () => {
   }, []);
 
   const getSvgHeight = () => {
-    return isSmallDev ? "40vh" : "100%";
+    return isSmallDev ? "100%" : "100%";
   };
 
   const handleContextMenu = (e, data) => {
@@ -113,7 +113,7 @@ const Building = () => {
             height: index === currentIndex ? getSvgHeight() : "0px",
             opacity: currentIndex === index ? 1 : 0,
             transition: "opacity 0.1s ease-in-out",
-            width: "100%",
+            width: isSmallDev ? "250%" : "100%",
             position: "absolute",
             display: "flex",
             justifyContent: "center",
@@ -123,7 +123,7 @@ const Building = () => {
         >
           <svg
             width={"100%"}
-            height={isSmallDev ? "85%" : "100%"}
+            height={isSmallDev ? "100%" : "100%"}
             preserveAspectRatio="xMidYMid slice"
             style={{
               transform: isSmallDev && "scale(1.4) translateX(20px)",
@@ -238,7 +238,7 @@ const Building = () => {
         >
           <svg
             width={"100%"}
-            height={isSmallDev ? "60%" : "100%"}
+            height={isSmallDev ? "100%" : "100%"}
             preserveAspectRatio="xMidYMid slice"
             style={{ transform: isSmallDev && "scale(1.4) translateX(20px)" }}
             viewBox={building.viewBoxStyle}
@@ -317,7 +317,7 @@ const Building = () => {
   );
 
   return (
-    <div className="relative w-full h-[53vh]  md:h-[120vh] flex flex-col items-center justify-center">
+    <div className="relative w-full h-[65vh]  md:h-[120vh] flex flex-col items-center justify-center">
       {/* <div className="absolute w-11/12 md:5/6 h-0 flex flex-col justify-center items-center bottom-8 md:top-10 z-10">
         <div className="flex items-center">
           <div className="tabsB w-full flex justify-between px-1">

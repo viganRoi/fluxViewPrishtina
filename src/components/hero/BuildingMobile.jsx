@@ -95,7 +95,7 @@ const BuildingMobile = () => {
             transition: "opacity 0.1s ease-in-out",
             position: "absolute",
             top: 0,
-            // left: 0,
+            left: 0,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -128,16 +128,16 @@ const BuildingMobile = () => {
                     onContextMenu={(e) => handleContextMenu(e, apartment)}
                     className={
                       parseInt(apartment.floorNumber) >= floorRange.startVal &&
-                        parseInt(apartment.floorNumber) <= floorRange.endVal &&
-                        (roomRange.includes(apartment.rooms) ||
-                          roomRange.includes("all")) &&
-                        parseInt(apartment.square) >= sizeRange.startVal &&
-                        parseInt(apartment.square) <= sizeRange.endVal
+                      parseInt(apartment.floorNumber) <= floorRange.endVal &&
+                      (roomRange.includes(apartment.rooms) ||
+                        roomRange.includes("all")) &&
+                      parseInt(apartment.square) >= sizeRange.startVal &&
+                      parseInt(apartment.square) <= sizeRange.endVal
                         ? apartment.isSold
                           ? "st1"
                           : filterState
-                            ? "st2"
-                            : "st0"
+                          ? "st2"
+                          : "st0"
                         : "st3"
                     }
                     id={apartment.apartmentId}
@@ -168,7 +168,7 @@ const BuildingMobile = () => {
                     onClick={() => {
                       if (
                         parseInt(apartment.floorNumber) >=
-                        floorRange.startVal &&
+                          floorRange.startVal &&
                         parseInt(apartment.floorNumber) <= floorRange.endVal &&
                         (roomRange.includes(apartment.rooms) ||
                           roomRange.includes("all")) &&
@@ -249,7 +249,7 @@ const BuildingMobile = () => {
                     onContextMenu={(e) => handleContextMenu(e, apartment)}
                     className={
                       parseInt(apartment.floorNumber) >= floorRange.startVal &&
-                        parseInt(apartment.floorNumber) <= floorRange.endVal
+                      parseInt(apartment.floorNumber) <= floorRange.endVal
                         ? "st2"
                         : "st3"
                     }
@@ -271,7 +271,7 @@ const BuildingMobile = () => {
                     onClick={() => {
                       if (
                         parseInt(apartment.floorNumber) >=
-                        floorRange.startVal &&
+                          floorRange.startVal &&
                         parseInt(apartment.floorNumber) <= floorRange.endVal
                       ) {
                         navigate(
@@ -305,10 +305,10 @@ const BuildingMobile = () => {
   );
 
   return (
-    <div className="relative w-full h-[90vh] flex items-start justify-center ">
+    <div className="relative w-full h-[65vh] flex items-start justify-center ">
       <div className="absolute w-11/12 flex flex-row justify-center items-center bottom-4  z-10">
-        <div className="flex items-center">
-          <div className="tabsB">
+        <div className="w-full flex items-center">
+          {/* <div className="tabsB">
             <input
               type="radio"
               id="radio-1"
@@ -347,18 +347,18 @@ const BuildingMobile = () => {
             >
               By Floor
             </label>
-          </div>
+          </div> */}
           {selectedTab === "selection" && (
             <div className="right-0 top-12 flex justif-center items-center gap-4 pl-4">
               <button
                 onClick={handlePrevious}
-                className="bg-gold transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
+                className="bg-brand transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
               >
                 <SlArrowLeft color="#fff" />
               </button>
               <button
                 onClick={handleNext}
-                className="bg-gold transition-all duration-.3s  hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
+                className="bg-brand transition-all duration-.3s  hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
               >
                 <SlArrowRight color="#fff" />
               </button>

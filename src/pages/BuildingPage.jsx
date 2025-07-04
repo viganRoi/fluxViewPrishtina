@@ -132,11 +132,15 @@ const BuildingPage = () => {
       {isSmallDev ? (
         <>
           <div className="flex md:hidden  mt-8 pl-4 ">
-            <button onClick={() => window.history.back()} className="border border-brand rounded-full p-2 mr-4">
+            <button
+              onClick={() => window.history.back()}
+              className="border border-brand rounded-full p-2 mr-4"
+            >
               <SlArrowLeft color="#fff" />
             </button>
             <h1 className="text-white text-3xl">
-              Objekti <span className="font-semibold text-brand">{buildingName}</span>
+              Objekti{" "}
+              <span className="font-semibold text-brand">{buildingName}</span>
             </h1>
           </div>
           <div className="w-full flex justify-center items-center p-4 ">
@@ -161,7 +165,7 @@ const BuildingPage = () => {
               />
             )}
           </div>
-          <Building filteredBuildings={filteredBuildings} />
+          <BuildingMobile filteredBuildings={filteredBuildings} />
         </>
       ) : (
         <>
