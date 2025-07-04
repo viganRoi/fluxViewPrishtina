@@ -99,7 +99,8 @@ const BuildingMobile = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            overflow: "auto",
+            overflowY: "auto",
+            overflowX: "hidden",
             backgroundColor: "#21434B",
           }}
         >
