@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getApartmentById } from "../../features/apartment/ApartmentAPI";
 import {
   homepage,
-  orientationImgPath,
   pdfPath,
   planmetricImageUrl,
 } from "../../utils/consts";
@@ -326,20 +325,13 @@ const SingleApartment = () => {
                 {selectedTab === "onFloor" && (
                   <img
                     className="w-[90%] p-14"
-                    src="/assets/images/onfloor.png"
+                    src={
+                      `${homepage}${planmetricImageUrl}/floor/${apartment?.name}-floor.jpg` ||
+                      "/projektet/assets/images/planimetria.png"
+                    }
                     alt="On Floor View"
                   />
                 )}
-                <div className="absolute flex flex-col justify-center items-center -bottom-4 md:bottom-10 -right-10 md:-right-6   ">
-                  <h3 className="text-[12px] text-black font-semibold">
-                    Orientimi
-                  </h3>
-                  <img
-                    className="w-1/2 md:w-4/5"
-                    src="/assets/images/orientimi.png"
-                    alt=""
-                  />
-                </div>
               </div>
             </div>
           </div>
