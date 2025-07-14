@@ -99,9 +99,9 @@ const BuildingMobile = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            overflowY: "auto",
-            overflowX: "hidden",
-            backgroundColor: "#21434B",
+            overflowY: "hidden",
+            overflowX: "auto",
+            backgroundColor: "black",
           }}
         >
           <svg
@@ -367,7 +367,7 @@ const BuildingMobile = () => {
           )}
         </div>
       </div>
-      <div className="relative w-screen bg-brand h-full flex flex-col justify-center items-center overflow-x-auto">
+      <div className="relative w-screen bg-brand h-full flex flex-col justify-center items-center overflow-x-auto overflow-y-hidden">
         {selectedTab === "selection" ? selectionView() : floorView()}
       </div>
       {selectedTab === "floor" && popup.open && (

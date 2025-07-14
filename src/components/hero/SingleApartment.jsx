@@ -172,17 +172,17 @@ const SingleApartment = () => {
                   </h2>
                 </div>
 
-                <div className="flex  border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
-                  {/* <img
+                {/* <div className="flex  border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
+                  <img
                     className="w-[35px] "
                     src="/assets/icons/terrace.svg"
                     alt=""
-                  />{" "} */}
+                  />{" "}
                   <h2 className="circe">Terraca</h2>
                   <h2 className="font-semibold">
                     {apartment.balconySquare}m<sup>2</sup>
                   </h2>
-                </div>
+                </div> */}
               </div>
 
               <div className="w-full flex md:flex-col gap-4">
