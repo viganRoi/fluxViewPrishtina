@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getApartmentDetailModalData } from "../../features/apartment/ApartmentSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getApartmentById } from "../../features/apartment/ApartmentAPI";
-import {
-  homepage,
-  pdfPath,
-  planmetricImageUrl,
-} from "../../utils/consts";
+import { homepage, pdfPath, planmetricImageUrl } from "../../utils/consts";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { TfiClose } from "react-icons/tfi";
@@ -92,112 +88,7 @@ const SingleApartment = () => {
             </div>
 
             <div className="w-full flex justify-end md:justify-end items-center">
-              <button className="hidden md:flex text-black text-[10px] md:text-[16px] text-nowrap  border border-black rounded-full px-3 md:px-6 py-2 circe hover:bg-black hover:text-white transition-all duration-500">
-                Shiko te gjitha apartamentet
-              </button>
               <div className="w-fit px-2 flex items-center gap-2  md:justify-center">
-                <button className="w-[35px] md:w-[45px]">
-                  <img src="/assets/icons/share.svg" alt="" />
-                </button>
-                <button className="">
-                  <img
-                    className="w-[35px] md:w-[45px]"
-                    src="/assets/icons/heart.svg"
-                    alt=""
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full flex flex-col md:flex-row h-full justify-center mt-6 md:mt-0 bg-white items-center ">
-            <div className="w-full flex  flex-col gap-2 flex-[3]">
-              <div className="flex  py-4 border-slate-300 text-[35px] md:text-[40px] font-semibold text-black montserrat items-center gap-2">
-                {/* <img
-                    className="w-[35px] "
-                    src="/assets/icons/siptotal.svg"
-                    alt=""
-                  />{" "} */}
-                <h1 className="circe">
-                  <span className="text-brand">Tipi </span>
-                  {apartment.name}{" "}
-                </h1>
-              </div>
-              <div className="w-full">
-                {" "}
-                <h1 className="text-brand leading-none  text-[30px] md:text-[35px] montserrat font-bold">
-                  {(
-                    parseFloat(apartment.square) +
-                    parseFloat(apartment.balconySquare)
-                  ).toFixed(2)}{" "}
-                  <sup>2</sup>{" "}
-                  <span className="text-black circe text-[20px] font-normal">
-                    Sip Totale
-                  </span>
-                </h1>
-              </div>
-
-              <div className="w-full flex flex-col gap-2 ">
-                <div className="flex justify-between w-full  border-b py-4 border-slate-300  text-[16px] md:text-[18px] text-black items-center gap-2">
-                  {/* <img
-                    className="w-[35px] "
-                    src="/assets/icons/key-s.svg"
-                    alt=""
-                  />{" "} */}
-                  <h2 className="circe">Dhoma</h2>
-                  <h2 className="font-semibold">{apartment.rooms}</h2>
-                </div>
-
-                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
-                  {/* <img
-                    className="w-[35px] "
-                    src="/assets/icons/floor.svg"
-                    alt=""
-                  />{" "} */}
-                  <h2 className="circe">Kati</h2>
-                  <h2 className="font-semibold">{apartment.floorNumber}</h2>
-                </div>
-
-                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
-                  {/* <img
-                    className="w-[35px] "
-                    src="/assets/icons/sip.svg"
-                    alt=""
-                  />{" "} */}
-                  <h2 className="circe">Sipërfaqja</h2>
-                  <h2 className="font-semibold">
-                    {apartment.square}
-                    <sup>2</sup>
-                  </h2>
-                </div>
-
-                {/* <div className="flex  border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
-                  <img
-                    className="w-[35px] "
-                    src="/assets/icons/terrace.svg"
-                    alt=""
-                  />{" "}
-                  <h2 className="circe">Terraca</h2>
-                  <h2 className="font-semibold">
-                    {apartment.balconySquare}m<sup>2</sup>
-                  </h2>
-                </div> */}
-              </div>
-
-              <div className="w-full flex md:flex-col gap-4">
-                <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 circe rounded-full">
-                  Rezervo një takim
-                </button>
-                <button
-                  onClick={() => window.open(`${pdfPath}${pdfUrl}`, "_blank")}
-                  className="w-full px-4 py-2 border border-brand text-black hover:bg-brand circe transition-all duration-500 rounded-full"
-                >
-                  Shkarko PDF
-                </button>
-              </div>
-            </div>
-            <div className="w-full flex h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
-              <div className="w-full flex justify-start md:justify-center items-center gap-4 ">
                 <div className="w-fit py-1 px-1  gap-2 bg-[#e9e9e9] flex items-center border-brand rounded-full justify-between md:justify-center">
                   <button
                     onClick={() => {
@@ -258,7 +149,7 @@ const SingleApartment = () => {
                       checked={selectedTab === "onFloor"}
                     />
                     <label
-                      className="tab circe mr-2"
+                      className="tab circe mr-2 px-4"
                       onClick={() => {
                         handleTabClick("onFloor");
                       }}
@@ -300,7 +191,97 @@ const SingleApartment = () => {
                     )}
                   </div>
                 </div>
+                <button className="">
+                  <img
+                    className="w-[35px] md:w-[45px]"
+                    src="/assets/icons/heart.svg"
+                    alt=""
+                  />
+                </button>
               </div>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col md:flex-row h-full justify-center mt-6 md:mt-0 bg-white items-center ">
+            <div className="w-full flex  flex-col gap-2 flex-[3]">
+              <div className="flex  py-4 border-slate-300 text-[35px] md:text-[40px] font-semibold text-black montserrat items-center gap-2">
+                {/* <img
+                    className="w-[35px] "
+                    src="/assets/icons/siptotal.svg"
+                    alt=""
+                  />{" "} */}
+                <h1 className="montserrat font-thin">
+                  <span className="text-black">Tipi </span>
+                  {apartment.name} -{" "}
+                </h1>
+                <h1 className="text-black leading-none  text-[30px] md:text-[35px] montserrat font-bold">
+                  {(
+                    parseFloat(apartment.square) +
+                    parseFloat(apartment.balconySquare)
+                  ).toFixed(2)}{" "}
+                  <sup>2</sup>{" "}
+                </h1>
+              </div>
+              <div className="w-full"> </div>
+
+              <div className="w-full flex flex-col gap-2 ">
+                <div className="flex justify-between w-full  border-b py-4 border-slate-300  text-[16px] md:text-[18px] text-black items-center gap-2">
+                  {/* <img
+                    className="w-[35px] "
+                    src="/assets/icons/key-s.svg"
+                    alt=""
+                  />{" "} */}
+                  <h2 className="circe">Dhoma</h2>
+                  <h2 className="font-semibold">{apartment.rooms}+1</h2>
+                </div>
+
+                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
+                  {/* <img
+                    className="w-[35px] "
+                    src="/assets/icons/floor.svg"
+                    alt=""
+                  />{" "} */}
+                  <h2 className="circe">Kati</h2>
+                  <h2 className="font-semibold">{apartment.floorNumber}</h2>
+                </div>
+
+                <div className="flex w-full border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
+                  {/* <img
+                    className="w-[35px] "
+                    src="/assets/icons/sip.svg"
+                    alt=""
+                  />{" "} */}
+                  <h2 className="circe">Objekti</h2>
+                  <h2 className="font-semibold">{apartment.apartmentNumber}</h2>
+                </div>
+
+                {/* <div className="flex  border-b py-4 border-slate-300 justify-between text-[16px] md:text-[18px] text-black items-center gap-2">
+                  <img
+                    className="w-[35px] "
+                    src="/assets/icons/terrace.svg"
+                    alt=""
+                  />{" "}
+                  <h2 className="circe">Terraca</h2>
+                  <h2 className="font-semibold">
+                    {apartment.balconySquare}m<sup>2</sup>
+                  </h2>
+                </div> */}
+              </div>
+
+              <div className="w-full flex md:flex-col gap-4">
+                <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 circe rounded-full">
+                  Rezervo një takim
+                </button>
+                <button
+                  onClick={() => window.open(`${pdfPath}${pdfUrl}`, "_blank")}
+                  className="w-full px-4 py-2 border border-brand text-black hover:bg-brand circe transition-all duration-500 rounded-full"
+                >
+                  Shkarko PDF
+                </button>
+              </div>
+            </div>
+            <div className="w-full flex h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
+              <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
               <div className="w-full  relative flex justify-center items-center">
                 {selectedTab === "3d" && (
                   <img
@@ -324,7 +305,7 @@ const SingleApartment = () => {
                 )}
                 {selectedTab === "onFloor" && (
                   <img
-                    className="w-[90%] p-14"
+                    className="w-[100%] p-14"
                     src={
                       `${homepage}${planmetricImageUrl}/floor/${apartment?.name}-floor.jpg` ||
                       "/projektet/assets/images/planimetria.png"

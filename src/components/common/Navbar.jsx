@@ -39,24 +39,24 @@ const Navbar = () => {
     <>
       <nav
         className={`w-screen fixed top-0 z-50 transition-nav ${
-          isScrolled ? "bg-brand" : "bg-transparent"
+          isScrolled ? "bg-black" : "bg-transparent"
         }`}
       >
         <div className="max-w-11/12 px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
               <NavLink
                 to="/"
                 className="text-2xl font-serif font-bold transition"
               >
                 <img
-                  src="/assets/images/brand/logoW.svg"
+                  src="https://flux-ks.com/wp-content/uploads/2023/07/Flux-Logo-whiteYellow-e1696543864342-2048x608.png"
                   alt="logo"
                   className="h-10"
                 />
               </NavLink>
             </div>
-            <div className="hidden xl:flex space-x-8 items-center">
+            <div className="hidden xl:flex space-x-4 items-center text-xl montserrat">
               <NavLink to="/" className={`text-white text-nowrap`}>
                 Ballina
               </NavLink>
@@ -69,81 +69,39 @@ const Navbar = () => {
               <NavLink to="/parking" className={`text-white text-nowrap`}>
                 Parkingu
               </NavLink>
-              <NavLink to="/gallery" className={`text-white text-nowrap`}>
-                Galeria
-              </NavLink>
-              <NavLink to="/news" className={`text-white text-nowrap`}>
-                Lajme & Evente
-              </NavLink>
-              <NavLink to="/contact" className={`text-white text-nowrap`}>
-                Kontakti
-              </NavLink>
-            </div>
-            <div className="hidden md:flex items-center space-x-2">
-              <button className="relative w-[35px] h-[35px] rounded-[50px] border border-gold duration-75 flex items-center justify-center">
-                <PiPlayThin className="fill-white text-2xl" />
-              </button>
-              <NavLink
-                to="/wishlist"
-                className="relative w-[35px] h-[35px] rounded-[50px] border border-gold duration-75 flex items-center justify-center"
-              >
-                {wishListItemCount > 0 && (
-                  <span className="absolute top-[-10px] right-[-5px] bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                    {wishListItemCount}
-                  </span>
-                )}
-                {wishListItemCount > 0 ? (
-                  <IoIosHeart className="fill-white text-2xl" />
-                ) : (
-                  <IoIosHeartEmpty className="fill-white text-2xl" />
-                )}
-              </NavLink>
-              <div className="relative">
-                <button
-                  // onClick={toggleDropdown}
-                  className="px-12 py-2 border border-gold bg-transparent text-white rounded-full"
+
+              <div className="hidden md:flex items-center space-x-2">
+                <NavLink
+                  to="/wishlist"
+                  className="relative w-[35px] h-[35px] rounded-[50px] border border-gold duration-75 flex items-center justify-center"
                 >
-                  Ndërtesa
-                </button>
-                <div
-                  className={`absolute right-0 mt-4 w-96 h-48 bg-brand border border-gold rounded-lg shadow-lg ${
-                    isDropdownOpen ? "flex" : "hidden"
-                  } justify-between dropdown-transition ${
-                    isDropdownOpen ? "dropdown-transition-enter" : ""
-                  }`}
-                >
-                  <NavLink
-                    to="/buildings"
-                    className="block w-1/2 h-full flex flex-col items-center justify-center text-white hover:bg-gold hover:text-white rounded-l-md duration-300"
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    <p className="text-lg certon">Ndërtesa</p>
-                    <img
-                      src="/assets/images/hero/nav.png"
-                      alt=""
-                      className="absolute w-1/2 bottom-0 rounded-r-md"
-                    />
-                    <img
-                      src="/assets/svgs/loop.svg"
-                      alt=""
-                      className="absolute h-40 bottom-0 right-0 rounded-r-md"
-                    />
-                  </NavLink>
-                  <NavLink
-                    to="/apartments"
-                    className="block w-1/2 h-full flex flex-col items-center justify-center text-white hover:bg-gold hover:text-white rounded-r-md duration-300 overflow-hidden"
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    <p className="text-lg certon">Apartamente</p>
-                    <img
-                      src="/assets/svgs/loop.svg"
-                      alt=""
-                      className="absolute h-40 bottom-0 right-0 rounded-r-md"
-                    />
-                  </NavLink>
-                </div>
+                  {wishListItemCount > 0 && (
+                    <span className="absolute top-[-10px] right-[-5px] bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {wishListItemCount}
+                    </span>
+                  )}
+                  {wishListItemCount > 0 ? (
+                    <IoIosHeart className="fill-white text-2xl" />
+                  ) : (
+                    <IoIosHeartEmpty className="fill-white text-2xl" />
+                  )}
+                </NavLink>
               </div>
+
+              <button className="bg-brand border w-9 h-9 flex justify-center items-center border-black p-0   rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32 "
+                  width={22}
+                  height={42}
+                >
+                  <g id="Layer_13" data-name="Layer 13">
+                    <path d="m30 7a1 1 0 0 1 -1 1h-26a1 1 0 0 1 0-2h26a1 1 0 0 1 1 1zm-5 8h-22a1 1 0 0 0 0 2h22a1 1 0 0 0 0-2zm-9 9h-13a1 1 0 0 0 0 2h13a1 1 0 0 0 0-2z" />
+                  </g>
+                </svg>
+              </button>
             </div>
+
             <div className="flex xl:hidden gap-2">
               <NavLink
                 to="/wishlist"
