@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   Building,
   BuildingFilter,
@@ -20,6 +20,7 @@ import { useParams } from "react-router-dom";
 import { getAllApartmentSvgData } from "../features/apartment/ApartmentSlice";
 import { apartments } from "../utils/server";
 import { SlArrowLeft } from "react-icons/sl";
+import BuildingTable from "../components/cards/BuildingTable";
 
 const BuildingPage = () => {
   const isSmallDev = window.innerWidth < 700;
@@ -173,7 +174,10 @@ const BuildingPage = () => {
             setFilterState={setFilterState}
             available={available}
           />
-          <Building filteredBuildings={filteredBuildings} />
+          <div className="p-12">
+            <Building filteredBuildings={filteredBuildings} />
+          </div>
+          <BuildingTable apartments={filteredBuildings} />
         </>
       )}
       {/* <BuildingFilter setFilterState={setFilterState} available={available} />

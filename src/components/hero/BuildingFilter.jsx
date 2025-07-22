@@ -237,7 +237,7 @@ const BuildingFilter = ({ available }) => {
           </button>
           <button
             onClick={setFilteredData}
-            className="text-nowrap bg-brand text-white text-sm md:text-md w-full py-2 px-2 rounded-full border border-gold"
+            className="text-nowrap bg-brand text-black text-sm md:text-md w-full py-2 px-2 rounded-full border border-gold"
           >
             Apliko Ndryshimet
           </button>

@@ -370,13 +370,13 @@ const Building = () => {
               onClick={handlePrevious}
               className="bg-brand transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
             >
-              <SlArrowLeft color="#fff" />
+              <SlArrowLeft color="black" />
             </button>
             <button
               onClick={handleNext}
               className="bg-brand transition-all duration-.3s  hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
             >
-              <SlArrowRight color="#fff" />
+              <SlArrowRight color="black" />
             </button>
           </div>
         )}
