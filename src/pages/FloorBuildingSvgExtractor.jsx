@@ -200,7 +200,7 @@ const FloorBuildingSvgExtractor = ({ show }) => {
     }
   };
   return (
-    <div style={{ display: !show ? "block" : "none", padding: 10 }}>
+    <div style={{ display: !show ? "block" : "none", padding: 10, backgroundColor: 'white'}}>
       <ToastContainer />
       <h2 style={{ paddingTop: "80px" }}>Shto Katet e nderteses</h2>
       <div style={{ display: "flex", gap: 20 }}>
