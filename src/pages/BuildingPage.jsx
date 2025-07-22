@@ -55,22 +55,22 @@ const BuildingPage = () => {
   }, [buildings, filterState, roomFilter, floorFilter, squareFilter]);
 
   const applyFilters = (buildings) => {
-    let filtered = buildings;
-
+    let filtered = buildings.flatMap((building) => building.apartmentList) || [];
     if (roomFilter.length && !roomFilter.includes("all")) {
       filtered = filtered.filter((building) =>
         roomFilter.includes(building.rooms)
-      );
+    );
     }
-
+    
     if (
       floorFilter.startVal !== undefined &&
       floorFilter.endVal !== undefined
     ) {
       filtered = filtered.filter(
         (building) =>
-          building.floorNumber >= floorFilter.startVal &&
-          building.floorNumber <= floorFilter.endVal
+          parseInt(building.floorNumber) >= floorFilter.startVal &&
+        parseInt(building.floorNumber) <= floorFilter.endVal
+        
       );
     }
 
@@ -84,7 +84,6 @@ const BuildingPage = () => {
           building.square <= squareFilter.endVal
       );
     }
-
     const availableCount =
       buildingData[0]?.apartmentList?.filter((apartment) => {
         const matchesRoom =
@@ -127,6 +126,7 @@ const BuildingPage = () => {
     setRoomRange("all");
     dispatch(handleRegularFilterReset());
   };
+
 
   return (
     <div className="flex flex-col ">

@@ -5,8 +5,8 @@ const BuildingTable = ({ apartments }) => {
   const navigate = useNavigate();
   console.log(apartments);
   return (
-    <div className="w-full h-full flex justify-center items-center py-6 sm:py-12">
-      <div className="w-11/12 h-full flex items-center justify-center">
+    <div className="w-full h-full flex justify-center items-center py-6">
+      <div className="w-full px-12 h-full flex items-center justify-center">
         <div className="h-full w-full overflow-x-auto sm:overflow-y-auto">
           <table className="min-w-full table-auto text-xs sm:text-sm text-left border-separate border-spacing-0">
             <thead className="bg-primary h-10 sm:h-12 text-white uppercase sticky top-0 z-10">
@@ -28,7 +28,7 @@ const BuildingTable = ({ apartments }) => {
                   <tr
                     key={apartment.id}
                     className={`${
-                      i % 2 === 0 ? "bg-white" : "bg-gray-100"
+                      i % 2 === 0 ? "bg-black" : "bg-gray-300"
                     } h-10 sm:h-12 w-full text-primary cursor-pointer ${
                       apartment.isSold ? "bg-red-500" : ""
                     } ${apartment.isReserved ? "bg-orange-400" : ""}`}
