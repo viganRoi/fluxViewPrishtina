@@ -67,7 +67,7 @@ input[id='radio-4']:checked~.glider {
     border-radius: 50px;
     cursor: pointer;
     transition: color 0.2s ease-in;
-    color: #fff;
+    color: black;
     text-wrap: nowrap;
 }
 @media (max-width: 768px) {

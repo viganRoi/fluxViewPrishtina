@@ -34,7 +34,7 @@ const ApartmentModal = ({ apartment, mousePosition }) => {
           <img
             src={`${homepage}${planmetricImageUrl}${apartment?.image}`}
             alt={apartment?.title}
-            className="w-full h-[150px] object-contain mt-2"
+            className="w-full h-[140px] object-contain mt-2"
             onClick={apartment?.navigateTo}
           />
         </div>

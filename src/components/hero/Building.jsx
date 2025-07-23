@@ -349,7 +349,10 @@ const Building = () => {
                 handleTabClick("floor");
               }}
               htmlFor="radio-1"
-              style={{ fontSize: isSmallDev ? "12px" : "16px", width: "100%" }}
+              style={{
+                fontSize: isSmallDev ? "12px" : "16px",
+                width: "100%",
+              }}
             >
               By Floor
             </label>

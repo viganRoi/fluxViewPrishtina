@@ -9,9 +9,12 @@ import { TfiClose } from "react-icons/tfi";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { PiPhoneThin } from "react-icons/pi";
 import {
+  addToWishlist,
   getWishlistCount,
+  getWishlistModalData,
   handleWishlistData,
   isProductInWishlist,
+  removeFromWishlist,
 } from "../../features/wishList/WishlistSlice";
 import { PriceCard } from "../";
 import "./style.css";
@@ -19,24 +22,19 @@ import { ArrowLeft, Key } from "@mui/icons-material";
 
 const SingleApartment = () => {
   const isSmallDev = window.innerWidth < 700;
+  const apartment = useSelector(getApartmentDetailModalData);
+  const wishlist = useSelector(getWishlistModalData);
   const [selectedTab, setSelectedTab] = useState("2d");
   const [isPriceCardVisible, setIsPriceCardVisible] = useState(false);
-  const [isHeartActive, setIsHeartActive] = useState(false);
 
-  const apartment = useSelector(getApartmentDetailModalData);
+  const isHeartActive = wishlist.some((item) => item.id === apartment.id);
+
   const wishListItemCount = useSelector(getWishlistCount);
   const isInWishlist = useSelector((state) =>
     isProductInWishlist(state, apartment.id)
   );
   const dispatch = useDispatch();
-  const { id } = useParams();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (id) {
-      dispatch(getApartmentById(id));
-    }
-  }, [dispatch, id]);
 
   const handleWishlistDataFunction = () => {
     dispatch(handleWishlistData(apartment));
@@ -69,6 +67,14 @@ const SingleApartment = () => {
 
   const handleOpenPdf = (pdfUrl) => {
     window.open(`${pdfPath}${pdfUrl}`, "_blank");
+  };
+
+  const toggleWishlist = () => {
+    if (isHeartActive) {
+      dispatch(removeFromWishlist(apartment.id));
+    } else {
+      dispatch(addToWishlist(apartment));
+    }
   };
 
   return (
@@ -192,10 +198,7 @@ const SingleApartment = () => {
                     )}
                   </div>
                 </div>
-                <button
-                  className=""
-                  onClick={() => setIsHeartActive(!isHeartActive)}
-                >
+                <button className="" onClick={toggleWishlist}>
                   <svg
                     width="50"
                     height="50"
