@@ -202,11 +202,35 @@ useEffect(() => {
                   width={floorData && floorData[activeFloor]?.imageWidth}
                   height={floorData && floorData[activeFloor]?.imageHeight}
                   transform={floorData && floorData[activeFloor]?.imageTransform}
-                  xlinkHref={`${imagePath}${id}-${activeFloor}.png`}
+                  xlinkHref={`${imagePath}f-${id}-${activeFloor}.jpg`}
                 ></image>
                 {floorData?.map((floor) => {
                   if (parseInt(floor.floorNumber) === activeFloor) {
                     return floor.apartmentList?.map((apartment) => {
+                      if(apartment.pointsType === "polygon") {
+                        return (
+                          <polygon
+                            key={apartment.id}
+                            onClick={() => {
+                              if (apartment.isSold) return;
+                              navigate(`/apartments/${apartment.id}`);
+                            }}
+                            onContextMenu={(e) =>
+                              handleContextMenu(e, apartment)
+                            }
+                            className={
+                              apartment.isSold
+                                ? "st1"
+                                : "ft0"
+                            }
+                            points={apartment.path}
+                            onMouseEnter={() => setHoveredId(apartment.id)}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={() => setHoveredId(null)}
+                          />
+                        );
+                      }
+                      if (apartment.pointsType === "path"){
                       return (
                         <path
                           onClick={() => {
@@ -225,6 +249,7 @@ useEffect(() => {
                           onMouseLeave={() => setHoveredId(null)}
                         />
                       );
+                    }
                     });
                   } else return <h1>{floor.floorNumber}</h1>;
                 })}
