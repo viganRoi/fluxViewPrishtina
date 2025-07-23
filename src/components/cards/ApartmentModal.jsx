@@ -3,7 +3,7 @@ import { homepage, planmetricImageUrl } from "../../utils/consts";
 const ApartmentModal = ({ apartment, mousePosition }) => {
   return (
     <div
-      className="relative w-[300px] h-[420px]  rounded-lg overflow-hidden shadow-lg bg-white"
+      className="relative w-[230px] h-[330px] z-20  rounded-lg overflow-hidden shadow-lg bg-white"
       style={{
         position: "fixed",
         pointerEvents: "none",
@@ -12,34 +12,29 @@ const ApartmentModal = ({ apartment, mousePosition }) => {
       }}
     >
       <div className="w-full flex flex-col ">
-        <div className="  w-full flex bg-black p-4 justify-between items-start">
-          <h1 className="text-lg md:text-4xl font-semibold text-brand mb-2 montserrat">
+        <div className="  w-full flex bg-black p-3 justify-between items-start">
+          <h1 className="text-lg md:text-3xl font-semibold text-brand mb-2 montserrat">
             {apartment?.sqft}m<sup>2</sup>{" "}
           </h1>
-          <button
-            className=" bg-transparent text-brand px-4 py-1 text-sm border-brand border-[1px] rounded-full hover:shadow-md transition montserrat"
-            onClick={apartment?.navigateTo}
-          >
-            E lirë
-          </button>
         </div>
         <div className="w-full flex flex-col justify-between items-start p-4">
-          <div className=" text-brand">
+          <div className=" text-black">
             <p className="text-sm md:text-lg montserrat">
-              Numer: {apartment?.number}
+              Numer: <span className="font-semibold">{apartment?.name}</span>
             </p>
             <p className="text-sm md:text-lg montserrat">
-              Tipi: {apartment?.bedroom}+1
+              Tipi:{" "}
+              <span className="font-semibold">{apartment?.bedroom}+1</span>
             </p>
             <p className="text-sm md:text-lg montserrat">
-              Kati: {apartment?.floor}
+              Kati: <span className="font-semibold">{apartment?.floor}</span>
             </p>
           </div>
 
           <img
             src={`${homepage}${planmetricImageUrl}${apartment?.image}`}
             alt={apartment?.title}
-            className="w-full h-[250px] object-contain mt-2"
+            className="w-full h-[140px] object-contain mt-2"
             onClick={apartment?.navigateTo}
           />
         </div>

@@ -55,13 +55,14 @@ const BuildingPage = () => {
   }, [buildings, filterState, roomFilter, floorFilter, squareFilter]);
 
   const applyFilters = (buildings) => {
-    let filtered = buildings.flatMap((building) => building.apartmentList) || [];
+    let filtered =
+      buildings.flatMap((building) => building.apartmentList) || [];
     if (roomFilter.length && !roomFilter.includes("all")) {
       filtered = filtered.filter((building) =>
         roomFilter.includes(building.rooms)
-    );
+      );
     }
-    
+
     if (
       floorFilter.startVal !== undefined &&
       floorFilter.endVal !== undefined
@@ -69,8 +70,7 @@ const BuildingPage = () => {
       filtered = filtered.filter(
         (building) =>
           parseInt(building.floorNumber) >= floorFilter.startVal &&
-        parseInt(building.floorNumber) <= floorFilter.endVal
-        
+          parseInt(building.floorNumber) <= floorFilter.endVal
       );
     }
 
@@ -127,12 +127,11 @@ const BuildingPage = () => {
     dispatch(handleRegularFilterReset());
   };
 
-
   return (
     <div className="flex flex-col ">
       {isSmallDev ? (
         <>
-          <div className="flex md:hidden  mt-8 pl-4 ">
+          <div className="flex md:hidden  mt-20 pl-4 ">
             <button
               onClick={() => window.history.back()}
               className="border border-brand rounded-full p-2 mr-4"
@@ -167,6 +166,7 @@ const BuildingPage = () => {
             )}
           </div>
           <BuildingMobile filteredBuildings={filteredBuildings} />
+          <BuildingTable apartments={filteredBuildings} />
         </>
       ) : (
         <>

@@ -41,6 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/floorsvg/:id" element={<FloorSvgPage />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/svg-extrator" element={<SvgExtractor />} />
           <Route path="/fsvg-extrator" element={<FloorSvgExtractor />} />
           <Route
