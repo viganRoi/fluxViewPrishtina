@@ -273,7 +273,7 @@ const SingleApartment = () => {
                 </button>
               </div>
               <div className="w-full"> </div>
-              <div className="w-full flex h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
+              <div className="w-full flex md:hidden h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
                 <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
                 <div className="w-full  relative flex justify-center items-center">
                   {selectedTab === "3d" && (
