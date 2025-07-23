@@ -166,6 +166,7 @@ const BuildingPage = () => {
             )}
           </div>
           <BuildingMobile filteredBuildings={filteredBuildings} />
+          <BuildingTable apartments={filteredBuildings} />
         </>
       ) : (
         <>

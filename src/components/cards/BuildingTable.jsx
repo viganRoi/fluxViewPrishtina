@@ -6,7 +6,7 @@ const BuildingTable = ({ apartments }) => {
   console.log(apartments);
   return (
     <div className="w-full h-full flex justify-center items-center py-6">
-      <div className="w-full px-12 h-full flex items-center justify-center">
+      <div className="w-full px-0 md:px-12 h-full flex items-center justify-center">
         <div className="h-full w-full overflow-x-auto sm:overflow-y-auto">
           <table className="min-w-full table-auto text-xs sm:text-sm text-left border-separate border-spacing-0">
             <thead className="bg-primary h-10 sm:h-12 text-black uppercase sticky top-0 z-10">

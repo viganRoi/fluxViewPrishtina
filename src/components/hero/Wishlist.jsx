@@ -7,6 +7,7 @@ import {
 } from "../../features/wishList/WishlistSlice";
 import ApartmentWishlistCard from "../cards/ApartmentWishlistCard";
 import { TfiClose } from "react-icons/tfi";
+import ApartmentCard from "../cards/ApartmentCard";
 
 const Wishlist = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Wishlist = () => {
       <div className="w-11/12 md:w-6/7 flex items-center justify-center flex-col">
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-10 right-20 bg-brand transition-all duration-.3s  hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center mb-2"
+          className="absolute top-10 right-10 md:right-20 bg-brand transition-all duration-.3s  hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center mb-2"
         >
           <TfiClose className="fill-black" />
         </button>
@@ -30,7 +31,7 @@ const Wishlist = () => {
       <div className="w-11/12 md:w-5/6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
         {wishData.map((el) => {
           return (
-            <ApartmentWishlistCard
+            <ApartmentCard
               key={el.id}
               id={el.id}
               category={el.category}
