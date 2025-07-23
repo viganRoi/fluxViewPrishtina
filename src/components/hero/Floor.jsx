@@ -46,15 +46,12 @@ const Floor = () => {
     : 0;
 
 
-  const totalFloors = 9;
-  // const floors = Array.from(
-  //   { length: totalFloors },
-  //   (_, i) => totalFloors - i
-  // ).reverse();
-  const floors = Array.from(
-    { length: totalFloors + 1 },
-    (_, i) => i
-  );
+    // const floors = Array.from(
+      //   { length: totalFloors },
+      //   (_, i) => totalFloors - i
+      // ).reverse();
+ const totalFloors = 9;
+const floors = Array.from({ length: totalFloors }, (_, i) => i + 1);
   // const [activeFloor, setActiveFloor] = useState(floors[0]);
   const [activeFloor, setActiveFloor] = useState(initialFloor);
   const visibleRange = 5;
@@ -199,9 +196,9 @@ useEffect(() => {
                 xmlnsSvg="http://www.w3.org/2000/svg"
               >
                 <image
-                  width={floorData && floorData[activeFloor]?.imageWidth}
-                  height={floorData && floorData[activeFloor]?.imageHeight}
-                  transform={floorData && floorData[activeFloor]?.imageTransform}
+                  width={floorData && floorData[activeFloor-1]?.imageWidth}
+                  height={floorData && floorData[activeFloor-1]?.imageHeight}
+                  transform={floorData && floorData[activeFloor-1]?.imageTransform}
                   xlinkHref={`${imagePath}f-${id}-${activeFloor}.jpg`}
                 ></image>
                 {floorData?.map((floor) => {
