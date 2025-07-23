@@ -46,7 +46,7 @@ const Floor = () => {
     : 0;
 
 
-  const totalFloors = 6;
+  const totalFloors = 9;
   // const floors = Array.from(
   //   { length: totalFloors },
   //   (_, i) => totalFloors - i
