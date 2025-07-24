@@ -383,34 +383,28 @@ const SingleApartment = () => {
               <div className="w-full flex md:hidden h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
                 <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
                 <div className="w-full  relative flex justify-center items-center">
-                  {selectedTab === "3d" && (
+                  {selectedTab === "360" ? (
+                    <div className="h-[80vh] md:h-screen w-full bg-brandD relative text-white">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        frameborder="10"
+                        allow="xr-spatial-tracking; gyroscope; accelerometer"
+                        src={vtourUrl}
+                      ></iframe>
+                    </div>
+                  ) : (
                     <img
-                      className="w-[90%]"
                       src={
-                        `${homepage}${planmetricImageUrl}${apartment?.image3dUrl}` ||
-                        "/projektet/assets/images/planimetria.png"
+                        selectedTab === "2d"
+                          ? `${homepage}${planmetricImageUrl}${imageUrl}`
+                          : `${homepage}${planmetricImageUrl}${image3dUrl}`
                       }
-                      alt="3D View"
-                    />
-                  )}
-                  {selectedTab === "2d" && (
-                    <img
-                      className="w-[70%]"
-                      src={
-                        `${homepage}${planmetricImageUrl}${apartment?.imageUrl}` ||
-                        "/projektet/assets/images/planimetria.png"
-                      }
-                      alt="2D View"
-                    />
-                  )}
-                  {selectedTab === "onFloor" && (
-                    <img
-                      className="w-[100%] p-14"
-                      src={
-                        `${homepage}${planmetricImageUrl}/floor/${apartment?.name}-floor.jpg` ||
-                        "/projektet/assets/images/planimetria.png"
-                      }
-                      alt="On Floor View"
+                      alt="Apartment view"
+                      className="h-[500px] md:h-[1000px] object-contain"
+                      style={{
+                        cursor: "pointer",
+                      }}
                     />
                   )}
                 </div>
