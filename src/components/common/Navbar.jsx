@@ -69,6 +69,9 @@ const Navbar = () => {
               <NavLink to="/parking" className={`text-white text-nowrap`}>
                 Parkingu
               </NavLink>
+              <NavLink to="/virtual" className={`text-white text-nowrap`}>
+                360 Virtual
+              </NavLink>
 
               <div className="hidden md:flex items-center space-x-2">
                 <NavLink
@@ -197,6 +200,14 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Parkingu
+              </NavLink>
+
+              <NavLink
+                to="/virtual"
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                360 Virtual
               </NavLink>
             </div>
           </div>
