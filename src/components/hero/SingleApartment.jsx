@@ -355,22 +355,30 @@ const SingleApartment = () => {
                         type="radio"
                         id="radio-4"
                         name="tabs"
-                        checked={selectedTab === "vrtour"}
+                        checked={selectedTab === "360"}
                       />
                       <label
                         className="tab circe pr-2"
                         onClick={() => {
-                          if (
-                            !apartment.vtourUrl ||
-                            apartment.vtourUrl === "null"
-                          ) {
-                            toast.warning(
-                              `Momentalisht nuk eshte ne dispozicion`
-                            );
+                          if (!apartment.vtourUrl || apartment.vtourUrl === "null") {
+                            toast.warning(`Momentalisht nuk eshte ne dispozicion`);
                             return;
                           }
-                          window.open(`${apartment.vtourUrl}`, "_blank");
+                          // toggleVrModal(); // <-- Open modal instead of new tab
+                          handleTabClick("360");
                         }}
+                        // onClick={() => {
+                        //   if (
+                        //     !apartment.vtourUrl ||
+                        //     apartment.vtourUrl === "null"
+                        //   ) {
+                        //     toast.warning(
+                        //       `Momentalisht nuk eshte ne dispozicion`
+                        //     );
+                        //     return;
+                        //   }
+                        //   window.open(`${apartment.vtourUrl}`, "_blank");
+                        // }}
                         htmlFor="radio-4"
                         style={{ fontSize: isSmallDev ? "12px" : "16px" }}
                       >
@@ -388,24 +396,47 @@ const SingleApartment = () => {
                       <iframe
                         width="100%"
                         height="100%"
-                        frameborder="10"
+                        frameBorder="10"
                         allow="xr-spatial-tracking; gyroscope; accelerometer"
                         src={vtourUrl}
                       ></iframe>
                     </div>
                   ) : (
-                    <img
-                      src={
-                        selectedTab === "2d"
-                          ? `${homepage}${planmetricImageUrl}${imageUrl}`
-                          : `${homepage}${planmetricImageUrl}${image3dUrl}`
-                      }
-                      alt="Apartment view"
-                      className="h-[500px] md:h-[1000px] object-contain"
-                      style={{
-                        cursor: "pointer",
-                      }}
-                    />
+                    <>
+                      {selectedTab === "3d" && (
+                        <img
+                          className="w-[90%]"
+                          src={
+                            apartment?.image3dUrl
+                              ? `${homepage}${planmetricImageUrl}${apartment.image3dUrl}`
+                              : "/projektet/assets/images/planimetria.png"
+                          }
+                          alt="3D View"
+                        />
+                      )}
+                      {selectedTab === "2d" && (
+                        <img
+                          className="w-[70%]"
+                          src={
+                            apartment?.imageUrl
+                              ? `${homepage}${planmetricImageUrl}${apartment.imageUrl}`
+                              : "/projektet/assets/images/planimetria.png"
+                          }
+                          alt="2D View"
+                        />
+                      )}
+                      {selectedTab === "onFloor" && (
+                        <img
+                          className="w-[100%] p-14"
+                          src={
+                            apartment?.name
+                              ? `${homepage}${planmetricImageUrl}/floor/${apartment.name}-floor.jpg`
+                              : "/projektet/assets/images/planimetria.png"
+                          }
+                          alt="On Floor View"
+                        />
+                      )}
+                    </>
                   )}
                 </div>
               </div>
@@ -469,36 +500,54 @@ const SingleApartment = () => {
             <div className="w-full  h-full flex-col hidden md:flex justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
               <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
               <div className="w-full  relative flex justify-center items-center">
-                {selectedTab === "3d" && (
-                  <img
-                    className="w-[90%]"
-                    src={
-                      `${homepage}${planmetricImageUrl}${apartment?.image3dUrl}` ||
-                      "/projektet/assets/images/planimetria.png"
-                    }
-                    alt="3D View"
-                  />
+                {selectedTab === "360" ? (
+                  <div className="h-[80vh] md:h-screen w-full bg-brandD relative text-white">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      frameBorder="10"
+                      allow="xr-spatial-tracking; gyroscope; accelerometer"
+                      src={vtourUrl}
+                    ></iframe>
+                  </div>
+                ) : (
+                  <>
+                    {selectedTab === "3d" && (
+                      <img
+                        className="w-[90%]"
+                        src={
+                          apartment?.image3dUrl
+                            ? `${homepage}${planmetricImageUrl}${apartment.image3dUrl}`
+                            : "/projektet/assets/images/planimetria.png"
+                        }
+                        alt="3D View"
+                      />
+                    )}
+                    {selectedTab === "2d" && (
+                      <img
+                        className="w-[70%]"
+                        src={
+                          apartment?.imageUrl
+                            ? `${homepage}${planmetricImageUrl}${apartment.imageUrl}`
+                            : "/projektet/assets/images/planimetria.png"
+                        }
+                        alt="2D View"
+                      />
+                    )}
+                    {selectedTab === "onFloor" && (
+                      <img
+                        className="w-[100%] p-14"
+                        src={
+                          apartment?.name
+                            ? `${homepage}${planmetricImageUrl}/floor/${apartment.name}-floor.jpg`
+                            : "/projektet/assets/images/planimetria.png"
+                        }
+                        alt="On Floor View"
+                      />
+                    )}
+                  </>
                 )}
-                {selectedTab === "2d" && (
-                  <img
-                    className="w-[70%]"
-                    src={
-                      `${homepage}${planmetricImageUrl}${apartment?.imageUrl}` ||
-                      "/projektet/assets/images/planimetria.png"
-                    }
-                    alt="2D View"
-                  />
-                )}
-                {selectedTab === "onFloor" && (
-                  <img
-                    className="w-[100%] p-14"
-                    src={
-                      `${homepage}${planmetricImageUrl}/floor/${apartment?.name}-floor.jpg` ||
-                      "/projektet/assets/images/planimetria.png"
-                    }
-                    alt="On Floor View"
-                  />
-                )}
+
               </div>
             </div>
           </div>
