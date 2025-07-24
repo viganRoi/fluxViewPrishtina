@@ -20,12 +20,17 @@ import { PriceCard } from "../";
 import "./style.css";
 import { ArrowLeft, Key } from "@mui/icons-material";
 import { SlArrowLeft } from "react-icons/sl";
+import VrModal from "./VrModal";
 
 const SingleApartment = () => {
   const isSmallDev = window.innerWidth < 700;
   const apartment = useSelector(getApartmentDetailModalData);
   const wishlist = useSelector(getWishlistModalData);
   const [selectedTab, setSelectedTab] = useState("2d");
+  const [isVrModalOpen, setIsVrModalOpen] = useState(false);
+  const [toggleVrModal] = useState(
+    () => () => setIsVrModalOpen(!isVrModalOpen)
+  );
   const [isPriceCardVisible, setIsPriceCardVisible] = useState(false);
 
   const isHeartActive = wishlist.some((item) => item.id === apartment.id);
@@ -97,7 +102,7 @@ const SingleApartment = () => {
 
             <div className="w-full flex justify-end md:justify-end items-center">
               <div className="w-full md:w-fit  md:px-2 flex items-center gap-2  md:justify-center">
-                <div className="w-fit py-1 px-1  gap-2 bg-[#e9e9e9] flex items-center border-brand rounded-full justify-between md:justify-center">
+                <div className="w-fit hidden py-1 px-1  gap-2 bg-[#e9e9e9] md:flex items-center border-brand rounded-full justify-between md:justify-center">
                   <button
                     onClick={() => {
                       if (
@@ -146,7 +151,7 @@ const SingleApartment = () => {
                       onClick={() => {
                         handleTabClick("2d");
                       }}
-                      htmlFor="radio-1"
+                      htmlFor="radio-2"
                       style={{ fontSize: isSmallDev ? "12px" : "16px" }}
                     >
                       2D
@@ -163,7 +168,7 @@ const SingleApartment = () => {
                       onClick={() => {
                         handleTabClick("onFloor");
                       }}
-                      htmlFor="radio-1"
+                      htmlFor="radio-3"
                       style={{ fontSize: isSmallDev ? "12px" : "16px" }}
                     >
                       On Floor
@@ -174,12 +179,12 @@ const SingleApartment = () => {
                       <>
                         <input
                           type="radio"
-                          id="radio-3"
+                          id="radio-4"
                           name="tabs"
-                          checked={selectedTab === "vrtour"}
+                          checked={selectedTab === "360"}
                         />
                         <label
-                          className="tab circe pr-2"
+                          className="tab certon"
                           onClick={() => {
                             if (
                               !apartment.vtourUrl ||
@@ -190,9 +195,10 @@ const SingleApartment = () => {
                               );
                               return;
                             }
-                            window.open(`${apartment.vtourUrl}`, "_blank");
+                            // toggleVrModal(); // <-- Open modal instead of new tab
+                            handleTabClick("360");
                           }}
-                          htmlFor="radio-3"
+                          htmlFor="radio-4"
                           style={{ fontSize: isSmallDev ? "12px" : "16px" }}
                         >
                           360° Vr Tour
@@ -201,6 +207,7 @@ const SingleApartment = () => {
                     )}
                   </div>
                 </div>
+
                 <button className="hidden md:block" onClick={toggleWishlist}>
                   <svg
                     width="50"
@@ -272,39 +279,164 @@ const SingleApartment = () => {
                   </svg>
                 </button>
               </div>
-              <div className="w-full"> </div>
-              <div className="w-full flex h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
+              <div className="w-fit py-1 px-1  gap-2 bg-[#e9e9e9] flex md:hidden items-center border-brand rounded-full justify-between md:justify-center">
+                <button
+                  onClick={() => {
+                    if (!apartment.vtourUrl || apartment.vtourUrl === "null") {
+                      toast.warning(`Momentalisht nuk eshte ne dispozicion`);
+                      return;
+                    }
+                    window.open(`${apartment.vtourUrl}`, "_blank");
+                  }}
+                  className="md:hidden border-dark border rounded-full py-2 px-6 text-sm text-nowrap circe text-text"
+                >
+                  360° Vr Tour
+                </button>
+                <div
+                  className="tabs gap-1"
+                  style={{ backgroundColor: "#e9e9e9" }}
+                >
+                  <input
+                    type="radio"
+                    id="radio-1"
+                    name="tabs"
+                    checked={selectedTab === "3d"}
+                  />
+                  <label
+                    className="tab circe"
+                    onClick={() => {
+                      handleTabClick("3d");
+                    }}
+                    htmlFor="radio-2"
+                    style={{
+                      fontSize: isSmallDev ? "12px" : "16px",
+                    }}
+                  >
+                    3D
+                  </label>
+                  <input
+                    type="radio"
+                    id="radio-2"
+                    name="tabs"
+                    checked={selectedTab === "2d"}
+                  />
+                  <label
+                    className="tab circe"
+                    onClick={() => {
+                      handleTabClick("2d");
+                    }}
+                    htmlFor="radio-1"
+                    style={{ fontSize: isSmallDev ? "12px" : "16px" }}
+                  >
+                    2D
+                  </label>
+
+                  <input
+                    type="radio"
+                    id="radio-3"
+                    name="tabs"
+                    checked={selectedTab === "onFloor"}
+                  />
+                  <label
+                    className="tab circe mr-2 px-1"
+                    onClick={() => {
+                      handleTabClick("onFloor");
+                    }}
+                    htmlFor="radio-4"
+                    style={{ fontSize: isSmallDev ? "12px" : "16px" }}
+                  >
+                    On Floor
+                  </label>
+                  {isSmallDev ? (
+                    <></>
+                  ) : (
+                    <>
+                      <input
+                        type="radio"
+                        id="radio-4"
+                        name="tabs"
+                        checked={selectedTab === "360"}
+                      />
+                      <label
+                        className="tab circe pr-2"
+                        onClick={() => {
+                          if (!apartment.vtourUrl || apartment.vtourUrl === "null") {
+                            toast.warning(`Momentalisht nuk eshte ne dispozicion`);
+                            return;
+                          }
+                          // toggleVrModal(); // <-- Open modal instead of new tab
+                          handleTabClick("360");
+                        }}
+                        // onClick={() => {
+                        //   if (
+                        //     !apartment.vtourUrl ||
+                        //     apartment.vtourUrl === "null"
+                        //   ) {
+                        //     toast.warning(
+                        //       `Momentalisht nuk eshte ne dispozicion`
+                        //     );
+                        //     return;
+                        //   }
+                        //   window.open(`${apartment.vtourUrl}`, "_blank");
+                        // }}
+                        htmlFor="radio-4"
+                        style={{ fontSize: isSmallDev ? "12px" : "16px" }}
+                      >
+                        360° Vr Tour
+                      </label>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div className="w-full flex md:hidden h-full flex-col justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
                 <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
                 <div className="w-full  relative flex justify-center items-center">
-                  {selectedTab === "3d" && (
-                    <img
-                      className="w-[90%]"
-                      src={
-                        `${homepage}${planmetricImageUrl}${apartment?.image3dUrl}` ||
-                        "/projektet/assets/images/planimetria.png"
-                      }
-                      alt="3D View"
-                    />
-                  )}
-                  {selectedTab === "2d" && (
-                    <img
-                      className="w-[70%]"
-                      src={
-                        `${homepage}${planmetricImageUrl}${apartment?.imageUrl}` ||
-                        "/projektet/assets/images/planimetria.png"
-                      }
-                      alt="2D View"
-                    />
-                  )}
-                  {selectedTab === "onFloor" && (
-                    <img
-                      className="w-[100%] p-14"
-                      src={
-                        `${homepage}${planmetricImageUrl}/floor/${apartment?.name}-floor.jpg` ||
-                        "/projektet/assets/images/planimetria.png"
-                      }
-                      alt="On Floor View"
-                    />
+                  {selectedTab === "360" ? (
+                    <div className="h-[80vh] md:h-screen w-full bg-brandD relative text-white">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        frameBorder="10"
+                        allow="xr-spatial-tracking; gyroscope; accelerometer"
+                        src={vtourUrl}
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <>
+                      {selectedTab === "3d" && (
+                        <img
+                          className="w-[90%]"
+                          src={
+                            apartment?.image3dUrl
+                              ? `${homepage}${planmetricImageUrl}${apartment.image3dUrl}`
+                              : "/projektet/assets/images/planimetria.png"
+                          }
+                          alt="3D View"
+                        />
+                      )}
+                      {selectedTab === "2d" && (
+                        <img
+                          className="w-[70%]"
+                          src={
+                            apartment?.imageUrl
+                              ? `${homepage}${planmetricImageUrl}${apartment.imageUrl}`
+                              : "/projektet/assets/images/planimetria.png"
+                          }
+                          alt="2D View"
+                        />
+                      )}
+                      {selectedTab === "onFloor" && (
+                        <img
+                          className="w-[100%] p-14"
+                          src={
+                            apartment?.name
+                              ? `${homepage}${planmetricImageUrl}/floor/${apartment.name}-floor.jpg`
+                              : "/projektet/assets/images/planimetria.png"
+                          }
+                          alt="On Floor View"
+                        />
+                      )}
+                    </>
                   )}
                 </div>
               </div>
@@ -353,7 +485,7 @@ const SingleApartment = () => {
                 </div> */}
               </div>
 
-              <div className="w-full flex md:flex-col gap-4">
+              <div className="w-full flex flex-row-reverse md:flex-col gap-4">
                 <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 circe rounded-full">
                   Rezervo një takim
                 </button>
@@ -368,36 +500,54 @@ const SingleApartment = () => {
             <div className="w-full  h-full flex-col hidden md:flex justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
               <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
               <div className="w-full  relative flex justify-center items-center">
-                {selectedTab === "3d" && (
-                  <img
-                    className="w-[90%]"
-                    src={
-                      `${homepage}${planmetricImageUrl}${apartment?.image3dUrl}` ||
-                      "/projektet/assets/images/planimetria.png"
-                    }
-                    alt="3D View"
-                  />
+                {selectedTab === "360" ? (
+                  <div className="h-[80vh] md:h-screen w-full bg-brandD relative text-white">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      frameBorder="10"
+                      allow="xr-spatial-tracking; gyroscope; accelerometer"
+                      src={vtourUrl}
+                    ></iframe>
+                  </div>
+                ) : (
+                  <>
+                    {selectedTab === "3d" && (
+                      <img
+                        className="w-[90%]"
+                        src={
+                          apartment?.image3dUrl
+                            ? `${homepage}${planmetricImageUrl}${apartment.image3dUrl}`
+                            : "/projektet/assets/images/planimetria.png"
+                        }
+                        alt="3D View"
+                      />
+                    )}
+                    {selectedTab === "2d" && (
+                      <img
+                        className="w-[70%]"
+                        src={
+                          apartment?.imageUrl
+                            ? `${homepage}${planmetricImageUrl}${apartment.imageUrl}`
+                            : "/projektet/assets/images/planimetria.png"
+                        }
+                        alt="2D View"
+                      />
+                    )}
+                    {selectedTab === "onFloor" && (
+                      <img
+                        className="w-[100%] p-14"
+                        src={
+                          apartment?.name
+                            ? `${homepage}${planmetricImageUrl}/floor/${apartment.name}-floor.jpg`
+                            : "/projektet/assets/images/planimetria.png"
+                        }
+                        alt="On Floor View"
+                      />
+                    )}
+                  </>
                 )}
-                {selectedTab === "2d" && (
-                  <img
-                    className="w-[70%]"
-                    src={
-                      `${homepage}${planmetricImageUrl}${apartment?.imageUrl}` ||
-                      "/projektet/assets/images/planimetria.png"
-                    }
-                    alt="2D View"
-                  />
-                )}
-                {selectedTab === "onFloor" && (
-                  <img
-                    className="w-[100%] p-14"
-                    src={
-                      `${homepage}${planmetricImageUrl}/floor/${apartment?.name}-floor.jpg` ||
-                      "/projektet/assets/images/planimetria.png"
-                    }
-                    alt="On Floor View"
-                  />
-                )}
+
               </div>
             </div>
           </div>
@@ -422,6 +572,9 @@ const SingleApartment = () => {
         </div>
       </div> */}
       {isPriceCardVisible && <PriceCard onClose={togglePriceCard} />}
+      {isVrModalOpen && (
+        <VrModal onClose={toggleVrModal} src={apartment.vtourUrl} />
+      )}
     </div>
   );
 };

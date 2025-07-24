@@ -216,7 +216,7 @@ const BuildingMobile = () => {
             alignItems: "center",
             overflow: "auto",
             top: 0,
-            // left:0,
+            left: 0,
             backgroundColor: "#fff",
           }}
         >
@@ -308,8 +308,8 @@ const BuildingMobile = () => {
   return (
     <div className="relative w-full h-[65vh] flex items-start justify-center ">
       <div className="absolute w-11/12 flex flex-row justify-center items-center bottom-4  z-10">
-        <div className="w-full flex items-center">
-          {/* <div className="tabsB">
+        <div className="w-full flex items-center ">
+          <div className="tabsB ">
             <input
               type="radio"
               id="radio-1"
@@ -348,7 +348,7 @@ const BuildingMobile = () => {
             >
               By Floor
             </label>
-          </div> */}
+          </div>
           {selectedTab === "selection" && (
             <div className="right-0 top-12 flex justif-center items-center gap-4 pl-4">
               <button

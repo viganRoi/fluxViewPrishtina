@@ -69,6 +69,9 @@ const Navbar = () => {
               <NavLink to="/parking" className={`text-white text-nowrap`}>
                 Parkingu
               </NavLink>
+              <NavLink to="/360-virtual" className={`text-white text-nowrap`}>
+                360 Virtual
+              </NavLink>
 
               <div className="hidden md:flex items-center space-x-2">
                 <NavLink
@@ -88,7 +91,10 @@ const Navbar = () => {
                 </NavLink>
               </div>
 
-              <button className="bg-brand border w-9 h-9 flex justify-center items-center border-black p-0   rounded-full">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="bg-brand border w-9 h-9 flex justify-center items-center border-brand p-0   rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32 "
@@ -119,8 +125,20 @@ const Navbar = () => {
                   <IoIosHeartEmpty className="fill-white text-lg sm:text-2xl" />
                 )}
               </NavLink>
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <PiTextAlignRightThin className={`fill-white text-3xl`} />
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="bg-brand border flex w-8 h-8 rounded-full justify-center items-center border-brand"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32 "
+                  width={17}
+                  height={42}
+                >
+                  <g id="Layer_13" data-name="Layer 13">
+                    <path d="m30 7a1 1 0 0 1 -1 1h-26a1 1 0 0 1 0-2h26a1 1 0 0 1 1 1zm-5 8h-22a1 1 0 0 0 0 2h22a1 1 0 0 0 0-2zm-9 9h-13a1 1 0 0 0 0 2h13a1 1 0 0 0 0-2z" />
+                  </g>
+                </svg>
               </button>
             </div>
           </div>
@@ -128,7 +146,7 @@ const Navbar = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="fixed top-0 left-0 w-screen h-full bg-gold z-[9999] flex flex-col items-center">
+        <div className="fixed top-0 left-0 w-screen h-full bg-black z-[9999] flex flex-col items-center">
           <div className="w-full flex justify-end items-center p-4">
             <NavLink
               to="/wishlist"
@@ -148,86 +166,49 @@ const Navbar = () => {
             </NavLink>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-white text-4xl"
+              className="text-brand text-4xl "
             >
               <IoCloseOutline />
             </button>
           </div>
           <div className=" w-11/12 flex flex-col items-start">
-            <div className="w-full flex flex-col items-start gap-2 border-y p-2">
+            <div className="w-full flex flex-col items-start gap-8 md:gap-2 pt-24  md:pt-12  p-2">
               <NavLink
                 to="/"
-                className="text-white text-xl"
+                className="text-white text-2xl md:text-8xl uppercase font-normal "
                 onClick={() => setIsMenuOpen(false)}
               >
                 Ballina
               </NavLink>
               <NavLink
                 to="/about"
-                className="text-white text-xl"
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Rreth Nesh
               </NavLink>
               <NavLink
                 to="/gallery"
-                className="text-white text-xl"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Galeria
-              </NavLink>
-              <NavLink
-                to="/parking"
-                className="text-white text-xl"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Parkingu
-              </NavLink>
-              <NavLink
-                to="/commercial"
-                className="text-white text-xl"
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Afarizmi
               </NavLink>
               <NavLink
-                to="/news"
-                className="text-white text-xl"
+                to="/parking"
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Lajme & Evente
+                Parkingu
               </NavLink>
+
               <NavLink
-                to="/apartments"
-                className="text-white text-xl"
+                to="/360-virtual"
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Apartamente
+                360 Virtual
               </NavLink>
-              <NavLink
-                to="/contact"
-                className="text-white text-xl"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Kontakti
-              </NavLink>
-            </div>
-            <div className="h-full w-full relative flex items-center">
-              <img
-                src="/assets/images/renderat/012pp.jpg"
-                alt=""
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-              <div
-                className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
-                onClick={() => {
-                  navigate("/buildings");
-                  setIsMenuOpen(false);
-                }}
-              >
-                <p className="text-white text-2xl certon">Ndërtesa</p>
-              </div>
             </div>
           </div>
           <div className="absolute bottom-20 w-full text-center">
@@ -246,7 +227,7 @@ const Navbar = () => {
               Privacy Policy · Terms and Conditions
             </p>
             <p className="text-white">
-              &copy; 2024 Foleja. Te drejtat e rezervuara.
+              &copy; 2024 FLUX VIEW PRISHTINA. Te drejtat e rezervuara.
             </p>
           </div>
         </div>
