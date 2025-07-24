@@ -13,17 +13,14 @@ const ApartmentModal = ({ apartment, mousePosition }) => {
     >
       <div className="w-full flex flex-col ">
         <div className="  w-full flex bg-black p-3 justify-between items-start">
-          <h1 className="text-lg md:text-3xl font-semibold text-brand mb-2 montserrat">
-            {apartment?.sqft}m<sup>2</sup>{" "}
+          <h1 className="text-lg md:text-xl font-semibold text-brand mb-2 montserrat">
+            Tipi {apartment?.name} - {apartment?.sqft}m<sup>2</sup>{" "}
           </h1>
         </div>
         <div className="w-full flex flex-col justify-between items-start p-4">
           <div className=" text-black">
             <p className="text-sm md:text-lg montserrat">
-              Numer: <span className="font-semibold">{apartment?.name}</span>
-            </p>
-            <p className="text-sm md:text-lg montserrat">
-              Tipi:{" "}
+              Dhoma:{" "}
               <span className="font-semibold">{apartment?.bedroom}+1</span>
             </p>
             <p className="text-sm md:text-lg montserrat">
