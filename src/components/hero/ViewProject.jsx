@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { buildings } from "../../utils/server";
 import { useNavigate } from "react-router-dom";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
@@ -7,6 +7,7 @@ import "./style.css";
 
 const ViewProject = () => {
   const navigate = useNavigate();
+  const ref = useRef(null);
   const isSmallDev = window.innerWidth < 700;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hoveredId, setHoveredId] = useState(null);
@@ -38,6 +39,12 @@ const ViewProject = () => {
     return "100%";
   };
 
+  useEffect(function () {
+    setTimeout(function () {
+      ref.current.scrollLeft = 1000;
+    }, 1000);
+  }, []);
+
   return (
     <div className="relative bg-black w-full h-[85vh] md:h-[100vh] flex flex-col items-center justify-center">
       <div className="relative w-screen bg-black h-full flex flex-col justify-center items-center overflow-x-auto md:overflow-x-hidden">
@@ -46,6 +53,7 @@ const ViewProject = () => {
           style={{ height: getSvgHeight() }}
         >
           <div
+            ref={ref}
             style={{
               transition: "opacity 0.1s ease-in-out",
               height: getSvgHeight(),

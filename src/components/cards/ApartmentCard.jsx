@@ -34,7 +34,7 @@ const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft }) => {
     <div className="w-full h-[480px] md:h-[585px] flex flex-col justify-between p-8 relative rounded-lg overflow-hidden border border-[#8B8B8BCC] shadow-lg bg-white hover:cursor-pointer">
       <div className="w-full flex flex-col gap-1">
         <h2 className="text-[16px] text-black montserrat">
-          {apartment.square}m<sup>2</sup>
+          Apartamenti {apartment.name}
         </h2>
         <h2 className="text-[16px] text-black montserrat">
           {apartment.rooms} Dhoma
@@ -45,7 +45,7 @@ const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft }) => {
       </div>
       <div className="w-full flex flex-col gap-1">
         <h1 className="text-2xl text-black font-semibold">
-          Objekti {apartment.buildingName}
+          {apartment.square}m<sup>2</sup>
         </h1>
       </div>
       {/* Image Section */}

@@ -135,14 +135,14 @@ const Floor = () => {
       </div>
       <div className="w-full h-full flex flex-col items-center justify-center content-center py-24 md:pt-24 md:pb-0 bg-white">
         <div className="w-full flex flex-col align-center justify-center gap-4">
-          <div className="w-full flex flex-row justify-center items-center gap-4">
+          <div className="w-full flex flex-row justify-center items-center gap-1 md:gap-4">
             <button
               onClick={plusFloor}
               className="bg-white border border-slate-300 transition-all duration-.3s hover:bg-opacity-80 hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"
             >
               <SlArrowUp className="-rotate-90" color="black" />
             </button>
-            <div className="flex flex-row justify-center items-center gap-4">
+            <div className="flex flex-row justify-center items-center gap-1 md:gap-4">
               {floors
                 .slice(startIndex, startIndex + visibleRange)
                 .map((floor) => (

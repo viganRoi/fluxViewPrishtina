@@ -308,8 +308,8 @@ const BuildingMobile = () => {
   return (
     <div className="relative w-full h-[65vh] flex items-start justify-center ">
       <div className="absolute w-11/12 flex flex-row justify-center items-center bottom-4  z-10">
-        <div className="w-full flex items-center">
-          <div className="tabsB">
+        <div className="w-full flex items-center ">
+          <div className="tabsB ">
             <input
               type="radio"
               id="radio-1"
