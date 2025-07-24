@@ -153,7 +153,7 @@ useEffect(() => {
                   <button
                     key={floor}
                     className={`${floor === activeFloor
-                      ? "bg-gold text-brand"
+                      ? "bg-gold text-black"
                       : "bg-brand text-gold"
                       } border border-gold text-4xl certon p-2  w-12 md:w-14 h-12 md:h-14 m-2 rounded-full flex items-center justify-center`}
                     onClick={() => {
@@ -202,6 +202,7 @@ useEffect(() => {
                   xlinkHref={`${imagePath}f-${id}-${activeFloor}.jpg`}
                 ></image>
                 {floorData?.map((floor) => {
+                  console.log(``)
                   if (parseInt(floor.floorNumber) === activeFloor) {
                     return floor.apartmentList?.map((apartment) => {
                       if(apartment.pointsType === "polygon") {
