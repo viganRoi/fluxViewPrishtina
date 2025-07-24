@@ -22,6 +22,7 @@ import {
   TempCommB,
   TempCommC,
   TempCommD,
+  VirtualPage,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import SvgExtractor from "./pages/SvgExtractor";
@@ -58,6 +59,7 @@ function App() {
           <Route path="/buildings/:id/floor/:floorId" element={<FloorPage />} />
           <Route path="/apartments/:id" element={<SingleApartmentPage />} />
           <Route path="/apartments" element={<AllApartmentsPage />} />
+          <Route path="/360-virtual" element={<VirtualPage />} />
           <Route
             path="/admin/*"
             element={
