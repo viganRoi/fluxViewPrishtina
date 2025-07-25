@@ -42,6 +42,10 @@ const SingleApartment = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    console.log(selectedTab);
+  }, [selectedTab]);
+
   const handleWishlistDataFunction = () => {
     dispatch(handleWishlistData(apartment));
   };
@@ -125,7 +129,7 @@ const SingleApartment = () => {
                     <input
                       type="radio"
                       id="radio-1"
-                      name="tabs"
+                      name="tabsdsd"
                       checked={selectedTab === "3d"}
                     />
                     <label
@@ -143,14 +147,15 @@ const SingleApartment = () => {
                     <input
                       type="radio"
                       id="radio-2"
-                      name="tabs"
+                      name="tabs-deesktop"
                       checked={selectedTab === "2d"}
-                    />
-                    <label
-                      className="tab circe"
                       onClick={() => {
                         handleTabClick("2d");
                       }}
+                    />
+                    <label
+                      className="tab circe"
+                      
                       htmlFor="radio-2"
                       style={{ fontSize: isSmallDev ? "12px" : "16px" }}
                     >
@@ -160,7 +165,7 @@ const SingleApartment = () => {
                     <input
                       type="radio"
                       id="radio-3"
-                      name="tabs"
+                      name="tabsw"
                       checked={selectedTab === "onFloor"}
                     />
                     <label
