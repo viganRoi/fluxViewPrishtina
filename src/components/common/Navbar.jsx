@@ -57,12 +57,22 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div className="hidden xl:flex space-x-4 items-center text-xl montserrat">
-              <NavLink to="/" className={`text-white text-nowrap`}>
+              <a
+                href="https://flux-ks.com" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
+                className="text-white text-nowrap"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Ballina
-              </NavLink>
-              <NavLink to="/about" className={`text-white text-nowrap`}>
+              </a>
+              <a
+                href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
+                className="text-white text-nowrap"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Rreth Nesh
-              </NavLink>
+              </a>
               <NavLink to="/commercial" className={`text-white text-nowrap`}>
                 Afarizmi
               </NavLink>
@@ -173,20 +183,22 @@ const Navbar = () => {
           </div>
           <div className=" w-11/12 flex flex-col items-start">
             <div className="w-full flex flex-col items-start gap-8 md:gap-2 pt-24  md:pt-12  p-2">
-              <NavLink
-                to="/"
-                className="text-white text-2xl md:text-8xl uppercase font-normal "
+              <a
+                href="https://flux-ks.com" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Ballina
-              </NavLink>
-              <NavLink
-                to="/about"
+              </a>
+              <a
+                href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
                 className="text-white text-2xl md:text-8xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Rreth Nesh
-              </NavLink>
+              </a>
               <NavLink
                 to="/gallery"
                 className="text-white text-2xl md:text-8xl uppercase font-normal"

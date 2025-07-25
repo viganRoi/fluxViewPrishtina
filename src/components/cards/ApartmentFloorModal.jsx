@@ -18,9 +18,7 @@ const ApartmentFloorModal = ({ apartment, mousePosition }) => {
       <div className="absolute -left-3 top-3 w-10 h-10 bg-brand rotate-45 -z-1 "></div>
       <div className="relative flex flex-col justify-between items-end w-full h-full">
         <div className="text-right">
-          <p className="text-2xl text-white mb-2">
-            Apartmenti: {apartment.name}
-          </p>
+          <p className="text-2xl text-black mb-2">Tipi: {apartment.name}</p>
           <p className="text-xl opacity-60 text-white">
             Objekti: {apartment.apartmentNumber}
           </p>
