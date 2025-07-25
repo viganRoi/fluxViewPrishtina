@@ -182,73 +182,77 @@ const Floor = () => {
                 position: "absolute",
               }}
             >
-              {floorData?.find((it) => it.floorNumber === activeFloor) ? <svg
-                x="0px"
-                y="0px"
-                width={"100%"}
-                height={"100%"}
-                viewBox={"0 0 1920 1080"}
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsSvg="http://www.w3.org/2000/svg"
-              >
-                <image
-                  width={floorData && floorData[activeFloor-1]?.imageWidth}
-                  height={floorData && floorData[activeFloor-1]?.imageHeight}
-                  transform={floorData && floorData[activeFloor-1]?.imageTransform}
-                  xlinkHref={`${imagePath}f-${id}-${activeFloor}.jpg`}
-                ></image>
-                {floorData?.map((floor) => {
-                  console.log(``)
-                  if (parseInt(floor.floorNumber) === activeFloor) {
-                    return floor.apartmentList?.map((apartment) => {
-                      if(apartment.pointsType === "polygon") {
-                        return (
-                          <polygon
-                            key={apartment.id}
-                            onClick={() => {
-                              if (apartment.isSold) return;
-                              navigate(`/apartments/${apartment.id}`);
-                            }}
-                            onContextMenu={(e) =>
-                              handleContextMenu(e, apartment)
-                            }
-                            className={
-                              apartment.isSold
-                                ? "st1"
-                                : "ft0"
-                            }
-                            points={apartment.path}
-                            onMouseEnter={() => setHoveredId(apartment.id)}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={() => setHoveredId(null)}
-                          />
-                        );
-                      }
-                      if (apartment.pointsType === "path"){
-                      return (
-                        <path
-                          onClick={() => {
-                            if (apartment.isSold) return;
-                            navigate(`/apartments/${apartment.id}`);
-                          }}
-                          onContextMenu={(e) => handleContextMenu(e, apartment)}
-                          className={
-                            apartment.isSold
-                              ? 'st1'
-                              : "ft0"
-                          }
-                          d={apartment.path}
-                          onMouseEnter={() => setHoveredId(apartment.id)}
-                          onMouseMove={handleMouseMove}
-                          onMouseLeave={() => setHoveredId(null)}
-                        />
-                      );
+              {floorData?.find((it) => it.floorNumber === activeFloor) ? (
+                <svg
+                  x="0px"
+                  y="0px"
+                  width={"100%"}
+                  height={"100%"}
+                  viewBox={"0 0 1920 1080"}
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsSvg="http://www.w3.org/2000/svg"
+                >
+                  <image
+                    width={floorData && floorData[activeFloor - 1]?.imageWidth}
+                    height={
+                      floorData && floorData[activeFloor - 1]?.imageHeight
                     }
-                    });
-                  } else return <h1>{floor.floorNumber}</h1>;
-                })}
-              </svg> : <h1 className="text-3xl text-gold">Ky kati nuk ekziston në këtë objekt</h1>}
+                    transform={
+                      floorData && floorData[activeFloor - 1]?.imageTransform
+                    }
+                    xlinkHref={`${imagePath}f-${id}-${activeFloor}.jpg`}
+                  ></image>
+                  {floorData?.map((floor) => {
+                    console.log(``);
+                    if (parseInt(floor.floorNumber) === activeFloor) {
+                      return floor.apartmentList?.map((apartment) => {
+                        if (apartment.pointsType === "polygon") {
+                          return (
+                            <polygon
+                              key={apartment.id}
+                              onClick={() => {
+                                if (apartment.isSold) return;
+                                navigate(`/apartments/${apartment.id}`);
+                              }}
+                              onContextMenu={(e) =>
+                                handleContextMenu(e, apartment)
+                              }
+                              className={apartment.isSold ? "st1" : "ft0"}
+                              points={apartment.path}
+                              onMouseEnter={() => setHoveredId(apartment.id)}
+                              onMouseMove={handleMouseMove}
+                              onMouseLeave={() => setHoveredId(null)}
+                            />
+                          );
+                        }
+                        if (apartment.pointsType === "path") {
+                          return (
+                            <path
+                              onClick={() => {
+                                if (apartment.isSold) return;
+                                navigate(`/apartments/${apartment.id}`);
+                              }}
+                              onContextMenu={(e) =>
+                                handleContextMenu(e, apartment)
+                              }
+                              className={apartment.isSold ? "st1" : "ft0"}
+                              d={apartment.path}
+                              onMouseEnter={() => setHoveredId(apartment.id)}
+                              onMouseMove={handleMouseMove}
+                              onMouseLeave={() => setHoveredId(null)}
+                            />
+                          );
+                        }
+                      });
+                    } else return <h1>{floor.floorNumber}</h1>;
+                  })}
+                </svg>
+              ) : (
+                <h1 className="text-3xl text-gold">
+                  Ky kati nuk ekziston në këtë objekt
+                </h1>
+              )}
             </div>
           </div>
         </div>

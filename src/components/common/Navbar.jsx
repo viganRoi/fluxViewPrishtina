@@ -62,7 +62,7 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-nowrap"
+                className="text-white text-nowrap uppercase"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Ballina
@@ -70,10 +70,18 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-nowrap"
+                className="text-white text-nowrap uppercase"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Rreth Nesh
+              </a>
+              <a
+                href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
+                className="text-white text-nowrap uppercase"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                NA KONTAKTONI
               </a>
               {/* <NavLink to="/commercial" className={`text-white text-nowrap`}>
                 Afarizmi
@@ -81,7 +89,10 @@ const Navbar = () => {
               <NavLink to="/parking" className={`text-white text-nowrap`}>
                 Parkingu
               </NavLink> */}
-              <NavLink to="/360-virtual" className={`text-white text-nowrap`}>
+              <NavLink
+                to="/360-virtual"
+                className={`text-white text-nowrap uppercase `}
+              >
                 360 Virtual
               </NavLink>
 
@@ -200,6 +211,14 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Rreth Nesh
+              </a>
+              <a
+                href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Na Kontaktoni
               </a>
               {/* <NavLink
                 to="/gallery"
