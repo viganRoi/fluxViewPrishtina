@@ -169,6 +169,7 @@ const Building = () => {
                           sqft: apartment.square,
                           bedroom: apartment.rooms,
                           floor: apartment.floorNumber,
+                          name: apartment.name,
                         },
                         open: true,
                         x: e.clientX + 10,
