@@ -47,37 +47,37 @@ const SingleApartmentByFloor = () => {
                         <div className="flex flex-col gap-4 text-center justify-center items-center">
                             <p className='text-xl'>Numer</p>
                             {/* <IoKey fontSize={isSmallDev ? 25 : 50} color='var(--brand2-color)' /> */}
-                            <img src="/assets/svgs/keys.png" alt="" className='h-12 md:h-20'/>
+                            <img src="/prishtina-view/assets/svgs/keys.png" alt="" className='h-12 md:h-20'/>
                             <h1 className='text-2xl'>{apartmentNumber}</h1>
                         </div>
                         <div className="flex flex-col gap-4 text-center justify-center items-center">
                             <p className='text-xl'>Size</p>
                             {/* <FaVectorSquare fontSize={isSmallDev ? 25 : 50} color='var(--brand2-color)' /> */}
-                            <img src="/assets/svgs/tot.png" alt="" className='h-12 md:h-20'/>
+                            <img src="/prishtina-view/assets/svgs/tot.png" alt="" className='h-12 md:h-20'/>
                             <h1 className='text-2xl'>{square}m<sup>2</sup></h1>
                         </div>
                         <div className="flex flex-col gap-4 text-center justify-center items-center">
                             <p className='text-xl'>Rooms</p>
                             {/* <MdMeetingRoom fontSize={isSmallDev ? 25 : 50} color='var(--brand2-color)' /> */}
-                            <img src="/assets/svgs/type.png" alt="" className='h-12 md:h-20'/>
+                            <img src="/prishtina-view/assets/svgs/type.png" alt="" className='h-12 md:h-20'/>
                             <h1 className='text-2xl'>{rooms}</h1>
                         </div>
                         <div className="flex flex-col gap-4 text-center justify-center items-center">
                             <p className='text-xl'>Balcony</p>
                             {/* <MdBalcony fontSize={isSmallDev ? 25 : 50} color='var(--brand2-color)' /> */}
-                            <img src="/assets/svgs/square.png" alt="" className='h-12 md:h-20'/>
+                            <img src="/prishtina-view/assets/svgs/square.png" alt="" className='h-12 md:h-20'/>
                             <h1 className='text-2xl'>{balconySquare}m<sup>2</sup></h1>
                         </div>
                         <div className="flex flex-col gap-4 text-center justify-center items-center">
                             <p className='text-xl'>Object</p>
                             {/* <IoKey fontSize={isSmallDev ? 25 : 50} color='var(--brand2-color)' /> */}
-                            <img src="/assets/svgs/keys.png" alt="" className='h-12 md:h-20'/>
+                            <img src="/prishtina-view/assets/svgs/keys.png" alt="" className='h-12 md:h-20'/>
                             <h1 className='text-2xl'>{apartmentNumber}</h1>
                         </div>
                         <div className="flex flex-col gap-4 text-center justify-center items-center">
                             <p className='text-xl'>Kati</p>
                             {/* <FaBuilding fontSize={isSmallDev ? 25 : 50} color='var(--brand2-color)' /> */}
-                            <img src="/assets/svgs/floor.png" alt="" className='h-12 md:h-20'/>
+                            <img src="/prishtina-view/assets/svgs/floor.png" alt="" className='h-12 md:h-20'/>
                             <h1 className='text-2xl'>{floorNumber}</h1>
                         </div>
                     </div>
@@ -114,15 +114,15 @@ const SingleApartmentByFloor = () => {
                     </div>
                 </div>
                 <div className="absolute w-[350px] h-[200px] flex justify-center align-center top-0 right-0">
-                <img src="/assets/images/apartments/1.jpg" alt="" className='h-full w-full cover' />
+                <img src="/prishtina-view/assets/images/apartments/1.jpg" alt="" className='h-full w-full cover' />
                 </div>
-                <img src={selectedTab === '2d' ? `/assets/images/apartments/f1.png` : `/assets/images/apartments/s1.png`} alt="Apartment view" className='h-[1000px] object-contain' style={{
+                <img src={selectedTab === '2d' ? `/prishtina-view/assets/images/apartments/f1.png` : `/prishtina-view/assets/images/apartments/s1.png`} alt="Apartment view" className='h-[1000px] object-contain' style={{
                 cursor: 'pointer'
                 }} /> 
-                {/* <img src="/assets/images/apartments/s1.png" alt="" className='h-[1000px] object-contain'/> */}
+                {/* <img src="/prishtina-view/assets/images/apartments/s1.png" alt="" className='h-[1000px] object-contain'/> */}
             </div>
             <div className="bg-brand w-full h-[50vh] flex-col align-center justify-center mt-10">
-                {/* <img src="/assets/images/apartments/1.jpg" alt="" className='h-full w-full cover' /> */}
+                {/* <img src="/prishtina-view/assets/images/apartments/1.jpg" alt="" className='h-full w-full cover' /> */}
             </div>
         </div>
     )

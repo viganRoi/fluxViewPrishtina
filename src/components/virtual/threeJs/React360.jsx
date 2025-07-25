@@ -11,7 +11,7 @@ const style = {
 
 
 class ThreeJS extends Component {
-  static defaultProps = { dir: "/assets/images/3d", numImages: 3 };
+  static defaultProps = { dir: "/prishtina-view/assets/images/3d", numImages: 3 };
 
   state = {
     dragging: false,

@@ -25,7 +25,7 @@ const PortfolioPage = () => {
     <div className="mb-12">
       <TitleSection
         title={"Galeria e Foleja"}
-        image={"/assets/images/apartments/1.jpg"}
+        image={"/prishtina-view/assets/images/apartments/1.jpg"}
       />
       <FilterGallery onFilterChange={handleFilterChange} />
       <Gallery filteredGallery={filteredGallery} />

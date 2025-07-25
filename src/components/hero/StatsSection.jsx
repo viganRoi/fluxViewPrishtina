@@ -8,7 +8,7 @@ const StatsSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `${isSmallDev ? `url('/assets/images/hero/bckM.jpg')`: `url('/assets/images/hero/bck.jpg')`}`,
+          backgroundImage: `${isSmallDev ? `url('/prishtina-view/assets/images/hero/bckM.jpg')`: `url('/prishtina-view/assets/images/hero/bck.jpg')`}`,
         }}
       ></div>
       <div className="relative w-11/12 md:w-7/12 ml-0 mt-10 md:mt-0 md:ml-36 px-6 py-6 md:py-12 flex flex-col gap-6 text-center items-center">

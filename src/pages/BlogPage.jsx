@@ -5,7 +5,7 @@ const BlogPage = () => {
   window.scrollTo({ top: 0 });
   return (
     <div className="mb-12">
-      <TitleSection title={"Lajme"} image={"/assets/images/apartments/1.jpg"} />
+      <TitleSection title={"Lajme"} image={"/prishtina-view/assets/images/apartments/1.jpg"} />
       <Blog />
     </div>
   );

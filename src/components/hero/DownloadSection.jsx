@@ -2,7 +2,7 @@ import React from 'react'
 
 const DownloadSection = () => {
 
-    const pdfLink = '/assets/pdf/File.pdf';
+    const pdfLink = '/prishtina-view/assets/pdf/File.pdf';
     const downloadPdf = () => {
         window.open(pdfLink, '_blank');
     }

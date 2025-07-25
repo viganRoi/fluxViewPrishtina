@@ -118,7 +118,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-11/12 flex items-center justify-center mt-10">
-        <img src="/assets/images/brand/logo.svg" alt="logo" className="h-10" />
+        <img src="/prishtina-view/assets/images/brand/logo.svg" alt="logo" className="h-10" />
       </div>
     </div>
   );

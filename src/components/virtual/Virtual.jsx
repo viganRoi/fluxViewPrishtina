@@ -6,7 +6,7 @@ import { CircularProgress } from '@mui/material';
 import { svg } from './svgData';
 
 let totalImages = 90;
-let imageDir = `/assets/images/virtual`;
+let imageDir = `/prishtina-view/assets/images/virtual`;
 let imagePattern = "{index}.webp";
 // let imagePattern = "{index}.jpg";
 

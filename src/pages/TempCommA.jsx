@@ -11,7 +11,7 @@ const TempCommA = () => {
         </div>
       </div>
       <div className='bg-white w-full md:h-[800px]'>
-        <img src="/assets/images/commercial/A.png" alt='' className="h-full w-full object-contain" />
+        <img src="/prishtina-view/assets/images/commercial/A.png" alt='' className="h-full w-full object-contain" />
       </div>
     </div>
   )

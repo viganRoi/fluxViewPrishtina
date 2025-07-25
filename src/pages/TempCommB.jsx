@@ -4,8 +4,8 @@ const TempCommB = () => {
   const [activeFilter, setActiveFilter] = useState('Suterreni');
 
   const images = {
-    'Suterreni': '/assets/images/commercial/B.png',
-    'Përdhesa': '/assets/images/commercial/1B.png',
+    'Suterreni': '/prishtina-view/assets/images/commercial/B.png',
+    'Përdhesa': '/prishtina-view/assets/images/commercial/1B.png',
   };
 
   const handleFilterClick = (filter) => {

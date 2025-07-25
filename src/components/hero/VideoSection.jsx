@@ -4,7 +4,7 @@ const VideoSection = () => {
   return (
     <div className="relative w-full h-[40vh] md:h-[100vh] flex items-center justify-center text-white">
       <video
-        src="/assets/videos/bck.webm"
+        src="/prishtina-view/assets/videos/bck.webm"
         className="absolute top-0 left-0 w-full h-full object-cover"
         alt=""
         autoPlay

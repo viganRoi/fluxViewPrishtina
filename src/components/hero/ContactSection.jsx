@@ -6,7 +6,7 @@ const ContactSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('/assets/images/renderat/013pp.jpg')`,
+          backgroundImage: `url('/prishtina-view/assets/images/renderat/013pp.jpg')`,
         }}
       ></div>
       <div className="relative w-full max-w-7xl px-6 py-6 md:py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
