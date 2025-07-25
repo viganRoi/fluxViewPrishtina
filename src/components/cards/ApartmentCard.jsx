@@ -11,20 +11,20 @@ import {
 } from "../../features/wishList/WishlistSlice";
 import { building } from "../../utils/server";
 
-const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft }) => {
-  const apartment = useSelector(getApartmentDetailModalData);
+const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft, id, apartment }) => {
+  
   const wishlist = useSelector(getWishlistModalData);
   const dispatch = useDispatch();
 
-  const isHeartActive = wishlist.some((item) => item.id === apartment.id);
+  const isHeartActive = wishlist.some((item) => item.id === id);
   const wishListItemCount = useSelector(getWishlistCount);
   const isInWishlist = useSelector((state) =>
-    isProductInWishlist(state, apartment.id)
+    isProductInWishlist(state, id)
   );
 
   const toggleWishlist = () => {
     if (isHeartActive) {
-      dispatch(removeFromWishlist(apartment.id));
+      dispatch(removeFromWishlist(id));
     } else {
       dispatch(addToWishlist(apartment));
     }
@@ -34,24 +34,24 @@ const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft }) => {
     <div className="w-full h-[480px] md:h-[585px] flex flex-col justify-between p-8 relative rounded-lg overflow-hidden border border-[#8B8B8BCC] shadow-lg bg-white hover:cursor-pointer">
       <div className="w-full flex flex-col gap-1">
         <h2 className="text-[16px] text-black montserrat">
-          Apartamenti {apartment.name}
+          Apartamenti {title}
         </h2>
         <h2 className="text-[16px] text-black montserrat">
-          {apartment.rooms} Dhoma
+          {bedroom} Dhoma
         </h2>
         <h2 className="text-[16px] text-black montserrat">
-          Kati {apartment.floorNumber}
+          Kati {floor}
         </h2>
       </div>
       <div className="w-full flex flex-col gap-1">
         <h1 className="text-2xl text-black font-semibold">
-          {apartment.square}m<sup>2</sup>
+          {sqft}m<sup>2</sup>
         </h1>
       </div>
       {/* Image Section */}
       <img
         className="absolute w-[250px] h-[250px] top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2"
-        src={`${homepage}${planmetricImageUrl}${apartment?.imageUrl}`}
+        src={`${homepage}${planmetricImageUrl}${image}`}
         alt=""
       />
       <button className="absolute top-8 right-8" onClick={toggleWishlist}>

@@ -51,18 +51,21 @@ const ApartmentsCarousel = () => {
             maxWidth: "100%",
           }}
         >
-          {relatedApartments?.slice(0, 8).map((el) => {
+          {relatedApartments?.map((el) => {
             return (
               <SwiperSlide id="swipeslides" key={el.id}>
                 <ApartmentCard
                   key={el.id}
                   object={el.apartmentNumber}
                   category={el.category}
-                  image={el.name}
+                  image={el.imageUrl}
                   title={el.name}
-                  sqft={el.netoSquare}
+                  floor={el.floorNumber}
+                  sqft={el.square}
                   bedroom={el.rooms}
                   navigateTo={() => navigate(`/apartments/${el.id}`)}
+                  id={el.id}
+                  apartment={el}
                 />
               </SwiperSlide>
             );
