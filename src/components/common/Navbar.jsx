@@ -205,6 +205,22 @@ const Navbar = () => {
                 Ballina
               </a>
               <a
+                href="https://flux-ks.com/projektet/" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projektet
+              </a>
+              <a
+                href="https://flux-ks.com/galeria/" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
+                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Galeria
+              </a>
+              <a
                 href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
                 className="text-white text-2xl md:text-8xl uppercase font-normal"
@@ -213,7 +229,7 @@ const Navbar = () => {
                 Rreth Nesh
               </a>
               <a
-                href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
+                href="https://flux-ks.com/na-kontaktoni/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
                 className="text-white text-2xl md:text-8xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
