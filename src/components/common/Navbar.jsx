@@ -45,16 +45,18 @@ const Navbar = () => {
         <div className="max-w-11/12 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
-              <NavLink
-                to="/"
-                className="text-2xl font-serif font-bold transition"
+              <a
+                href="https://flux-ks.com" // <-- replace with your desired URL
+                rel="noopener noreferrer" // recommended for security
+                // className="text-white text-nowrap"
+                onClick={() => setIsMenuOpen(false)}
               >
                 <img
                   src="https://flux-ks.com/wp-content/uploads/2023/07/Flux-Logo-whiteYellow-e1696543864342-2048x608.png"
                   alt="logo"
                   className="h-10"
                 />
-              </NavLink>
+              </a>
             </div>
             <div className="hidden xl:flex space-x-4 items-center text-xl montserrat">
               <a
@@ -73,12 +75,12 @@ const Navbar = () => {
               >
                 Rreth Nesh
               </a>
-              <NavLink to="/commercial" className={`text-white text-nowrap`}>
+              {/* <NavLink to="/commercial" className={`text-white text-nowrap`}>
                 Afarizmi
               </NavLink>
               <NavLink to="/parking" className={`text-white text-nowrap`}>
                 Parkingu
-              </NavLink>
+              </NavLink> */}
               <NavLink to="/360-virtual" className={`text-white text-nowrap`}>
                 360 Virtual
               </NavLink>
@@ -199,7 +201,7 @@ const Navbar = () => {
               >
                 Rreth Nesh
               </a>
-              <NavLink
+              {/* <NavLink
                 to="/gallery"
                 className="text-white text-2xl md:text-8xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
@@ -212,7 +214,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Parkingu
-              </NavLink>
+              </NavLink> */}
 
               <NavLink
                 to="/360-virtual"
