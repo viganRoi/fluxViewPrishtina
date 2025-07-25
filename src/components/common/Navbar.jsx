@@ -199,7 +199,7 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                className="text-white text-2xl md:text-7xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Ballina
@@ -207,7 +207,7 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com/projektet/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                className="text-white text-2xl md:text-7xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Projektet
@@ -215,7 +215,7 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com/galeria/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                className="text-white text-2xl md:text-7xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Galeria
@@ -223,7 +223,7 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                className="text-white text-2xl md:text-7xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Rreth Nesh
@@ -231,7 +231,7 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com/na-kontaktoni/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                className="text-white text-2xl md:text-7xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Na Kontaktoni
@@ -253,14 +253,14 @@ const Navbar = () => {
 
               <NavLink
                 to="/360-virtual"
-                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                className="text-white text-2xl md:text-7xl uppercase font-normal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 360 Virtual
               </NavLink>
             </div>
           </div>
-          <div className="absolute bottom-20 w-full text-center">
+          {/* <div className="absolute bottom-20 w-full text-center">
             <div className="flex justify-center space-x-4">
               <a href="#" className="text-white">
                 <i className="fab fa-instagram"></i>
@@ -278,7 +278,7 @@ const Navbar = () => {
             <p className="text-white">
               &copy; 2024 FLUX VIEW PRISHTINA. Te drejtat e rezervuara.
             </p>
-          </div>
+          </div> */}
         </div>
       )}
     </>

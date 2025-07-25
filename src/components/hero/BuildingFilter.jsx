@@ -75,7 +75,7 @@ const BuildingFilter = ({ available }) => {
         </div>
         <div className="w-full flex items-center justify-start md:justify-center">
           <h1 className="font-bold text-4xl circe rounded-full text-white uppercase">
-            Ndertesa <span className="text-brand montserrat">{id}</span>
+            Ndërtesa <span className="text-brand montserrat">{id}</span>
           </h1>
         </div>
         <div className="w-full flex items-center justify-start md:justify-end">
