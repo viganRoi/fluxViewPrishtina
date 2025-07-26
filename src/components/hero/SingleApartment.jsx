@@ -103,7 +103,6 @@ const SingleApartment = () => {
                 Kthehu Pas
               </h3>
             </div>
-
             <div className="w-full flex justify-end md:justify-end items-center">
               <div className="w-full md:w-fit  md:px-2 flex items-center gap-2  md:justify-center">
                 <div className="w-fit hidden py-1 px-1  gap-2 bg-[#e9e9e9] md:flex items-center border-brand rounded-full justify-between md:justify-center">
@@ -202,6 +201,7 @@ const SingleApartment = () => {
                             }
                             // toggleVrModal(); // <-- Open modal instead of new tab
                             handleTabClick("360");
+                      window.open(`${apartment.vtourUrl}`, "_blank");
                           }}
                           htmlFor="radio-4"
                           style={{ fontSize: isSmallDev ? "12px" : "16px" }}
@@ -506,7 +506,7 @@ const SingleApartment = () => {
               <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
               <div className="w-full  relative flex justify-center items-center">
                 {selectedTab === "360" ? (
-                  <div className="h-[80vh] md:h-screen w-full bg-brandD relative text-white">
+                  <div className="h-[80vh] md:h-screen w-full bg-white relative text-white pl-20 py-20 ">
                     <iframe
                       width="100%"
                       height="100%"
