@@ -1,31 +1,35 @@
 import React from "react";
 import { homepage, planmetricImageUrl } from "../../utils/consts";
 import { useDispatch, useSelector } from "react-redux";
-import { getApartmentDetailModalData } from "../../features/apartment/ApartmentSlice";
 import {
-  addToWishlist,
-  getWishlistCount,
   getWishlistModalData,
-  isProductInWishlist,
+  getWishlistCount,
+  addToWishlist,
   removeFromWishlist,
 } from "../../features/wishList/WishlistSlice";
-import { building } from "../../utils/server";
 
-const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft, id, apartment }) => {
-  
-  const wishlist = useSelector(getWishlistModalData);
+const ApartmentCard = ({
+  image,
+  title,
+  navigateTo,
+  floor,
+  bedroom,
+  sqft,
+  id,
+  apartment,
+}) => {
   const dispatch = useDispatch();
-
-  const isHeartActive = wishlist.some((item) => item.id === id);
+  const wishlist = useSelector(getWishlistModalData);
   const wishListItemCount = useSelector(getWishlistCount);
-  const isInWishlist = useSelector((state) =>
-    isProductInWishlist(state, id)
-  );
+
+  // ✅ Safe null check for wishlist items
+  const isHeartActive =
+    Array.isArray(wishlist) && wishlist.some((item) => item?.id === id);
 
   const toggleWishlist = () => {
     if (isHeartActive) {
       dispatch(removeFromWishlist(id));
-    } else {
+    } else if (apartment) {
       dispatch(addToWishlist(apartment));
     }
   };
@@ -36,24 +40,27 @@ const ApartmentCard = ({ image, title, navigateTo, floor, bedroom, sqft, id, apa
         <h2 className="text-[16px] text-black montserrat">
           Apartamenti {title}
         </h2>
-        <h2 className="text-[16px] text-black montserrat">
-          {bedroom} Dhoma
-        </h2>
-        <h2 className="text-[16px] text-black montserrat">
-          Kati {floor}
-        </h2>
+        <h2 className="text-[16px] text-black montserrat">{bedroom} Dhoma</h2>
+        <h2 className="text-[16px] text-black montserrat">Kati {floor}</h2>
       </div>
       <div className="w-full flex flex-col gap-1">
         <h1 className="text-2xl text-black font-semibold">
           {sqft}m<sup>2</sup>
         </h1>
       </div>
-      {/* Image Section */}
+
+      {/* ✅ Image Section */}
       <img
-        className="absolute w-[250px] h-[250px] top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2"
-        src={`${homepage}${planmetricImageUrl}${image}`}
-        alt=""
+        className="absolute w-[400px] h-[400px] object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        src={
+          image
+            ? `${homepage}${planmetricImageUrl}${image}`
+            : "/fallback-image.jpg"
+        }
+        alt="Apartment"
       />
+
+      {/* ❤️ Wishlist Button */}
       <button className="absolute top-8 right-8" onClick={toggleWishlist}>
         <svg
           width="50"

@@ -155,7 +155,6 @@ const SingleApartment = () => {
                     />
                     <label
                       className="tab circe"
-                      
                       htmlFor="radio-2"
                       style={{ fontSize: isSmallDev ? "12px" : "16px" }}
                     >
@@ -312,7 +311,7 @@ const SingleApartment = () => {
                     onClick={() => {
                       handleTabClick("3d");
                     }}
-                    htmlFor="radio-2"
+                    htmlFor="radio-1"
                     style={{
                       fontSize: isSmallDev ? "12px" : "16px",
                     }}
@@ -365,8 +364,13 @@ const SingleApartment = () => {
                       <label
                         className="tab circe pr-2"
                         onClick={() => {
-                          if (!apartment.vtourUrl || apartment.vtourUrl === "null") {
-                            toast.warning(`Momentalisht nuk eshte ne dispozicion`);
+                          if (
+                            !apartment.vtourUrl ||
+                            apartment.vtourUrl === "null"
+                          ) {
+                            toast.warning(
+                              `Momentalisht nuk eshte ne dispozicion`
+                            );
                             return;
                           }
                           // toggleVrModal(); // <-- Open modal instead of new tab
@@ -397,7 +401,7 @@ const SingleApartment = () => {
                 <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
                 <div className="w-full  relative flex justify-center items-center">
                   {selectedTab === "360" ? (
-                    <div className="h-[80vh] md:h-screen w-full bg-brandD relative text-white">
+                    <div className="h-[80vh] md:h-screen w-full bg-white relative text-white">
                       <iframe
                         width="100%"
                         height="100%"
@@ -410,7 +414,7 @@ const SingleApartment = () => {
                     <>
                       {selectedTab === "3d" && (
                         <img
-                          className="w-[90%]"
+                          className="w-[90%] md:w-[70%]"
                           src={
                             apartment?.image3dUrl
                               ? `${homepage}${planmetricImageUrl}${apartment.image3dUrl}`
@@ -421,7 +425,7 @@ const SingleApartment = () => {
                       )}
                       {selectedTab === "2d" && (
                         <img
-                          className="w-[70%]"
+                          className="w-[90%] md:w-[70%]"
                           src={
                             apartment?.imageUrl
                               ? `${homepage}${planmetricImageUrl}${apartment.imageUrl}`
@@ -432,7 +436,7 @@ const SingleApartment = () => {
                       )}
                       {selectedTab === "onFloor" && (
                         <img
-                          className="w-[100%] p-14"
+                          className="w-[100%] p-0 md:p-14"
                           src={
                             apartment?.name
                               ? `${homepage}${planmetricImageUrl}/floor/${apartment.name}-floor.jpg`
@@ -504,9 +508,9 @@ const SingleApartment = () => {
             </div>
             <div className="w-full  h-full flex-col hidden md:flex justify-start items-start gap-2 mt-6 md:mt-0 flex-[8]">
               <div className="w-full flex justify-start md:justify-center items-center gap-4 "></div>
-              <div className="w-full  relative flex justify-center items-center">
+              <div className="w-full  relative flex justify-end items-center">
                 {selectedTab === "360" ? (
-                  <div className="h-[80vh] md:h-screen w-full bg-brandD relative text-white">
+                  <div className="h-[80vh] md:h-screen w-[95%] bg-brandD relative text-white">
                     <iframe
                       width="100%"
                       height="100%"
@@ -552,7 +556,6 @@ const SingleApartment = () => {
                     )}
                   </>
                 )}
-
               </div>
             </div>
           </div>

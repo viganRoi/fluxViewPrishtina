@@ -27,12 +27,12 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 const Building = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const { id, mode } = useParams();
   const buildingData = useSelector(getAllApartmentSvgData);
   const buildingFloorData = useSelector(getAllFloorSvgData);
   const isSmallDev = window.innerWidth < 700;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedTab, setSelectedTab] = useState("selection");
+  const [selectedTab, setSelectedTab] = useState(mode || "selection");
   const sizeRange = useSelector(getRegularSquareFilter);
   const floorRange = useSelector(getRegularFloorFilter);
   const roomRange = useSelector(getRegularRoomFilter);
