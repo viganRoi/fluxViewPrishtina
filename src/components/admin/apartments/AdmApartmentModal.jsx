@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import { AddLocation, Image, LocationCity, Photo, PictureAsPdf, ThreeDRotation, Tour, ViewInAr } from "@mui/icons-material";
+import { AddLocation, Image, LocationCity, Note, Photo, PictureAsPdf, ThreeDRotation, Tour, ViewInAr } from "@mui/icons-material";
 import {
   Divider,
   FormControl,
@@ -62,6 +62,7 @@ function AdmApartmentModal() {
     imageUrl: '',
     vtourUrl: '',
     apartmentPositionImageUrl: '',
+    description: '',
   });
   const [selectedImagePreview, setSelectedImagePreview] = React.useState(apartmentData.imageUrl);
 
@@ -86,6 +87,7 @@ function AdmApartmentModal() {
       imageUrl: '',
       vtourUrl: '',
       apartmentPositionImageUrl: '',
+      description: '',
     });
   }
 
@@ -177,6 +179,7 @@ function AdmApartmentModal() {
     formData.append("planMetricName", imageName);
     formData.append("planMetricUrl", imagePathh);
     formData.append("image3dUrl", apartmentData.image3dUrl)
+    formData.append("description", apartmentData.description);
     formData.append("apartmentPositionImageUrl", apartmentData.apartmentPositionImageUrl)
     formData.append("vTourUrl", apartmentData.vtourUrl);
     updateHandler(apartmentData.id, formData).then().catch();
@@ -569,6 +572,36 @@ function AdmApartmentModal() {
                           <Tooltip title='Check if Pdf Link exists'>
                             <IconButton onClick={() => window.open(`${pdfPath}${apartmentData.pdfUrl}`, '_blank')}>
                               <PictureAsPdf />
+                            </IconButton>
+                          </Tooltip>
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Box>
+              </Grid>
+               <Grid item sm={12} md={12}>
+                <Box maxHeight={120} height={100} overflow={"auto"}>
+                  <TextField
+                    multiline
+                    label="Pershkrimi"
+                    fullWidth
+                    size={"small"}
+                    sx={{ marginTop: 2 }}
+                    value={apartmentData.description}
+                    name="description"
+                    onChange={(e) => {
+                      setApartmentData({
+                        ...apartmentData,
+                        description: e.target.value,
+                      });
+                    }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <Tooltip title='Description'>
+                            <IconButton>
+                              <Note />
                             </IconButton>
                           </Tooltip>
                         </InputAdornment>
