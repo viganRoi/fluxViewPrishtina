@@ -99,7 +99,7 @@ const SingleApartment = () => {
               >
                 <SlArrowLeft className="text-xl" />
               </button>
-              <h3 className="text-black text-nowrap text-[14px] md:text-[18px] circe">
+              <h3 className="text-black text-nowrap text-[14px] md:text-[18px] montserrat">
                 Kthehu Pas
               </h3>
             </div>
@@ -117,7 +117,7 @@ const SingleApartment = () => {
                       }
                       window.open(`${apartment.vtourUrl}`, "_blank");
                     }}
-                    className="md:hidden border-dark border rounded-full py-2 px-6 text-sm text-nowrap circe text-text"
+                    className="md:hidden border-dark border rounded-full py-2 px-6 text-sm text-nowrap montserrat text-text"
                   >
                     360° Vr Tour
                   </button>
@@ -132,7 +132,7 @@ const SingleApartment = () => {
                       checked={selectedTab === "3d"}
                     />
                     <label
-                      className="tab circe"
+                      className="tab montserrat"
                       onClick={() => {
                         handleTabClick("3d");
                       }}
@@ -153,7 +153,7 @@ const SingleApartment = () => {
                       }}
                     />
                     <label
-                      className="tab circe"
+                      className="tab montserrat"
                       htmlFor="radio-2"
                       style={{ fontSize: isSmallDev ? "12px" : "16px" }}
                     >
@@ -167,7 +167,7 @@ const SingleApartment = () => {
                       checked={selectedTab === "onFloor"}
                     />
                     <label
-                      className="tab circe mr-2 px-1"
+                      className="tab montserrat mr-2 px-1"
                       onClick={() => {
                         handleTabClick("onFloor");
                       }}
@@ -187,7 +187,7 @@ const SingleApartment = () => {
                           checked={selectedTab === "360"}
                         />
                         <label
-                          className="tab certon"
+                          className="tab montserrat"
                           onClick={() => {
                             if (
                               !apartment.vtourUrl ||
@@ -292,7 +292,7 @@ const SingleApartment = () => {
                     }
                     window.open(`${apartment.vtourUrl}`, "_blank");
                   }}
-                  className="md:hidden border-dark border rounded-full py-2 px-6 text-sm text-nowrap circe text-text"
+                  className="md:hidden border-dark border rounded-full py-2 px-6 text-sm text-nowrap montserrat text-text"
                 >
                   360° Vr Tour
                 </button>
@@ -307,7 +307,7 @@ const SingleApartment = () => {
                     checked={selectedTab === "3d"}
                   />
                   <label
-                    className="tab circe"
+                    className="tab montserrat"
                     onClick={() => {
                       handleTabClick("3d");
                     }}
@@ -325,7 +325,7 @@ const SingleApartment = () => {
                     checked={selectedTab === "2d"}
                   />
                   <label
-                    className="tab circe"
+                    className="tab montserrat"
                     onClick={() => {
                       handleTabClick("2d");
                     }}
@@ -342,7 +342,7 @@ const SingleApartment = () => {
                     checked={selectedTab === "onFloor"}
                   />
                   <label
-                    className="tab circe mr-2 px-1"
+                    className="tab montserrat mr-2 px-1"
                     onClick={() => {
                       handleTabClick("onFloor");
                     }}
@@ -362,7 +362,7 @@ const SingleApartment = () => {
                         checked={selectedTab === "360"}
                       />
                       <label
-                        className="tab circe pr-2"
+                        className="tab montserrat pr-2"
                         onClick={() => {
                           if (
                             !apartment.vtourUrl ||
@@ -457,7 +457,7 @@ const SingleApartment = () => {
                     src="/assets/icons/key-s.svg"
                     alt=""
                   />{" "} */}
-                  <h2 className="circe">Dhoma</h2>
+                  <h2 className="montserrat">Dhoma</h2>
                   <h2 className="font-semibold">{apartment.rooms}+1</h2>
                 </div>
 
@@ -467,7 +467,7 @@ const SingleApartment = () => {
                     src="/assets/icons/floor.svg"
                     alt=""
                   />{" "} */}
-                  <h2 className="circe">Kati</h2>
+                  <h2 className="montserrat">Kati</h2>
                   <h2 className="font-semibold">{apartment.floorNumber}</h2>
                 </div>
 
@@ -477,7 +477,7 @@ const SingleApartment = () => {
                     src="/assets/icons/sip.svg"
                     alt=""
                   />{" "} */}
-                  <h2 className="circe">Objekti</h2>
+                  <h2 className="montserrat">Objekti</h2>
                   <h2 className="font-semibold">{apartment.apartmentNumber}</h2>
                 </div>
 
@@ -487,7 +487,7 @@ const SingleApartment = () => {
                     src="/assets/icons/terrace.svg"
                     alt=""
                   />{" "}
-                  <h2 className="circe">Terraca</h2>
+                  <h2 className="montserrat">Terraca</h2>
                   <h2 className="font-semibold">
                     {apartment.balconySquare}m<sup>2</sup>
                   </h2>
@@ -495,12 +495,12 @@ const SingleApartment = () => {
               </div>
 
               <div className="w-full flex flex-row-reverse md:flex-col gap-4">
-                <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 circe rounded-full">
+                <button className="w-full px-4 py-2 bg-black text-brand hover:bg-brand hover:text-black transition-all duration-500 montserrat rounded-full">
                   Rezervo një takim
                 </button>
                 <button
                   onClick={() => window.open(`${pdfPath}${pdfUrl}`, "_blank")}
-                  className="w-full px-4 py-2 border border-brand text-black hover:bg-brand circe transition-all duration-500 rounded-full"
+                  className="w-full px-4 py-2 border border-brand text-black hover:bg-brand montserrat transition-all duration-500 rounded-full"
                 >
                   Shkarko PDF
                 </button>

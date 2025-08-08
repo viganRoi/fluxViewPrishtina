@@ -6,14 +6,18 @@ const Footer = () => {
     <div className="bg-gold w-full h-full flex flex-col items-center justify-between py-[6%] px-5 text-white">
       <div className="w-11/12 h-full flex flex-col md:flex-row items-start justify-between mb-5 gap-[50px]">
         <div className="w-full md:w-1/2 flex flex-col gap-4 md:gap-20">
-          <h1 className="certon text-3xl md:text-7xl text-white">
+          <h1 className="montserrat text-3xl md:text-7xl text-white">
             Foleja Group
           </h1>
           <div class="flex items-center bg-black bg-opacity-30 rounded-full p-1 w-full max-w-md">
-            <input type="email" placeholder="Emaili juaj..." class="flex-grow bg-transparent text-white placeholder-white px-4 py-2 focus:outline-none text-sm md:text-base"/>
-              <button class="bg-white text-gold font-medium px-4 py-2 rounded-full shadow-md text-nowrap text-sm md:text-base">
-                Abonohu
-              </button>
+            <input
+              type="email"
+              placeholder="Emaili juaj..."
+              class="flex-grow bg-transparent text-white placeholder-white px-4 py-2 focus:outline-none text-sm md:text-base"
+            />
+            <button class="bg-white text-gold font-medium px-4 py-2 rounded-full shadow-md text-nowrap text-sm md:text-base">
+              Abonohu
+            </button>
           </div>
         </div>
         {/* <div className="w-[80%] flex flex-col xl:flex-row gap-5 align-center justify-between text-start">
@@ -75,13 +79,17 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-full h-full flex items-start justify-between">
-            <h1 className="mb-2 w-1/2 montserrat text-nowrap">Zyrja Kryesore</h1>
+            <h1 className="mb-2 w-1/2 montserrat text-nowrap">
+              Zyrja Kryesore
+            </h1>
             <div className="flex w-1/3 flex-col gap-1">
               <p className="montserrat text-nowrap">foleja address</p>
             </div>
           </div>
           <div className="w-full h-full flex items-start justify-between">
-            <h1 className="mb-2 w-1/2 montserrat text-nowrap">Qendra e shitjes</h1>
+            <h1 className="mb-2 w-1/2 montserrat text-nowrap">
+              Qendra e shitjes
+            </h1>
             <div className="flex w-1/3 flex-col gap-1">
               <p className="montserrat text-nowrap">foleja address</p>
             </div>
@@ -118,7 +126,11 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-11/12 flex items-center justify-center mt-10">
-        <img src="/prishtina-view/assets/images/brand/logo.svg" alt="logo" className="h-10" />
+        <img
+          src="/prishtina-view/assets/images/brand/logo.svg"
+          alt="logo"
+          className="h-10"
+        />
       </div>
     </div>
   );

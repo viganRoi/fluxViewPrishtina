@@ -13,7 +13,7 @@ const VideoSection = () => {
         playsInline
       />
       <div className="relative w-11/12 md:w-5/6 ml-0 md:ml-36 px-6  flex flex-col gap-6 z-10">
-        <h1 className="text-white certon text-5xl ">Foleja Living</h1>
+        <h1 className="text-white montserrat text-5xl ">Foleja Living</h1>
       </div>
     </div>
   );

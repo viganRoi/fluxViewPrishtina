@@ -12,7 +12,7 @@ const AboutProject = () => {
           />
         </div>
         <div className="w-full md:w-1/2 xl:w-1/2  p-4 flex flex-col justify-center gap-4">
-          <h1 className="certon text-xl md:text-5xl mb-6">
+          <h1 className="montserrat text-xl md:text-5xl mb-6">
             Një Histori e Ndërtuar mbi Cilësinë dhe Inovacionin
           </h1>
           <p className="text-sm md:text-base montserrat text-text">

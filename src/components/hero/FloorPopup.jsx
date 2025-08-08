@@ -51,9 +51,8 @@ const FloorPopup = ({ anchorEl, data, open }) => {
         alignItems: "center",
       }}
     >
-      
-      <h1 className='certon text-white text-5xl'>{data.floorNumber}</h1>
-      <p className=' text-white'>Kati</p>
+      <h1 className="montserrat text-white text-5xl">{data.floorNumber}</h1>
+      <p className=" text-white">Kati</p>
     </div>
   );
 };
