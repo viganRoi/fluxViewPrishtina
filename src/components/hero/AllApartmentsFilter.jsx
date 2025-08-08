@@ -59,8 +59,8 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
         </h1>
       </div>
       <div className="w-11/12 h-full text-gold flex flex-col justify-between items-center gap-4">
-        <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-20">
-          <div className="w-full flex flex-col items-start gap-1 md:gap-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
+          {/* <div className="w-full flex flex-col items-start gap-1 md:gap-4">
             <h1 className="text-lg text-white font-semibold">Objekti</h1>
             <div className="w-full flex gap-4 justify-start">
               <button
@@ -130,10 +130,10 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
                 F
               </button>
             </div>
-          </div>
+          </div> */}
           <div className="w-full flex flex-col items-start gap-1 md:gap-4">
             <h1 className="text-lg text-white font-semibold">Tipi</h1>
-            <div className="w-full grid grid-cols-2  text-nowrap gap-4 justify-start">
+            <div className="w-full grid grid-cols-3  text-nowrap gap-4 justify-start">
               <button
                 name="1"
                 onClick={handleRoomChange}
