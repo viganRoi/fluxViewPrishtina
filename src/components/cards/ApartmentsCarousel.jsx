@@ -58,7 +58,7 @@ const ApartmentsCarousel = () => {
                   key={el.id}
                   object={el.apartmentNumber}
                   category={el.category}
-                  image={el.imageUrl}
+                  image={el.image3dUrl}
                   title={el.name}
                   floor={el.floorNumber}
                   sqft={el.square}

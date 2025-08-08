@@ -133,7 +133,7 @@ const AllApartmentsFilter = ({ setFilterState, available }) => {
           </div>
           <div className="w-full flex flex-col items-start gap-1 md:gap-4">
             <h1 className="text-lg text-white font-semibold">Tipi</h1>
-            <div className="w-full flex gap-4 justify-start">
+            <div className="w-full grid grid-cols-2  text-nowrap gap-4 justify-start">
               <button
                 name="1"
                 onClick={handleRoomChange}

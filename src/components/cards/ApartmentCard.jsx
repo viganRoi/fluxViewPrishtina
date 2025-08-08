@@ -37,10 +37,10 @@ const ApartmentCard = ({
   return (
     <div className="w-full h-[480px] md:h-[585px] flex flex-col justify-between p-8 relative rounded-lg overflow-hidden border border-[#8B8B8BCC] shadow-lg bg-white hover:cursor-pointer">
       <div className="w-full flex flex-col gap-1">
+        <h2 className="text-[16px] text-black montserrat">Tipi {title}</h2>
         <h2 className="text-[16px] text-black montserrat">
-          Apartamenti {title}
+          Dhoma {bedroom}+1{" "}
         </h2>
-        <h2 className="text-[16px] text-black montserrat">{bedroom} Dhoma</h2>
         <h2 className="text-[16px] text-black montserrat">Kati {floor}</h2>
       </div>
       <div className="w-full flex flex-col gap-1">
@@ -51,6 +51,7 @@ const ApartmentCard = ({
 
       {/* ✅ Image Section */}
       <img
+        onClick={navigateTo}
         className="absolute w-[400px] h-[400px] object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         src={
           image
