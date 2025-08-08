@@ -12,6 +12,7 @@ import { AuthProvider } from "../auth/AuthProvider";
 import ContextMenu from "../contextMenu/ContextMenu";
 import AdmApartmentModal from "../admin/apartments/AdmApartmentModal";
 import { ApartmentFloorModal } from "../";
+import AdmApartmentIdModal from "../admin/apartments/AdmApartmentIdModal";
 
 const Floor = () => {
   const isSmallDev = window.innerWidth < 700;
@@ -262,6 +263,7 @@ const Floor = () => {
           </AuthProvider>
         )}
         <AdmApartmentModal />
+        <AdmApartmentIdModal />
         <ApartmentFloorModal
           apartment={hoveredApartment}
           mousePosition={mousePosition}
