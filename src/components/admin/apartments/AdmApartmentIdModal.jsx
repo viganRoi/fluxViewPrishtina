@@ -15,7 +15,7 @@ const AdmApartmentIdModal = () => {
     const apartmentId = useSelector(getApartmentIdModalApartmentId)
     const [status, setStatus] = useState('');
     const dispatch = useDispatch();
-    const [input1, setInput1] = useState('');
+    // const [input1, setInput1] = useState('');
     const [input2, setInput2] = useState('');
 
     const handleClose = () => {
@@ -62,6 +62,7 @@ const AdmApartmentIdModal = () => {
     }
     , [status]);
 
+
     return (
       <Modal open={open} onClose={handleClose} keepMounted>
           <Box
@@ -92,11 +93,11 @@ const AdmApartmentIdModal = () => {
                 pb: 3
             
             }}>
+              {/* Te perkthehen*/}
               <Typography variant="h6" sx={{ mb: 2 }}>
                 Modal Header
               </Typography>
               <TextField
-                
                 value={apartmentId ? apartmentId : ''}
                 disabled
                 size='small'
@@ -109,6 +110,7 @@ const AdmApartmentIdModal = () => {
                 onChange={handleInputChange2}
                 sx={{ mb: 2 }}
               />
+              {/* Te perkthehen*/}
               <Button onClick={handleSubmit} variant="contained">
                 Submit
               </Button>
