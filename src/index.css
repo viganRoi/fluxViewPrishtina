@@ -42,8 +42,11 @@ html {
   font-style: normal;
 }
 
-.montserrat {
-  font-family: "montserrat";
+*{
+  font-family: 'montserrat';
+}
+.circe {
+  font-family: 'circe';
 }
 .swiper-pagination-bullet {
   background: var(--brand2-color) !important;
