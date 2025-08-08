@@ -74,7 +74,7 @@ const BuildingFilter = ({ available }) => {
           </button>
         </div>
         <div className="w-full flex items-center justify-start md:justify-center">
-          <h1 className="font-bold text-4xl circe rounded-full text-white uppercase">
+          <h1 className="font-bold text-4xl montserrat rounded-full text-white uppercase">
             Ndërtesa <span className="text-brand montserrat">{id}</span>
           </h1>
         </div>
@@ -90,7 +90,9 @@ const BuildingFilter = ({ available }) => {
       <div className="w-11/12 h-full text-gold  flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="w-5/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-r  border-white border-none md:border-1 pr-12">
           <div className="w-full flex flex-col items-start gap-4">
-            <h1 className="text-lg text-white circe font-semibold">Tipi</h1>
+            <h1 className="text-lg text-white montserrat font-semibold">
+              Tipi
+            </h1>
             <div className="w-full flex gap-2 justify-start">
               <button
                 name="1"
@@ -139,7 +141,7 @@ const BuildingFilter = ({ available }) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start gap-4">
-            <h1 className="text-lg text-white circe font-semibold">
+            <h1 className="text-lg text-white montserrat font-semibold">
               Sipërfaqja
             </h1>
             <div className="w-full flex flex-col justify-between">
@@ -184,7 +186,9 @@ const BuildingFilter = ({ available }) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start gap-4">
-            <h1 className="text-lg text-white circe font-semibold">Kati</h1>
+            <h1 className="text-lg text-white montserrat font-semibold">
+              Kati
+            </h1>
             <div className="w-full flex flex-col justify-between">
               <div className="w-full  ml-3">
                 <Slider

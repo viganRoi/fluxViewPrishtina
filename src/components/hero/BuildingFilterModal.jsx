@@ -93,7 +93,7 @@ const BuildingFilterModal = ({
             </button>
           </div>
           <div className="w-full flex items-center justify-start md:justify-center">
-            <h1 className="font-bold text-4xl circe rounded-full text-white uppercase">
+            <h1 className="font-bold text-4xl montserrat rounded-full text-white uppercase">
               Ndertesa <span className="text-brand montserrat">{id}</span>
             </h1>
           </div>
@@ -109,52 +109,58 @@ const BuildingFilterModal = ({
         <div className="w-11/12 h-full text-gold  flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="w-5/6 grid grid-cols-1 md:grid-cols-3 gap-8 border-r  border-white border-none md:border-1 pr-12">
             <div className="w-full flex flex-col items-start gap-4">
-              <h1 className="text-lg text-white circe font-semibold">Tipi</h1>
+              <h1 className="text-lg text-white montserrat font-semibold">
+                Tipi
+              </h1>
               <div className="w-full flex gap-2 justify-start">
                 <button
                   name="1"
                   onClick={handleRoomChange}
-                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${roomRange.includes("1")
+                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
+                    roomRange.includes("1")
                       ? "bg-brand text-black"
                       : "bg-transparent text-white"
-                    }`}
+                  }`}
                 >
                   1 + 1
                 </button>
                 <button
                   name="2"
                   onClick={handleRoomChange}
-                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${roomRange.includes("2")
+                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
+                    roomRange.includes("2")
                       ? "bg-brand text-black"
                       : "bg-transparent text-white"
-                    }`}
+                  }`}
                 >
                   2 + 1
                 </button>
                 <button
                   name="3"
                   onClick={handleRoomChange}
-                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${roomRange.includes("3")
+                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
+                    roomRange.includes("3")
                       ? "bg-brand text-black"
                       : "bg-transparent text-white"
-                    }`}
+                  }`}
                 >
                   3 + 1
                 </button>
                 <button
                   name="penthouse"
                   onClick={handleRoomChange}
-                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${roomRange.includes("penthouse")
+                  className={`text-nowrap w-fit px-4 py-2 rounded-full border border-gold ${
+                    roomRange.includes("penthouse")
                       ? "bg-brand text-black"
                       : "bg-transparent text-white"
-                    }`}
+                  }`}
                 >
                   Penthouse
                 </button>
               </div>
             </div>
             <div className="w-full flex flex-col items-start gap-4">
-              <h1 className="text-lg text-white circe font-semibold">
+              <h1 className="text-lg text-white montserrat font-semibold">
                 Sipërfaqja
               </h1>
               <div className="w-full flex flex-col justify-between">
@@ -199,7 +205,9 @@ const BuildingFilterModal = ({
               </div>
             </div>
             <div className="w-full flex flex-col items-start gap-4">
-              <h1 className="text-lg text-white circe font-semibold">Kati</h1>
+              <h1 className="text-lg text-white montserrat font-semibold">
+                Kati
+              </h1>
               <div className="w-full flex flex-col justify-between">
                 <div className="w-full  ml-3">
                   <Slider

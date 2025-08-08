@@ -33,23 +33,39 @@ const ParkingModal = ({ onClose, parkingData, onTogglePriceCard }) => {
             <div className="flex flex-col md:flex-row justify-between text-sm uppercase mb-4 mt-10 opacity-80 gap-2 md:gap-0">
               <div className="text-start flex flex-col gap-2 md:gap-4">
                 <span className="montserrat">Lloji</span>
-                <span className="certon text-3xl">{parkingData.isWarehouse === true ? 'Depo' : 'Parking'}</span>
+                <span className="montserrat text-3xl">
+                  {parkingData.isWarehouse === true ? "Depo" : "Parking"}
+                </span>
               </div>
               <div className="text-start flex flex-col gap-2 md:gap-4">
                 <span className="montserrat">Numër</span>
-                <span className="certon text-3xl">{parkingData.parkingNumber}</span>
+                <span className="montserrat text-3xl">
+                  {parkingData.parkingNumber}
+                </span>
               </div>
               <div className="text-start flex flex-col gap-2 md:gap-4">
-                <span className="montserrat">{parkingData.isWarehouse === true ? 'Sipërfaqja' : 'Mbushje elektrike'}</span>
-                <span className="certon text-3xl">
-                  {parkingData.electric === true ? "Po" : (parkingData.isWarehouse === true ?(parkingData.square).toFixed(2) + " m²" : "-")}
+                <span className="montserrat">
+                  {parkingData.isWarehouse === true
+                    ? "Sipërfaqja"
+                    : "Mbushje elektrike"}
+                </span>
+                <span className="montserrat text-3xl">
+                  {parkingData.electric === true
+                    ? "Po"
+                    : parkingData.isWarehouse === true
+                    ? parkingData.square.toFixed(2) + " m²"
+                    : "-"}
                 </span>
               </div>
             </div>
             <hr className="border-light mb-4" />
             <div className="flex justify-center mb-4">
               <img
-                src={parkingData.isWarehouse === true ? "/assets/images/parkings/boxes.png" : "/assets/images/parkings/car.png"}
+                src={
+                  parkingData.isWarehouse === true
+                    ? "/assets/images/parkings/boxes.png"
+                    : "/assets/images/parkings/car.png"
+                }
                 alt="Parking Dimensions"
                 className="w-1/2"
               />

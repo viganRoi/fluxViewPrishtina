@@ -308,7 +308,7 @@ const BuildingMobile = () => {
   return (
     <div className="relative w-full h-[65vh] flex items-start justify-center ">
       <div className="absolute w-11/12 flex flex-row justify-center items-center bottom-4  z-10">
-        <div className="w-full flex items-center ">
+        <div className="w-full flex items-center  ">
           <div className="tabsB ">
             <input
               type="radio"
@@ -317,14 +317,14 @@ const BuildingMobile = () => {
               checked={selectedTab === "selection"}
             />
             <label
-              className="tabB certon"
+              className="tabB montserrat"
               onClick={() => {
                 handleTabClick("selection");
               }}
               htmlFor="radio-1"
               style={{
                 fontSize: "16px",
-                width: isSmallDev ? "140px" : "",
+                width: isSmallDev ? "150px" : "",
               }}
             >
               By Apartment
@@ -336,7 +336,7 @@ const BuildingMobile = () => {
               checked={selectedTab === "floor"}
             />
             <label
-              className="tabB certon"
+              className="tabB montserrat"
               onClick={() => {
                 handleTabClick("floor");
               }}
@@ -350,7 +350,7 @@ const BuildingMobile = () => {
             </label>
           </div>
           {selectedTab === "selection" && (
-            <div className="right-0 top-12 flex justif-center items-center gap-4 pl-4">
+            <div className="right-0 top-12 flex justif-center items-center gap-4 pl-4 ">
               <button
                 onClick={handlePrevious}
                 className="bg-brand transition-all duration-.3s hover:text-bck w-[35px] md:w-[50px] h-[35px] md:h-[50px] radius-50 rounded-[50px] flex items-center justify-center"

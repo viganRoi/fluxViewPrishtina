@@ -29,7 +29,7 @@ const ApartmentCarousel = ({ data }) => {
       <div className="w-full md:w-full flex flex-col items-center justify-center">
         <div className="w-11/12 flex justify-between items-center mb-10">
           <div className="flex flex-col gap-8">
-            <h1 className="text-gold font-bold text-xl md:text-5xl certon">
+            <h1 className="text-gold font-bold text-xl md:text-5xl montserrat">
               Apartamente
             </h1>
             <p className="text-white text-sm md:text-xl montserrat">

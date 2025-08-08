@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'manrope';
+    font-family: 'montserrat', sans-serif;
     
 }
 
@@ -73,8 +73,7 @@ input[id='radio-4']:checked~.glider {
 @media (max-width: 768px) {
     .tabsB {
         width: 250px;
-        padding-left: 5px;
-        padding-right: 5px;
+        
     }
     .tabB {
         width: 60px;

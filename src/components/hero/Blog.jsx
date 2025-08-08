@@ -10,7 +10,7 @@ const Blog = () => {
     <div className="bg-white w-full h-full flex flex-col items-center justify-center py-6 md:py-12">
       <div className="w-11/12 md:w-5/6 text-black text-start">
         <p className="text-sm md:text-base">Eksploro</p>
-        <h1 className="certon text-xl md:text-3xl">
+        <h1 className="montserrat text-xl md:text-3xl">
           Të gjitha të rejat nga ne
         </h1>
       </div>
