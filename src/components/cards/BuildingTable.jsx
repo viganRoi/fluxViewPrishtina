@@ -11,12 +11,10 @@ const BuildingTable = ({ apartments }) => {
           <table className="min-w-full table-auto text-xs sm:text-sm text-left border-separate border-spacing-0">
             <thead className="bg-primary h-10 sm:h-12 text-black uppercase sticky top-0 z-10">
               <tr>
-                <th className="px-4 sm:px-6 py-2 sm:py-3 font-medium">
-                  Apartment
-                </th>
                 <th className="px-4 sm:px-6 py-2 sm:py-3 font-medium">Tipi</th>
+                <th className="px-4 sm:px-6 py-2 sm:py-3 font-medium">Dhoma</th>
                 <th className="px-4 sm:px-6 py-2 sm:py-3 font-medium">
-                  Siperfaqja
+                  Sipërfaqja
                 </th>
                 <th className="px-4 sm:px-6 py-2 sm:py-3 font-medium">Kati</th>
               </tr>

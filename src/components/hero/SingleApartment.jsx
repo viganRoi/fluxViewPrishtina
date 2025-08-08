@@ -240,23 +240,21 @@ const SingleApartment = () => {
 
           <div className="w-full flex flex-col md:flex-row h-full justify-center mt-2 px-2 md:mt-0 bg-white items-center ">
             <div className="w-full flex  flex-col gap-2 flex-[3]">
-              <div className="flex   py-4 border-slate-300 text-[35px] md:text-[40px] font-semibold text-black montserrat items-center gap-2">
-                {/* <img
-                    className="w-[35px] "
-                    src="/assets/icons/siptotal.svg"
-                    alt=""
-                  />{" "} */}
-                <h1 className="montserrat font-thin">
-                  <span className="text-black">Tipi </span>
-                  {apartment.name} -{" "}
-                </h1>
-                <h1 className="text-black leading-none  text-[30px] md:text-[35px] montserrat font-bold">
-                  {(
-                    parseFloat(apartment.square) +
-                    parseFloat(apartment.balconySquare)
-                  ).toFixed(2)}{" "}
-                  m<sup>2</sup>{" "}
-                </h1>
+              <div className="flex w-full  py-4 border-slate-300 text-[35px] md:text-[40px] font-semibold text-black montserrat justify-between items-center gap-2">
+                <div className="w-full flex justify-start items-center gap-2">
+                  <h1 className="montserrat font-thin">
+                    <span className="text-black">Tipi </span>
+                    {apartment.name} -{" "}
+                  </h1>
+                  <h1 className="text-black leading-none  text-[30px] md:text-[35px] montserrat font-bold">
+                    {(
+                      parseFloat(apartment.square) +
+                      parseFloat(apartment.balconySquare)
+                    ).toFixed(2)}{" "}
+                    m<sup>2</sup>{" "}
+                  </h1>
+                </div>
+
                 <button
                   className="block md:hidden ml-12"
                   onClick={toggleWishlist}
