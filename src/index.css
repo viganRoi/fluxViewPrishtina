@@ -27,9 +27,6 @@ html {
   margin: auto;
   overflow-x: hidden;
 }
-*{
-  font-family: 'montserrat';
-}
 
 @font-face {
   font-family: 'circe';
@@ -42,6 +39,9 @@ html {
   font-style: normal;
 }
 
+*{
+  font-family: 'montserrat';
+}
 .circe {
   font-family: 'circe';
 }

@@ -19,11 +19,11 @@ const ConditionalLayout = ({ children }) => {
   const shouldHideFooter = pathMatches(hideFooterPaths);
 
   return (
-    <>
+    <div className="[&_*]:font-montserrat">
       {!shouldHideNavbar && <Navbar />}
       {children}
       {/* {!shouldHideFooter && <Footer />} */}
-    </>
+    </div>
   );
 };
 

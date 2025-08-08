@@ -14,6 +14,9 @@ module.exports = {
           '100%': { transform: 'translateY(0)' },
         },
       },
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'],
+      },
       animation: {
         'slide-down': 'slide-down 0.3s ease-in-out',
       },
