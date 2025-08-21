@@ -521,7 +521,7 @@ const SingleApartment = () => {
                   <>
                     {selectedTab === "3d" && (
                       <img
-                        className="w-[90%]"
+                        className="w-[70%]"
                         src={
                           apartment?.image3dUrl
                             ? `${homepage}${planmetricImageUrl}${apartment.image3dUrl}`
