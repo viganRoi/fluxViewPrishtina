@@ -44,7 +44,7 @@ const Floor = () => {
   //   { length: totalFloors },
   //   (_, i) => totalFloors - i
   // ).reverse();
-  const totalFloors = 9;
+  const totalFloors = 10;
   const floors = Array.from({ length: totalFloors }, (_, i) => i + 1);
   // const [activeFloor, setActiveFloor] = useState(floors[0]);
   const [activeFloor, setActiveFloor] = useState(initialFloor);
