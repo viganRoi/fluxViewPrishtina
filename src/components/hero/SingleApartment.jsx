@@ -519,7 +519,7 @@ const SingleApartment = () => {
                   <>
                     {selectedTab === "3d" && (
                       <img
-                        className="w-[90%]"
+                        className="w-[70%]"
                         src={
                           apartment?.image3dUrl
                             ? `${homepage}${planmetricImageUrl}${apartment.image3dUrl}`
@@ -544,7 +544,7 @@ const SingleApartment = () => {
                         className="w-[100%] p-14"
                         src={
                           apartment?.name
-                            ? `${homepage}${planmetricImageUrl}/floor/${apartment.name}-floor.jpg`
+                            ? `${homepage}${planmetricImageUrl}floor/${apartment.apartmentNumber}-${apartment.name}-floor.jpg`
                             : "/projektet/assets/images/planimetria.png"
                         }
                         alt="On Floor View"
