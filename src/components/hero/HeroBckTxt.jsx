@@ -14,11 +14,11 @@ const HeroBckTxt = ({
     >
       <div className={`w-11/12 md:w-8/12 text-center text-${textColor}`}>
         {/* <p className='montserrat'>Bespole build</p> */}
-        <h1 className="text-xl md:text-5xl certon mt-6">
+        <h1 className="text-xl md:text-5xl montserrat mt-6">
           {text}
-          <span className="text-gold certon">{textSpan}</span>
+          <span className="text-gold montserrat">{textSpan}</span>
           {text2}
-          <span className="text-gold certon">{textSpan2}</span>
+          <span className="text-gold montserrat">{textSpan2}</span>
         </h1>
       </div>
     </div>

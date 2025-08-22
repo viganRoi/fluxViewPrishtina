@@ -27,12 +27,12 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 const Building = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const { id, mode } = useParams();
   const buildingData = useSelector(getAllApartmentSvgData);
   const buildingFloorData = useSelector(getAllFloorSvgData);
   const isSmallDev = window.innerWidth < 700;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedTab, setSelectedTab] = useState("selection");
+  const [selectedTab, setSelectedTab] = useState(mode || "selection");
   const sizeRange = useSelector(getRegularSquareFilter);
   const floorRange = useSelector(getRegularFloorFilter);
   const roomRange = useSelector(getRegularRoomFilter);
@@ -300,13 +300,42 @@ const Building = () => {
                   <polygon
                     key={apartment.id}
                     points={apartment.path}
-                    className={"st0"}
-                    id={apartment.apartmentId}
-                    onClick={() =>
-                      navigate(
-                        `/buildings/${building.buildingNr}/floor/${apartment.floorNumber}`
-                      )
+                    onContextMenu={(e) => handleContextMenu(e, apartment)}
+                    className={
+                      parseInt(apartment.floorNumber) >= floorRange.startVal &&
+                      parseInt(apartment.floorNumber) <= floorRange.endVal
+                        ? "st2"
+                        : "st3"
                     }
+                    id={apartment.apartmentId}
+                    onMouseEnter={(e) => {
+                      e.preventDefault();
+                      setPopup({
+                        anchorEl: e.currentTarget,
+                        open: true,
+                        data: apartment,
+                      });
+                    }}
+                    onMouseLeave={() => {
+                      setPopup({
+                        anchorEl: null,
+                        open: false,
+                        data: apartment,
+                      });
+                    }}
+                    onClick={() => {
+                      if (
+                        parseInt(apartment.floorNumber) >=
+                          floorRange.startVal &&
+                        parseInt(apartment.floorNumber) <= floorRange.endVal
+                      ) {
+                        // navigate(`/buildings/${building.buildingNr}/floor/${apartment.id}`);
+                        navigate(
+                          `/buildings/${building.buildingNr}/floor/${apartment.id}`,
+                          { state: { floorNumber: apartment.floorNumber } }
+                        );
+                      }
+                    }}
                   />
                 );
               }

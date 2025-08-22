@@ -18,6 +18,8 @@ const AllApartments = ({ filteredApartments }) => {
             return (
               <ApartmentCard
                 key={el.id}
+                id={el.id}
+                apartment={el}
                 category={el.category}
                 image={el.image3dUrl}
                 title={el.name}

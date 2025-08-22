@@ -2,7 +2,7 @@ import { ViewProject, } from "../components";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="[&_*]:font-montserrat">
       <ViewProject />
     </div>
   );

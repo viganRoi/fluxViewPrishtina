@@ -50,7 +50,7 @@ const Banner = () => {
               />
               <div className="absolute  left-10 flex items-center justify-center">
                 <div className="bg-transparent p-4 text-start rounded text-white flex flex-col gap-2">
-                  <h1 className="certon text-4xl sm:text-5xl md:text-7xl text-white">
+                  <h1 className="montserrat text-4xl sm:text-5xl md:text-7xl text-white">
                     Më shumë se një <br />
                     kompleks banimi
                   </h1>
@@ -58,8 +58,8 @@ const Banner = () => {
               </div>
               <div className="absolute bottom-10 left-10 flex items-center justify-center">
                 <div className="bg-transparent p-4 text-start rounded text-white flex flex-col gap-2">
-                  <p className="certon">Prishtinë, Kosovë</p>
-                  <h1 className="certon">{el.title}</h1>
+                  <p className="montserrat">Prishtinë, Kosovë</p>
+                  <h1 className="montserrat">{el.title}</h1>
                   <a href={el.link} style={{ textDecoration: "none" }}>
                     <button className="border-2 border-white rounded-full py-2 px-10 w-full">
                       Blej Tani

@@ -11,21 +11,23 @@ const AvailableFloor = ({ anchorEl, setPopupMenu, data, open }) => {
         const componentWidth = 200; // Assuming the width of the component is 200px
         const windowHeight = window.innerHeight;
         const windowWidth = window.innerWidth;
-      
+
         const calculatedTop = rect.top + rect.height / 2 - componentHeight / 2;
         const calculatedLeft = rect.left + rect.width / 2 - componentWidth / 2;
-      
-        const isOverflowingVertically = calculatedTop + componentHeight > windowHeight;
-        const isOverflowingHorizontally = calculatedLeft + componentWidth > windowWidth;
-      
+
+        const isOverflowingVertically =
+          calculatedTop + componentHeight > windowHeight;
+        const isOverflowingHorizontally =
+          calculatedLeft + componentWidth > windowWidth;
+
         const adjustedTop = isOverflowingVertically
           ? windowHeight - componentHeight
           : calculatedTop;
-      
+
         const adjustedLeft = isOverflowingHorizontally
           ? windowWidth - componentWidth
           : calculatedLeft;
-      
+
         setPosition({
           top: adjustedTop,
           left: adjustedLeft,
@@ -58,7 +60,9 @@ const AvailableFloor = ({ anchorEl, setPopupMenu, data, open }) => {
         zIndex: 1,
       }}
     >
-      <h1 className='certon text-white text-2xl'>Kati: {data.floorNumber}</h1>
+      <h1 className="montserrat text-white text-2xl">
+        Kati: {data.floorNumber}
+      </h1>
     </div>
   );
 };

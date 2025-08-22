@@ -20,7 +20,7 @@ const ApartmentWishlistCard = ({
         onClick={navigateTo}
       />
       {/* <button
-        className="absolute top-4 right-4 bg-transparent text-brand px-4 py-1 text-sm border-brand border-[1px] rounded-full hover:shadow-md transition certon"
+        className="absolute top-4 right-4 bg-transparent text-brand px-4 py-1 text-sm border-brand border-[1px] rounded-full hover:shadow-md transition montserrat"
         onClick={navigateTo}
       >
         360° Vr Tour

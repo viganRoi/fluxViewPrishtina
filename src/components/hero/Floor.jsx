@@ -12,6 +12,7 @@ import { AuthProvider } from "../auth/AuthProvider";
 import ContextMenu from "../contextMenu/ContextMenu";
 import AdmApartmentModal from "../admin/apartments/AdmApartmentModal";
 import { ApartmentFloorModal } from "../";
+import AdmApartmentIdModal from "../admin/apartments/AdmApartmentIdModal";
 
 const Floor = () => {
   const isSmallDev = window.innerWidth < 700;
@@ -43,7 +44,7 @@ const Floor = () => {
   //   { length: totalFloors },
   //   (_, i) => totalFloors - i
   // ).reverse();
-  const totalFloors = 9;
+  const totalFloors = 10;
   const floors = Array.from({ length: totalFloors }, (_, i) => i + 1);
   // const [activeFloor, setActiveFloor] = useState(floors[0]);
   const [activeFloor, setActiveFloor] = useState(initialFloor);
@@ -262,6 +263,7 @@ const Floor = () => {
           </AuthProvider>
         )}
         <AdmApartmentModal />
+        <AdmApartmentIdModal />
         <ApartmentFloorModal
           apartment={hoveredApartment}
           mousePosition={mousePosition}

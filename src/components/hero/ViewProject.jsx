@@ -93,7 +93,9 @@ const ViewProject = () => {
                   d={point.path}
                   onMouseEnter={() => setHoveredId(point.id)}
                   onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => navigate(`/${point.type}/${point.name}`)}
+                  onClick={() =>
+                    navigate(`/${point.type}/${point.redirect}/${point.name}`)
+                  }
                 />
               ))}
             </svg>
@@ -109,7 +111,7 @@ const ViewProject = () => {
             checked={selectedTab === "3d"}
           />
           <label
-            className="tab certon"
+            className="tab montserrat"
             onClick={() => {
               handleTabClick("3d");
             }}
@@ -125,7 +127,7 @@ const ViewProject = () => {
             checked={selectedTab === "top"}
           />
           <label
-            className="tab certon"
+            className="tab montserrat"
             onClick={() => {
               handleTabClick("top");
             }}

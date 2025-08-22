@@ -32,7 +32,7 @@ const ApartmentsCarousel = () => {
     <div className="w-full h-full flex flex-col items-center justify-center content-center  bg-white">
       <div className="w-full md:w-11/12 flex flex-col items-start justify-center gap-4 bg-white py-12 px-4 md:px-12 z-20">
         <h1 className="text-brand text-2xl montserrat font-semibold ml-0 md:ml-4">
-          Apartamente te ngjashme
+          Apartamente të ngjashme
         </h1>
         <Swiper
           ref={swiperRef}
@@ -58,7 +58,7 @@ const ApartmentsCarousel = () => {
                   key={el.id}
                   object={el.apartmentNumber}
                   category={el.category}
-                  image={el.imageUrl}
+                  image={el.image3dUrl}
                   title={el.name}
                   floor={el.floorNumber}
                   sqft={el.square}

@@ -19,12 +19,12 @@ const ContactSection = () => {
           </h2>
           <div className="space-y-2 md:space-y-2 md:space-y-4">
             <div>
-              <h5 className="font-bold certon text-white">Kontakti</h5>
+              <h5 className="font-bold montserrat text-white">Kontakti</h5>
               <p className="text-gray-200">info@folejaliving.com</p>
               <p className="text-gray-200">+383 48 401 401</p>
             </div>
             <div>
-              <h5 className="font-bold certon text-white">Zyret</h5>
+              <h5 className="font-bold montserrat text-white">Zyret</h5>
               <p className="text-gray-200">
                 Zyre 503, Prishtine,
                 <br />
@@ -32,7 +32,9 @@ const ContactSection = () => {
               </p>
             </div>
             <div>
-              <h5 className="font-bold certon text-white">Qendra e shitjeve</h5>
+              <h5 className="font-bold montserrat text-white">
+                Qendra e shitjeve
+              </h5>
               <p className="text-gray-200">
                 Zyre 202, Kosove Height Square 1, Kosove Hills Estate,
                 <br />
@@ -42,7 +44,7 @@ const ContactSection = () => {
           </div>
         </div>
         <div className="bg-white p-4 md:p-8 rounded-lg shadow-lg text-black">
-          <h3 className="text-xl font-bold certon mb-4">Na Kontaktoni</h3>
+          <h3 className="text-xl font-bold montserrat mb-4">Na Kontaktoni</h3>
           <form className="space-y-2 md:space-y-4">
             <div className="grid grid-cols-2 gap-2 md:gap-4">
               <input

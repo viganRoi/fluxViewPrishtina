@@ -79,15 +79,15 @@ const BuildingFilterMobile = ({ available, setFilterState }) => {
     <div className="w-full h-full bg-brand py-0 pt-16 flex flex-col items-center justify-center">
       <div className="w-full h-full flex flex-col items-center justify-center bg-brand py-5">
         <div className="w-11/12 h-full text-gold flex justify-between items-center gap-4">
-          <h1 className="text-xl certon text-gold text-nowrap">
+          <h1 className="text-xl montserrat text-gold text-nowrap">
             Objekti:{" "}
-            <span className="text-white certon">
+            <span className="text-white montserrat">
               {buildingData[0]?.buildingNr?.toUpperCase()}
             </span>
           </h1>
           <button
             onClick={() => setShowModal(true)}
-            className="py-2 px-6 w-full border-gold border bg-brandD rounded-full text-gold text-nowrap certon hidden md:flex justify-center items-center gap-4"
+            className="py-2 px-6 w-full border-gold border bg-brandD rounded-full text-gold text-nowrap montserrat hidden md:flex justify-center items-center gap-4"
           >
             {" "}
             <img src="/assets/icons/filter.png" alt="" className="h-6" /> Filtro
@@ -95,7 +95,7 @@ const BuildingFilterMobile = ({ available, setFilterState }) => {
 
           <div className="md:hidden w-full h-full bg-brand ">
             <div className="w-11/12 flex justify-end items-center">
-              <h1 className="text-xl certon text-white text-nowrap">
+              <h1 className="text-xl montserrat text-white text-nowrap">
                 Të lira: {available}
               </h1>
             </div>
@@ -104,13 +104,13 @@ const BuildingFilterMobile = ({ available, setFilterState }) => {
       </div>
       <div className="  w-full h-full bg-brand py-4 px-4">
         <div className="hidden  w-11/12 md:flex justify-end">
-          <h1 className="text-xl certon text-white text-nowrap">
+          <h1 className="text-xl montserrat text-white text-nowrap">
             Të lira: {available}
           </h1>
         </div>
         <button
           onClick={() => setShowModal(true)}
-          className="py-2 px-6 w-full border-gold border bg-brandD rounded-full text-gold text-nowrap certon flex justify-center items-center gap-4"
+          className="py-2 px-6 w-full border-gold border bg-brandD rounded-full text-gold text-nowrap montserrat flex justify-center items-center gap-4"
         >
           {" "}
           <img src="/assets/icons/filter.png" alt="" className="h-6" /> Filtro
