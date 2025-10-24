@@ -208,7 +208,7 @@ const handleCheckboxChange = (e) => {
   }
 };
   return (
-    <div style={{ display: !show ? "block" : "none", padding: 10, marginTop: 60}}>
+    <div style={{ display: !show ? "block" : "none", padding: 10, marginTop: 60, backgroundColor: "#fff" }}>
       <ToastContainer />
       <h2>Shto Parking</h2>
       <div style={{ display: "flex", gap: 20 }}>

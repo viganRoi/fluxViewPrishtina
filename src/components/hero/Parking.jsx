@@ -45,7 +45,7 @@ const Parking = ({ parkingNumber }) => {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/api/v1/parking?id=parking${parkingNumber}`)
+      .get(`${BASE_URL}/api/v1/parking?id=test`)
       .then((res) => setParkingData(res.data))
       .catch((err) => console.log(err));
   }, [parkingNumber]);

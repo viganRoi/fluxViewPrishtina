@@ -22,7 +22,7 @@ export const fetchAllCommercialStoreByBuilding = createAsyncThunk(
     'commercialStore/fetchCommercialStore',
     async (id, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`${apiUrl}/getall/building/s-${id}`);
+            const response = await axios.get(`${apiUrl}/getall/building/${id}`);
             return response.data;
         } catch (error) {
             return rejectWithValue(error.message);

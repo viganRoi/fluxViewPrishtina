@@ -57,7 +57,9 @@ function App() {
           <Route path="/buildings" element={<GeneralBuildingPage />} />
           <Route path="/buildings/:mode/:id" element={<BuildingPage />} />
           <Route path="/buildings/:id/floor/:floorId" element={<FloorPage />} />
+          <Route path="/parking" element={<ParkingPage />} />
           <Route path="/apartments/:id" element={<SingleApartmentPage />} />
+          <Route path="/afarizmi/:id" element={<CommercialPage />} />
           <Route path="/apartments" element={<AllApartmentsPage />} />
           <Route path="/360-virtual" element={<VirtualPage />} />
           <Route
