@@ -64,7 +64,7 @@ const Parking = ({ parkingNumber }) => {
   };
 
   return (
-    <div className="bg-white w-full h-[50vh] md:h-[40vh] flex flex-col items-center justify-center overflow-auto md:overflow-hidden relative my-20">
+    <div className="bg-white w-full h-[50vh] md:h-[120vh] flex flex-col items-center justify-center overflow-auto md:overflow-hidden relative my-20">
       {parkingData?.map((building, index) => {
         return (
           <div

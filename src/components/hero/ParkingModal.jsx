@@ -72,7 +72,7 @@ const ParkingModal = ({ onClose, parkingData, onTogglePriceCard }) => {
             </div>
             <div className="w-full flex justify-center items-center">
               <button
-                className="w-full md:w-1/2 bg-brand border border-gold text-white text-sm md:text-lg hover:bg-gold hover:text-brand cursor-pointer py-3 rounded-md montserrat"
+                className="w-full md:w-1/2 bg-brand border border-black text-white text-sm md:text-lg hover:bg-black hover:text-brand cursor-pointer py-3 rounded-md montserrat"
                 onClick={onTogglePriceCard}
               >
                 NA KONTAKTONI
