@@ -64,7 +64,7 @@ const Parking = ({ parkingNumber }) => {
   };
 
   return (
-    <div className="bg-white w-full h-[50vh] md:h-[40vh] flex flex-col items-center justify-center overflow-auto md:overflow-hidden relative my-20">
+    <div className="bg-white w-full h-[50vh] md:h-[130vh] flex flex-col items-center justify-center overflow-auto md:overflow-hidden relative my-0">
       {parkingData?.map((building, index) => {
         return (
           <div
@@ -106,7 +106,7 @@ const Parking = ({ parkingNumber }) => {
                       onContextMenu={(e) => handleContextMenu(e, apartment)}
                       className={
                         apartment.isSold
-                          ? 'st1'
+                          ? "st1"
                           : apartment.isRent
                           ? "rent-class"
                           : apartment.isReserved

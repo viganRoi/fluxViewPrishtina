@@ -32,12 +32,12 @@ const ParkingFilter = ({
   };
 
   return (
-    <div className="bg-white w-full h-full flex flex-col md:flex-row items-center justify-center pt-6">
+    <div className="bg-white w-full h-full flex flex-col md:flex-row items-center justify-center pt-6 pb-12">
       <div className="w-11/12 md:w-5/6 flex flex-col md:flex-row items-start md:items-center gap-5 justify-between relative">
         <div className="flex flex-col items-start">
           <h3 className="text-base font-semibold montserrat mb-2">Tipi</h3>
           <div className="flex items-center space-x-4">
-            <label className="flex items-center space-x-2 cursor-pointer">
+            <label className="flex  items-center space-x-2 cursor-pointer">
               <input
                 type="checkbox"
                 checked={selectedType.includes("Parkingjet")}
@@ -47,7 +47,7 @@ const ParkingFilter = ({
               <div
                 className={`w-5 h-5 border rounded-md ${
                   selectedType.includes("Parkingjet")
-                    ? "bg-[var(--brand-color)]"
+                    ? "bg-[var(--brand2-color)]"
                     : "bg-white"
                 }`}
               />
@@ -64,7 +64,7 @@ const ParkingFilter = ({
               <div
                 className={`w-5 h-5 border rounded-md ${
                   selectedType.includes("Depo")
-                    ? "bg-[var(--brand-color)]"
+                    ? "bg-[var(--brand2-color)]"
                     : "bg-white"
                 }`}
               />
@@ -136,7 +136,7 @@ const ParkingFilter = ({
         </div>
         <button
           onClick={resetFilters}
-          className="px-6 py-2 bg-[var(--brand-color)] text-[var(--brand2-color)] text-sm uppercase montserrat rounded-md"
+          className="px-6 py-2 bg-black text-[var(--brand-color)] text-sm uppercase montserrat rounded-md"
         >
           RESETO FILTERN
         </button>
