@@ -30,9 +30,9 @@ const ParkingFilter = ({
   };
 
   const mappingParkingNumberToFloor = {
-    "1": "-2 Bodrumi",
-    "2": "-2 Suterreni",
-    "3": "-1 Suterreni",
+    "1": "Bodrumi",
+    "2": "Suterreni 1",
+    "3": "Suterreni 2",
   };
 
   return (
