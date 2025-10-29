@@ -130,7 +130,9 @@ const ParkingFilter = ({
                     : "bg-white"
                 }`}
               />
-              <span className="montserrat text-nowrap">Me mbushje elektrike</span>
+              <span className="montserrat text-nowrap">
+                Me mbushje elektrike
+              </span>
             </label>
           </div> */}
         </div>

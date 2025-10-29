@@ -58,11 +58,11 @@ const Navbar = () => {
                 />
               </a>
             </div>
-            <div className="hidden xl:flex space-x-4 items-center text-xl montserrat">
+            <div className="hidden xl:flex space-x-4 items-center text-[16px] montserrat">
               <a
                 href="https://flux-ks.com" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-nowrap uppercase"
+                className="text-white text-nowrap font-montserrat uppercase"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Ballina
@@ -70,7 +70,7 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-nowrap uppercase"
+                className="text-white text-nowrap font-montserrat uppercase"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Rreth Nesh
@@ -78,7 +78,7 @@ const Navbar = () => {
               <a
                 href="https://flux-ks.com/rreth-nesh/" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
-                className="text-white text-nowrap uppercase"
+                className="text-white text-nowrap font-montserrat uppercase"
                 onClick={() => setIsMenuOpen(false)}
               >
                 NA KONTAKTONI
@@ -91,7 +91,7 @@ const Navbar = () => {
               </NavLink> */}
               <NavLink
                 to="/360-virtual"
-                className={`text-white text-nowrap uppercase `}
+                className={`text-white text-nowrap font-montserrat uppercase `}
               >
                 360 Virtual
               </NavLink>

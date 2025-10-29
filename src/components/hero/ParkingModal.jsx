@@ -76,10 +76,7 @@ const ParkingModal = ({ onClose, parkingData }) => {
           </div>
 
           <div className="w-full flex justify-center items-center">
-            <a
-              href="https://gogaj.roitiv.com/kontakti"
-              rel="noopener noreferrer"
-            >
+            <a href="https://flux-ks.com/kontakti" rel="noopener noreferrer">
               <button className="w-full md:w-full bg-black border border-brand text-brand text-sm md:text-md hover:bg-black hover:text-white hover:border-white px-4 py-3 rounded-md montserrat transition-colors duration-200">
                 NA KONTAKTONI
               </button>
