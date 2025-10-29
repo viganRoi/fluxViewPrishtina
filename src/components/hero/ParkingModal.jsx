@@ -34,7 +34,7 @@ const ParkingModal = ({ onClose, parkingData }) => {
             <IoCloseOutline size={24} />
           </button>
 
-          <div className="flex flex-col md:flex-row justify-between text-[12px] uppercase mb-4 mt-10 opacity-80 gap-2 md:gap-0">
+          <div className="flex flex-col md:flex-row justify-between text-sm uppercase mb-4 mt-10 opacity-80 gap-2 md:gap-0">
             <div className="text-start flex flex-col gap-2 md:gap-4">
               <span className="montserrat">Lloji</span>
               <span className="montserrat text-3xl">
@@ -76,7 +76,10 @@ const ParkingModal = ({ onClose, parkingData }) => {
           </div>
 
           <div className="w-full flex justify-center items-center">
-            <a href="https://flux-ks.com/kontakti" rel="noopener noreferrer">
+            <a
+              href="https://flux-ks.com/na-kontaktoni"
+              rel="noopener noreferrer"
+            >
               <button className="w-full md:w-full bg-black border border-brand text-brand text-sm md:text-md hover:bg-black hover:text-white hover:border-white px-4 py-3 rounded-md montserrat transition-colors duration-200">
                 NA KONTAKTONI
               </button>
