@@ -37,13 +37,13 @@ const ParkingModal = ({ onClose, parkingData }) => {
           <div className="flex flex-col md:flex-row justify-between text-sm uppercase mb-4 mt-10 opacity-80 gap-2 md:gap-0">
             <div className="text-start flex flex-col gap-2 md:gap-4">
               <span className="montserrat">Lloji</span>
-              <span className="montserrat text-3xl">
+              <span className="montserrat text-3xl text-white">
                 {parkingData.isWarehouse ? "Depo" : "Parking"}
               </span>
             </div>
             <div className="text-center flex flex-col gap-2 md:gap-4">
               <span className="montserrat">Numër</span>
-              <span className="montserrat text-3xl">
+              <span className="montserrat text-3xl text-white">
                 {parkingData.parkingNumber}
               </span>
             </div>
@@ -51,7 +51,7 @@ const ParkingModal = ({ onClose, parkingData }) => {
               <span className="montserrat">
                 {parkingData.isWarehouse ? "Sipërfaqja" : "Sipërfaqja"}
               </span>
-              <span className="montserrat text-3xl">
+              <span className="montserrat text-3xl text-white">
                 {parkingData.electric
                   ? "Po"
                   : parkingData.isWarehouse
@@ -80,7 +80,7 @@ const ParkingModal = ({ onClose, parkingData }) => {
               href="https://flux-ks.com/na-kontaktoni"
               rel="noopener noreferrer"
             >
-              <button className="w-full md:w-full bg-black border border-brand text-brand text-sm md:text-md hover:bg-black hover:text-white hover:border-white px-4 py-3 rounded-md montserrat transition-colors duration-200">
+              <button className="w-full md:w-full bg-black border border-brand text-white text-sm md:text-md hover:bg-black hover:text-white hover:border-white px-4 py-3 rounded-md montserrat transition-colors duration-200">
                 NA KONTAKTONI
               </button>
             </a>
