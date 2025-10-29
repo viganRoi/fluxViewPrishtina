@@ -34,22 +34,22 @@ const ParkingModal = ({ onClose, parkingData }) => {
             <IoCloseOutline size={24} />
           </button>
 
-          <div className="flex flex-col md:flex-row justify-between text-sm uppercase mb-4 mt-10 opacity-80 gap-2 md:gap-0">
+          <div className="flex flex-col md:flex-row justify-between text-[12px] uppercase mb-4 mt-10 opacity-80 gap-2 md:gap-0">
             <div className="text-start flex flex-col gap-2 md:gap-4">
               <span className="montserrat">Lloji</span>
               <span className="montserrat text-3xl">
                 {parkingData.isWarehouse ? "Depo" : "Parking"}
               </span>
             </div>
-            <div className="text-start flex flex-col gap-2 md:gap-4">
+            <div className="text-center flex flex-col gap-2 md:gap-4">
               <span className="montserrat">Numër</span>
               <span className="montserrat text-3xl">
                 {parkingData.parkingNumber}
               </span>
             </div>
-            <div className="text-start flex flex-col gap-2 md:gap-4">
+            <div className="text-end flex flex-col gap-2 md:gap-4">
               <span className="montserrat">
-                {parkingData.isWarehouse ? "Sipërfaqja" : ""}
+                {parkingData.isWarehouse ? "Sipërfaqja" : "Sipërfaqja"}
               </span>
               <span className="montserrat text-3xl">
                 {parkingData.electric
