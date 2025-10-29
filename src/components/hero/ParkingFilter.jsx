@@ -93,6 +93,25 @@ const ParkingFilter = ({
           </div>
         </div>
         <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start">
+            <h3 className="text-base font-semibold montserrat mb-2">
+              Legjenda
+            </h3>
+            <div className="flex gap-4">
+              <div className="flex items-center gap-2">
+                <a className="w-4 h-4 rounded-full bg-brand opacity-70" />E lirë
+              </div>
+              <div className="flex items-center gap-2">
+                <a className="w-4 h-4 rounded-full bg-[#8b0000] opacity-70" />E
+                shitur
+              </div>
+
+              <div className="flex items-center gap-2">
+                <a className="w-4 h-4 rounded-full bg-[#ff7b00] opacity-70" />E
+                rezevuar
+              </div>
+            </div>
+          </div>
           {/* <h3 className="text-base font-semibold montserrat mb-2">
             Funksionaliteti
           </h3>
