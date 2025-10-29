@@ -99,7 +99,8 @@ const ParkingFilter = ({
             </h3>
             <div className="flex gap-4">
               <div className="flex items-center gap-2">
-                <a className="w-4 h-4 rounded-full bg-brand opacity-70" />E lirë
+                <a className="w-4 h-4 rounded-full bg-green-600 opacity-70" />E
+                lirë
               </div>
               <div className="flex items-center gap-2">
                 <a className="w-4 h-4 rounded-full bg-[#8b0000] opacity-70" />E
