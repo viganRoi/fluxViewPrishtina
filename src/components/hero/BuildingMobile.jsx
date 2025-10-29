@@ -128,17 +128,17 @@ const BuildingMobile = () => {
                     d={apartment.path}
                     onContextMenu={(e) => handleContextMenu(e, apartment)}
                     className={
-                      parseInt(apartment.floorNumber) >= floorRange.startVal &&
-                      parseInt(apartment.floorNumber) <= floorRange.endVal &&
-                      (roomRange.includes(apartment.rooms) ||
-                        roomRange.includes("all")) &&
-                      parseInt(apartment.square) >= sizeRange.startVal &&
-                      parseInt(apartment.square) <= sizeRange.endVal
-                        ? apartment.isSold
-                          ? "st1"
-                          : filterState
-                          ? "st2"
-                          : "st0"
+                      (parseInt(apartment.floorNumber) >= floorRange.startVal &&
+                        parseInt(apartment.floorNumber) <= floorRange.endVal &&
+                        (roomRange.includes(apartment.rooms) ||
+                          roomRange.includes("all")) &&
+                        parseInt(apartment.square) >= sizeRange.startVal &&
+                        parseInt(apartment.square) <= sizeRange.endVal)
+                        ? (apartment.isSold
+                            ? "st1"
+                            : (apartment.isReserved
+                                ? "reserved"
+                                : (filterState ? "st2" : "st0")))
                         : "st3"
                     }
                     id={apartment.apartmentId}

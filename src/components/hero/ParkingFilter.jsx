@@ -31,6 +31,12 @@ const ParkingFilter = ({
     setSelectedFunctionality([]);
   };
 
+  const mappingParkingNumberToFloor = {
+    "1": "-2 Bodrumi",
+    "2": "-2 Suterreni",
+    "3": "-1 Suterreni",
+  };
+
   return (
     <div className="bg-white w-full h-full flex flex-col md:flex-row items-center justify-center pt-6 pb-12">
       <div className="w-11/12 md:w-5/6 flex flex-col md:flex-row items-start md:items-center gap-5 justify-between relative">
@@ -75,19 +81,19 @@ const ParkingFilter = ({
         <div className="flex flex-col items-start">
           <h3 className="text-base font-semibold montserrat mb-2">Kati</h3>
           <div className="flex space-x-2">
-            {["-1", "-2"].map((floor) => (
+            {Object.keys(mappingParkingNumberToFloor).map((floor) => (
               <button
                 key={floor}
                 className={`px-4 py-2 border rounded-md ${
-                  `-${parkingNumber}` === floor
+                  String(parkingNumber) === floor
                     ? "bg-[var(--brand2-color)] text-white"
                     : "bg-white"
                 }`}
                 onClick={() => {
-                  onParkingNumberChange(floor.replace("-", ""));
+                  onParkingNumberChange(floor);
                 }}
               >
-                {floor}
+                {mappingParkingNumberToFloor[floor]}
               </button>
             ))}
           </div>

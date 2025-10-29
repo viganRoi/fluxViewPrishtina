@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Parking, ParkingFilter } from "../components";
+import { useParams } from "react-router-dom";
 
 const ParkingPage = () => {
   window.scrollTo({ top: 0 });

@@ -85,6 +85,21 @@ html {
   width: 100%;
 }
 
+.reserved {
+  fill: #ff7b00;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease 0s;
+  opacity: 0.5;
+  stroke: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 1px;
+  outline: none;
+  width: 100%;
+}
+
 .st0 {
   fill: #61ce709c;
   cursor: pointer;

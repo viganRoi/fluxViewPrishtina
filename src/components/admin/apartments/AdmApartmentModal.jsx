@@ -46,6 +46,7 @@ function AdmApartmentModal() {
     id: "",
     rooms: 1,
     isSold: false,
+    isReserved: false,
     floorNumber: 0,
     square: 0,
     name: "",
@@ -71,6 +72,7 @@ function AdmApartmentModal() {
       id: "",
       rooms: 1,
       isSold: false,
+      isReserved: false,
       floorNumber: 0,
       square: 0,
       name: "",
@@ -164,6 +166,7 @@ function AdmApartmentModal() {
     const formData = new FormData();
     formData.append("rooms", apartmentData.rooms);
     formData.append("isSold", apartmentData.isSold);
+    formData.append("isReserved", apartmentData.isReserved);
     formData.append("floorNumber", apartmentData.floorNumber);
     formData.append("square", apartmentData.square);
     formData.append("name", apartmentData.name);
@@ -492,32 +495,62 @@ function AdmApartmentModal() {
                   }}
                 />
               </Grid>
-              <Grid item sm={12} md={12}>
+              <Grid item sm={12} md={6}>
                 <FormControl>
                   <FormLabel id="demo-row-radio-buttons-group-label">
                     Disponueshmeria
                   </FormLabel>
                   <RadioGroup
-                    value={apartmentData.isSold}
+                    value={String(apartmentData.isSold)}
                     row={true}
                     onChange={(e) => {
                       setApartmentData((prev) => ({
                         ...prev,
-                        isSold: e.target.value,
+                        isSold: e.target.value === 'true',
                       }));
                     }}
                     aria-labelledby="demo-row-radio-buttons-group-label"
-                    name="row-radio-buttons-group"
+                    name="isSold"
                   >
                     <FormControlLabel
-                      value={true}
+                      value={"true"}
                       control={<Radio />}
                       label="Shitur"
                     />
                     <FormControlLabel
-                      value={false}
+                      value={"false"}
                       control={<Radio />}
                       label="Jo e shitur"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </Grid>
+              <Grid item sm={12} md={6}>
+                <FormControl>
+                  <FormLabel id="demo-row-radio-buttons-group-label">
+                    Rezervuar
+                  </FormLabel>
+                  <RadioGroup
+                    value={String(apartmentData.isReserved)}
+                    row={true}
+                    onChange={(e) => {
+                      setApartmentData((prev) => ({
+                        ...prev,
+                        isReserved: e.target.value === 'true',
+                      }));
+                    }}
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="isReserved"
+                  >
+                    <FormControlLabel
+                      value={"true"}
+                      control={<Radio />}
+                      label="PO"
+                    />
+                    <FormControlLabel
+                      value={"false"}
+                      control={<Radio />}
+                      label="JO"
                     />
                   </RadioGroup>
                 </FormControl>
