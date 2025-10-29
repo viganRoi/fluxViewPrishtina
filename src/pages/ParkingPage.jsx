@@ -3,13 +3,13 @@ import { Parking, ParkingFilter } from "../components";
 import { useParams } from "react-router-dom";
 
 const ParkingPage = () => {
-  window.scrollTo({ top: 0 });
-  const [filter, setFilter] = useState(1);
   const [parkingNumber, setParkingNumber] = useState(1);
+  const [selectedTypes, setSelectedTypes] = useState([]);
 
-  const handleFilterChange = (filter) => {
-    setFilter(filter);
+  const handleFilterChange = (types) => {
+    setSelectedTypes(types);
   };
+
   return (
     <div className="bg-white">
       <div className="bg-[var(--brand2-color)] w-full pt-20 md:pt-0 h-[200px] md:h-[300px] flex flex-col items-center justify-center relative">
@@ -24,7 +24,7 @@ const ParkingPage = () => {
         onParkingNumberChange={(c) => setParkingNumber(c)}
         parkingNumber={parkingNumber}
       />
-      <Parking parkingNumber={parkingNumber} />
+      <Parking parkingNumber={parkingNumber} selectedTypes={selectedTypes} />
     </div>
   );
 };

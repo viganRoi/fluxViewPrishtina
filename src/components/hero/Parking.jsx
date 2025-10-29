@@ -8,7 +8,7 @@ import { BASE_URL, imagePath } from "../../utils/consts";
 import { useMediaQuery } from "@mui/material";
 import { useParams } from "react-router-dom";
 
-const Parking = ({ parkingNumber }) => {
+const Parking = ({ parkingNumber, selectedTypes = [] }) => {
   const isSmallDev = window.innerWidth < 700;
   const isMidDev = useMediaQuery("(max-width:1024px)");
   const { id } = useParams();
@@ -30,6 +30,17 @@ const Parking = ({ parkingNumber }) => {
   const [isPriceCardVisible, setIsPriceCardVisible] = useState(false);
 
   const currentParkingArea = parkingNumber[currentIndex];
+
+    const filteredParkingData = parkingData.map((building) => ({
+    ...building,
+    parkingList: building.parkingList.filter((apartment) => {
+      if (selectedTypes.length === 0) return true;
+      if (selectedTypes.includes("Parkingjet") && apartment.isWarehouse !== true) return true;
+      if (selectedTypes.includes("Depo") && apartment.isWarehouse === true) return true;
+      return false;
+    }),
+  }));
+
 
   const handlePathClick = (point) => {
     setSelectedParking(point);
@@ -67,7 +78,7 @@ const Parking = ({ parkingNumber }) => {
 
   return (
     <div className="bg-white w-full h-[50vh] md:h-[120vh] flex flex-col items-center justify-center overflow-auto md:overflow-hidden relative my-20">
-      {parkingData?.map((building, index) => {
+      {filteredParkingData?.map((building, index) => {
         return (
           <div
             key={building.buildingName}
