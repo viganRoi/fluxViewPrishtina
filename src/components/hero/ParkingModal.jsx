@@ -56,7 +56,7 @@ const ParkingModal = ({ onClose, parkingData }) => {
                   ? "Po"
                   : parkingData.isWarehouse
                   ? parkingData.square.toFixed(2) + " m²"
-                  : "-"}
+                  : parkingData.square.toFixed(2) + " m²"}
               </span>
             </div>
           </div>
