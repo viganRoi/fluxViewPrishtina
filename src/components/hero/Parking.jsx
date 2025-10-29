@@ -6,10 +6,12 @@ import ContextMenuParking from "../contextMenu/ContextMenuParking";
 import axios from "axios";
 import { BASE_URL, imagePath } from "../../utils/consts";
 import { useMediaQuery } from "@mui/material";
+import { useParams } from "react-router-dom";
 
 const Parking = ({ parkingNumber }) => {
   const isSmallDev = window.innerWidth < 700;
   const isMidDev = useMediaQuery("(max-width:1024px)");
+  const { id } = useParams();
   const [parkingData, setParkingData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [contextMenu, setContextMenu] = useState({
@@ -45,7 +47,7 @@ const Parking = ({ parkingNumber }) => {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/api/v1/parking?id=test`)
+      .get(`${BASE_URL}/api/v1/parking?id=${id}-${parkingNumber}`)
       .then((res) => setParkingData(res.data))
       .catch((err) => console.log(err));
   }, [parkingNumber]);
