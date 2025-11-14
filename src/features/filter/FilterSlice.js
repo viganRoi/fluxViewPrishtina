@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 export const maxFloor = 10;
 export const minFloor = 0;
-export const maxSquare = 330;
+export const maxSquare = 367;
 export const minSquare = 40;
 
 const initialState = {
