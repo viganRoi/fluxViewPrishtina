@@ -58,7 +58,7 @@ const Navbar = () => {
                 />
               </a>
             </div>
-            <div className="hidden xl:flex space-x-4 items-center text-[16px] montserrat">
+            <div className="hidden xl:flex space-x-8 items-center text-[16px] montserrat">
               <a
                 href="https://flux-ks.com" // <-- replace with your desired URL
                 rel="noopener noreferrer" // recommended for security
