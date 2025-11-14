@@ -15,7 +15,7 @@ const initialState = {
         },
         square: {
             startVal: 40,
-            endVal: 300
+            endVal: 367
         },
         building:['all'],
     },
