@@ -8,8 +8,8 @@ const BuildingTable = ({ apartments }) => {
     <div className="w-full h-full flex justify-center items-center py-12 md:py-6">
       <div className="w-full px-0 md:px-12 h-full flex items-center justify-center">
         <div className="h-full w-full overflow-x-auto sm:overflow-y-auto">
-          <table className="min-w-full table-auto text-xs sm:text-sm text-left border-separate border-spacing-0">
-            <thead className="bg-primary h-10 sm:h-12 text-black uppercase sticky top-0 z-10">
+          <table className="min-w-full table-auto text-xs sm:text-sm text-left border-separate  border-spacing-0">
+            <thead className="bg-primary h-10 sm:h-12 text-black uppercase sticky  top-0 z-10">
               <tr>
                 <th className="px-4 sm:px-6 py-2 sm:py-3 font-medium">Tipi</th>
                 <th className="px-4 sm:px-6 py-2 sm:py-3 font-medium">Dhoma</th>
@@ -27,8 +27,8 @@ const BuildingTable = ({ apartments }) => {
                     key={apartment.id}
                     className={`${
                       i % 2 === 0 ? "bg-black" : "bg-[#3a3a3a]/50"
-                    } h-10 sm:h-12 w-full text-white cursor-pointer ${
-                      apartment.isSold ? "bg-red-500" : ""
+                    } h-10 sm:h-12 w-full text-white  cursor-pointer ${
+                      apartment.isSold ? "bg-red-400 border-white border-1" : ""
                     } ${apartment.isReserved ? "bg-orange-400" : ""}`}
                     onClick={() => navigate(`/apartments/${apartment.id}`)}
                   >
