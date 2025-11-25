@@ -61,7 +61,7 @@ const Parking = ({ parkingNumber, selectedTypes = [] }) => {
       .get(`${BASE_URL}/api/v1/parking?id=${id}-${parkingNumber}`)
       .then((res) => setParkingData(res.data))
       .catch((err) => console.log(err));
-  }, [parkingNumber]);
+  }, [parkingNumber, id]);
 
   const getSvgHeight = () => {
     return isSmallDev ? "auto" : isMidDev ? "auto" : "auto";
