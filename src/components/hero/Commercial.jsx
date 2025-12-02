@@ -77,7 +77,7 @@ const Commercial = ({ filteredCommercial }) => {
                 height={'100%'}
               /> */}
                 <image
-                  xlinkHref={`${mainUrl}${STORE_IMAGE_PATH}${id}-${currentIndex + 1}.jpg`}
+                  xlinkHref={`${mainUrl}${STORE_IMAGE_PATH}${id}-${currentIndex + 1}.png`}
                   alt=""
                   width={building.imgWidth} height={building.imgHeight}
                   transform={building.imgTransform}
