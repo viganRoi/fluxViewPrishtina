@@ -1,11 +1,11 @@
 export const mainUrl = 'https://flux-ks.com/prishtina-view';
-//export const BASE_URL = 'http://localhost:8080';
+// export const BASE_URL = 'http://localhost:8080';
 export const BASE_URL = 'https://srv412786.hstgr.cloud:7145'
 export const objectImageUrl = 'images/'
 export const planmetricImageUrl = '/images/planimetrit/'
 // export const BASE_URL = 'http://localhost:8845';
 // export const BASE_URL_JEHONA = 'http://localhost:8845';
-export const STORE_IMAGE_PATH = 'objektetImg/';
+export const STORE_IMAGE_PATH = '/objektetImg/store/';
 export const EURO_SYMBOL = '€';
 export const homepage = `https://flux-ks.com/prishtina-view`
 export const galleryDir = 'assets/gallery/'

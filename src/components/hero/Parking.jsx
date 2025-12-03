@@ -31,16 +31,20 @@ const Parking = ({ parkingNumber, selectedTypes = [] }) => {
 
   const currentParkingArea = parkingNumber[currentIndex];
 
-    const filteredParkingData = parkingData.map((building) => ({
+  const filteredParkingData = parkingData.map((building) => ({
     ...building,
     parkingList: building.parkingList.filter((apartment) => {
       if (selectedTypes.length === 0) return true;
-      if (selectedTypes.includes("Parkingjet") && apartment.isWarehouse !== true) return true;
-      if (selectedTypes.includes("Depo") && apartment.isWarehouse === true) return true;
+      if (
+        selectedTypes.includes("Parkingjet") &&
+        apartment.isWarehouse !== true
+      )
+        return true;
+      if (selectedTypes.includes("Depo") && apartment.isWarehouse === true)
+        return true;
       return false;
     }),
   }));
-
 
   const handlePathClick = (point) => {
     setSelectedParking(point);
@@ -61,7 +65,7 @@ const Parking = ({ parkingNumber, selectedTypes = [] }) => {
       .get(`${BASE_URL}/api/v1/parking?id=${id}-${parkingNumber}`)
       .then((res) => setParkingData(res.data))
       .catch((err) => console.log(err));
-  }, [parkingNumber]);
+  }, [parkingNumber, id]);
 
   const getSvgHeight = () => {
     return isSmallDev ? "auto" : isMidDev ? "auto" : "auto";
@@ -94,9 +98,9 @@ const Parking = ({ parkingNumber, selectedTypes = [] }) => {
           >
             <svg
               width={isSmallDev ? "300%" : "100%"}
-              height={"100%"}
+              // height={"100%"}
               objectFit="cover"
-              preserveAspectRatio="none"
+              // preserveAspectRatio="none"
               style={{
                 borderRadius: "5px",
                 paddingLeft: isSmallDev ? "420px" : "0px",
@@ -109,7 +113,7 @@ const Parking = ({ parkingNumber, selectedTypes = [] }) => {
                 width={building.imgWidth}
                 height={building.imgHeight}
                 transform={building.imgTransform}
-                objectFit="cover"
+                objectFit="fill"
               />
               {building?.parkingList?.map((apartment) => {
                 if (apartment.pointsType === "path") {
