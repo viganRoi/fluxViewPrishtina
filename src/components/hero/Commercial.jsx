@@ -104,7 +104,7 @@ const Commercial = ({ filteredCommercial, floor }) => {
                           })
                         }
                         onClick={() => {
-                          navigate(`/commercial/unit/${apartment.id}`);
+                          navigate(`/afarizmi/njesia/${apartment.id}`);
                         }}
                       />
                     );
@@ -116,7 +116,7 @@ const Commercial = ({ filteredCommercial, floor }) => {
                         points={apartment.path}
                         className={"parking-available"}
                         id={apartment.apartmentId}
-                        onClick={() => navigate(`/commercial/unit/${apartment.id}`)}
+                        onClick={() => navigate(`/afarizmi/njesia/${apartment.id}`)}
                       />
                     );
                   }

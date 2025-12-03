@@ -83,12 +83,12 @@ const Navbar = () => {
               >
                 NA KONTAKTONI
               </a>
-              {/* <NavLink to="/commercial" className={`text-white text-nowrap`}>
+              <NavLink to="/afarizmi" className={`text-white text-nowrap font-montserrat uppercase`}>
                 Afarizmi
               </NavLink>
-              <NavLink to="/parking" className={`text-white text-nowrap`}>
+              <NavLink to="/parking" className={`text-white text-nowrap font-montserrat uppercase`}>
                 Parkingu
-              </NavLink> */}
+              </NavLink>
               <NavLink
                 to="/360-virtual"
                 className={`text-white text-nowrap font-montserrat uppercase `}
@@ -236,20 +236,20 @@ const Navbar = () => {
               >
                 Na Kontaktoni
               </a>
-              {/* <NavLink
-                to="/gallery"
-                className="text-white text-2xl md:text-8xl uppercase font-normal"
+              <NavLink
+                to="/afarizmi"
+                className="text-white text-2xl md:text-7xl uppercase font-normal uppercase"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Afarizmi
               </NavLink>
               <NavLink
                 to="/parking"
-                className="text-white text-2xl md:text-8xl uppercase font-normal"
+                className="text-white text-2xl md:text-7xl uppercase font-normal uppercase"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Parkingu
-              </NavLink> */}
+              </NavLink>
 
               <NavLink
                 to="/360-virtual"

@@ -260,3 +260,20 @@ select:focus {
   stroke-width: 1px;
   stroke: white;
 }
+
+
+.parking-available {
+  /* fill: #0e37524d; */
+  fill: #119b244d;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease 0s;
+  opacity: 1;
+  stroke: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 1px;
+  outline: none;
+  width: 100%;
+}

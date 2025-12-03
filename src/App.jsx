@@ -35,6 +35,7 @@ import SingleApartmentByFloorPage from "./pages/SibleApartmentByFloorPage";
 import FloorSvgPage from "./pages/FloorSvgPage";
 import ParkingSvgExtractor from "./pages/admin/svgExtractor/ParkingSvgExtractor";
 import SvgExtractorForStores from "./pages/admin/svgExtractor/SvgExtractorForStores";
+import SingleCommercialPage from "./pages/SingleCommercialPage";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/buildings/:id/floor/:floorId" element={<FloorPage />} />
           <Route path="/afarizmi" element={<AllCommercialPage />} />
           <Route path="/afarizmi/:id" element={<CommercialPage />} />
+          <Route path="/afarizmi/njesia/:id" element={<SingleCommercialPage />} />
           <Route path="/parking" element={<AllParkingPage />} />
           <Route path="/parking/:id" element={<ParkingPage />} />
           <Route path="/floorsvg/:id" element={<FloorSvgPage />} />
