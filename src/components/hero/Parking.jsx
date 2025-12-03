@@ -77,7 +77,7 @@ const Parking = ({ parkingNumber, selectedTypes = [] }) => {
   };
 
   return (
-    <div className="bg-white w-full h-[50vh] md:h-[120vh] flex flex-col items-center justify-center overflow-auto md:overflow-hidden relative my-20">
+    <div className="bg-white w-full h-[50vh] md:h-[100vh] flex flex-col items-center justify-center overflow-auto md:overflow-hidden relative my-20">
       {filteredParkingData?.map((building, index) => {
         return (
           <div

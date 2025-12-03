@@ -10,7 +10,7 @@
   --secondary-color: #888888;
   --tertiary-color: #f1f3f8;
   --text-color: #7f8087;
-  --brand-color: rgba(246, 206, 62, 1);
+  --brand-color: #f6ce3e;
   --brandD-color: #183136;
   --brand2-color: #000;
   --dark-color: #7c7c7c;
@@ -231,4 +231,32 @@ option {
 select:active,
 select:focus {
   border: 1px solid var(--brand2-color);
+}
+.available {
+  /* fill: #0e37524d; */
+  fill: #119b244d;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease 0s;
+  opacity: 1;
+  stroke: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  stroke-width: 1px;
+  outline: none;
+  width: 100%;
+}
+
+.available:hover {
+  /* fill: #0E3752; */
+  fill: #10771ea2;
+  opacity: 0.8;
+}
+
+.sold {
+  fill: #8b0000;
+  opacity: 0.5;
+  stroke-width: 1px;
+  stroke: white;
 }

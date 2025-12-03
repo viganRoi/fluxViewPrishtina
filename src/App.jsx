@@ -23,6 +23,7 @@ import {
   TempCommC,
   TempCommD,
   VirtualPage,
+  AllParkingPage,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import SvgExtractor from "./pages/SvgExtractor";
@@ -41,26 +42,17 @@ function App() {
       <ConditionalLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/floorsvg/:id" element={<FloorSvgPage />} />
-          <Route path="/wishlist" element={<WishlistPage />} />
-          <Route path="/svg-extrator" element={<SvgExtractor />} />
-          <Route path="/fsvg-extrator" element={<FloorSvgExtractor />} />
-          <Route
-            path="/fbsvg-extrator"
-            element={<FloorBuildingSvgExtractor />}
-          />
-          <Route path="/psvg-extrator" element={<ParkingSvgExtractor />} />
-          <Route
-            path="/store/svg-extractor"
-            element={<SvgExtractorForStores />}
-          />
+          <Route path="/apartments" element={<AllApartmentsPage />} />
+          <Route path="/apartments/:id" element={<SingleApartmentPage />} />
           <Route path="/buildings" element={<GeneralBuildingPage />} />
           <Route path="/buildings/:mode/:id" element={<BuildingPage />} />
           <Route path="/buildings/:id/floor/:floorId" element={<FloorPage />} />
-          <Route path="/parking/:id" element={<ParkingPage />} />
-          <Route path="/apartments/:id" element={<SingleApartmentPage />} />
+          <Route path="/afarizmi" element={<AllCommercialPage />} />
           <Route path="/afarizmi/:id" element={<CommercialPage />} />
-          <Route path="/apartments" element={<AllApartmentsPage />} />
+          <Route path="/parking" element={<AllParkingPage />} />
+          <Route path="/parking/:id" element={<ParkingPage />} />
+          <Route path="/floorsvg/:id" element={<FloorSvgPage />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/360-virtual" element={<VirtualPage />} />
           <Route
             path="/admin/*"
@@ -70,6 +62,11 @@ function App() {
               </AuthProvider>
             }
           />
+          <Route path="/svg-extrator" element={<SvgExtractor />} />
+          <Route path="/fsvg-extrator" element={<FloorSvgExtractor />} />
+          <Route path="/fbsvg-extrator" element={<FloorBuildingSvgExtractor />} />
+          <Route path="/psvg-extrator" element={<ParkingSvgExtractor />} />
+          <Route path="/store/svg-extractor" element={<SvgExtractorForStores />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </ConditionalLayout>

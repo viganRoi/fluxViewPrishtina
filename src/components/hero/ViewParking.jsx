@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { commercialArea } from "../../utils/server";
 import { useNavigate } from "react-router-dom";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { imagePath } from "../../utils/consts";
 
-const ViewCommercial = () => {
+const ViewParking = () => {
     const navigate = useNavigate();
     const isSmallDev = window.innerWidth < 700;
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,7 +34,7 @@ const ViewCommercial = () => {
         <div className="relative bg-brand w-full h-[110vh] md:min-h-[1080px] flex flex-col items-center justify-center">
             <div className="relative bg-brand w-full h-full flex flex-col justify-center items-center overflow-x-auto md:overflow-x-hidden">
                 <h1 className="hidden md:block md:absolute top-20 text-white z-20 font-semibold text-2xl md:text-5xl bg-primary/60 p-4 rounded-lg">
-                Zgjedh lokalin afaristë
+                Zgjedh vendparkimin
                 </h1>
                 <div
                     className="absolute md:relative w-full flex items-center justify-center"
@@ -80,7 +79,7 @@ const ViewCommercial = () => {
                                     d={point.path}
                                     onClick={() => {
                                         if (['n1', 'n2'].includes(point.name)) {
-                                            navigate(`/afarizmi/${point.name}`);
+                                            navigate(`/parking/${point.name}`);
                                         }
                                     }}
                                     style={{
@@ -113,4 +112,4 @@ const ViewCommercial = () => {
     );
 };
 
-export default ViewCommercial;
+export default ViewParking;
