@@ -126,11 +126,13 @@ const Floor = () => {
 
   return (
     <>
-      <div className="bg-[var(--brand-color)] w-full pt-20 md:pt-0 h-[200px] md:h-[300px] flex flex-col items-center justify-center relative">
+      <div className="bg-black w-full pt-20 md:pt-0 h-[200px] md:h-[300px] flex flex-col items-center justify-center relative">
         <div className="w-11/12 md:w-5/6 text-black flex relative">
-          <h1 className="montserrat text-2xl md:text-5xl text-[var(--brand2-color)]">
+          <h1 className="montserrat text-2xl md:text-5xl text-brand">
             Objekti:{" "}
-            {floorData?.[0]?.apartmentList?.[0]?.apartmentNumber || "N/A"}
+            <span className="text-white">
+              N{floorData?.[0]?.apartmentList?.[0]?.apartmentNumber || "N/A"}
+            </span>
           </h1>
         </div>
       </div>
@@ -181,6 +183,7 @@ const Floor = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 position: "absolute",
+                left: isSmallDev ? "0" : "unset",
               }}
             >
               {floorData?.find((it) => it.floorNumber === activeFloor) ? (
