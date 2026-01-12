@@ -247,11 +247,7 @@ const SingleApartment = () => {
                     {apartment.name} -{" "}
                   </h1>
                   <h1 className="text-black leading-none  text-[30px] md:text-[35px] montserrat font-bold">
-                    {(
-                      parseFloat(apartment.square) +
-                      parseFloat(apartment.balconySquare)
-                    ).toFixed(2)}{" "}
-                    m<sup>2</sup>{" "}
+                    {parseFloat(apartment.square).toFixed(2)} m<sup>2</sup>{" "}
                   </h1>
                 </div>
 
