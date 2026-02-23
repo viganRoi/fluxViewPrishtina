@@ -35,6 +35,12 @@ import "react-toastify/dist/ReactToastify.css";
 import Notes from "../../components/admin/notes/Notes";
 import Login from "../../components/auth/Login";
 import AdmRequestPage from "./requests/AdmRequestPage";
+import SvgExtractor from '../SvgExtractor';
+import FloorSvgExtractor from './svgExtractor/FloorSvgExtractor';
+import FloorBuildingSvgExtractor from './svgExtractor/FloorBuildingSvgExtractor';
+import ParkingSvgExtractor from './svgExtractor/ParkingSvgExtractor';
+import SvgExtractorForStores from './svgExtractor/SvgExtractorForStores';
+
 
 const AdminPage = () => {
   const [open, setOpen] = React.useState(true);
@@ -201,6 +207,11 @@ const AdminPage = () => {
           <Route path="/garage" element={<AdminParkinPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/requests" element={<AdmRequestPage />} />
+          <Route path="/svg-extrator" element={<SvgExtractor />} />
+          <Route path="/fsvg-extrator" element={<FloorSvgExtractor />} />
+          <Route path="/fbsvg-extrator" element={<FloorBuildingSvgExtractor />} />
+          <Route path="/psvg-extrator" element={<ParkingSvgExtractor />} />
+          <Route path="/store/svg-extractor" element={<SvgExtractorForStores />} />
         </Routes>
       </Box>
     </Box>
