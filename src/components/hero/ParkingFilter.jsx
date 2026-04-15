@@ -33,8 +33,8 @@ const ParkingFilter = ({
 
   const mappingParkingNumberToFloor = {
     1: id === "n1" ? "Bodrumi" : "Bodrumi -2",
-    2: id === "n1" ? "Suterreni 1" : "Bodrumi -1",
-    3: "Suterreni 2",
+    2: id === "n1" ? "Suterreni 2" : "Bodrumi -1",
+    3: "Suterreni 1",
   };
 
   return (
