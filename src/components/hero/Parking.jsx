@@ -7,6 +7,7 @@ import axios from "axios";
 import { BASE_URL, imagePath } from "../../utils/consts";
 import { useMediaQuery } from "@mui/material";
 import { useParams } from "react-router-dom";
+import { AuthProvider } from "../auth/AuthProvider";
 
 const Parking = ({ parkingNumber, selectedTypes = [] }) => {
   const isSmallDev = window.innerWidth < 700;
@@ -125,10 +126,10 @@ const Parking = ({ parkingNumber, selectedTypes = [] }) => {
                         apartment.isSold
                           ? "st1"
                           : apartment.isRent
-                          ? "rent-class"
-                          : apartment.isReserved
-                          ? "parking-reserved"
-                          : "st0"
+                            ? "rent-class"
+                            : apartment.isReserved
+                              ? "parking-reserved"
+                              : "st0"
                       }
                       id={apartment.apartmentId}
                       onMouseEnter={(e) => {
@@ -174,7 +175,9 @@ const Parking = ({ parkingNumber, selectedTypes = [] }) => {
         );
       })}
 
-      <ContextMenuParking menu={contextMenu} setMenu={setContextMenu} />
+      <AuthProvider hide={true}>
+        <ContextMenuParking menu={contextMenu} setMenu={setContextMenu} />
+      </AuthProvider>
       <AdmParkingModal />
       {showModal && (
         <ParkingModal
